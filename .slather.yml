@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+workspace: ios-target.xcworkspace
+xcodeproj: ios-target.xcodeproj
+scheme: ios-target-develop
+ignore:
+  - Pods/*
