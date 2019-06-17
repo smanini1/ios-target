@@ -51,14 +51,41 @@ class FirstViewModel {
     guard FBSDKAccessToken.current() != nil else {
       return
     }
+    
+  //  let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
+    
+//    FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
+//
+//      if error == nil {
+//        let fbDetails = result as? NSDictionary
+//        let userEmail = fbDetails?["email"] as? String
+//        let userFirstName = fbDetails?["first_name"] as? String
+//        let userLastName = fbDetails?["last_name"] as? String
+//        let userId = fbDetails?["id"] as? String
+//
+//        let parameters = [
+//          "data": [
+//            "email": userEmail,
+//            "first_name": userFirstName,
+//            "last_name": userLastName,
+//            "username": "",
+//            "provider": "facebook",
+//            "uid": userId
+//          ]
+//        ]
+    
+        UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString,
+                                  success: { [weak self] in
+                                    self?.state = .facebookLoggedIn
+          },
+                                  failure: { [weak self] error in
+                                    self?.state = .error(error.localizedDescription)
+        })
+    //  }
+      
+   // })
     //This fails with 404 since this endpoint is not implemented in the API base
-    UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString,
-                              success: { [weak self] in
-                                self?.state = .facebookLoggedIn
-                              },
-                              failure: { [weak self] error in
-                                self?.state = .error(error.localizedDescription)
-                              })
+   
   }
   
   func facebookLoginRequestFailed(reason: String, cancelled: Bool = false) {

@@ -13,9 +13,12 @@ class SignUpViewController: UIViewController {
   // MARK: - Outlets
   
   @IBOutlet weak var signUp: UIButton!
+  @IBOutlet weak var usernameField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var passwordConfirmationField: UITextField!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var backgroundImage: UIImageView!
   
   var viewModel = SignUpViewModelWithEmail()
   
@@ -23,14 +26,21 @@ class SignUpViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    signUp.setRoundBorders(22)
     viewModel.delegate = self
     setSignUpButton(enabled: false)
+    setUpBackground()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(false, animated: true)
+  }
+  
+  func setUpBackground() {
+    backgroundImage.image = UIImage(named: "background-main")
+    backgroundImage.contentMode = .scaleAspectFill
+    view.bringSubviewToFront(titleLabel)
+    // self.view.insertSubview(self.backgroundImage, at: 0)
   }
   
   // MARK: - Actions
@@ -44,6 +54,8 @@ class SignUpViewController: UIViewController {
       viewModel.password = newValue
     case passwordConfirmationField:
       viewModel.passwordConfirmation = newValue
+    case usernameField:
+      viewModel.username = newValue
     default: break
     }
   }

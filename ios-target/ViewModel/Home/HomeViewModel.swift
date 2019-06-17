@@ -24,21 +24,12 @@ class HomeViewModel {
   weak var delegate: HomeViewModelDelegate?
   
   var userEmail: String?
+  var targets: [Target] = []
   
   var state: HomeViewModelState = .idle {
     didSet {
         delegate?.didUpdateState()
     }
-  }
-  
-  func loadUserProfile() {
-    state = .loading
-    UserAPI.getMyProfile({ [weak self] user in
-      self?.userEmail = user.email
-      self?.state = .idle
-    }, failure: { [weak self] error in
-      self?.state = .error(error.localizedDescription)
-    })
   }
   
   func logoutUser() {
@@ -49,4 +40,15 @@ class HomeViewModel {
       self?.state = .error(error.localizedDescription)
     })
   }
+  
+//TODO: 
+//  func loadTargetPoints() {
+//    state = .loading
+//    TargetAPI.getTargets({ [weak self] targets in
+//      self?.targets = targets
+//      self?.state = .idle
+//      }, failure: { [weak self] error in
+//        self?.state = .error(error.localizedDescription)
+//    })
+//  }
 }

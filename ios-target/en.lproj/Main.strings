@@ -2,11 +2,11 @@
 /* Class = "UIButton"; normalTitle = "FACEBOOK CONNECT"; ObjectID = "3he-61-Jm3"; */
 "3he-61-Jm3.normalTitle" = "FACEBOOK CONNECT";
 
-/* Class = "UILabel"; text = "Sign Up"; ObjectID = "AaK-dC-F7z"; */
-"AaK-dC-F7z.text" = "Sign Up";
+/* Class = "UILabel"; text = "SIGN UP"; ObjectID = "AaK-dC-F7z"; */
+"AaK-dC-F7z.text" = "SIGN UP";
 
-/* Class = "UIButton"; normalTitle = "Don’t have an account? Let’s create one ►"; ObjectID = "EN8-2n-nei"; */
-"EN8-2n-nei.normalTitle" = "Don’t have an account? Let’s create one ►";
+/* Class = "UIButton"; normalTitle = "SIGN UP"; */
+"EN8-2n-nei.normalTitle" = "SIGN UP";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "GqP-oe-fcZ"; */
 "GqP-oe-fcZ.placeholder" = "Password";
@@ -29,14 +29,14 @@
 /* Class = "UILabel"; text = "You are signed in/up"; ObjectID = "deB-Nf-PW5"; */
 "deB-Nf-PW5.text" = "You are signed in/up";
 
-/* Class = "UILabel"; text = "Welcome to\nRS iOS BASE."; ObjectID = "nMy-eR-RsW"; */
-"nMy-eR-RsW.text" = "Welcome to\nRS iOS BASE.";
+/* Class = "UILabel"; text = "TARGET MVD."; ObjectID = "nMy-eR-RsW"; */
+"nMy-eR-RsW.text" = "TARGET MVD";
 
 /* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "oRD-MA-2oV"; */
 "oRD-MA-2oV.normalTitle" = "SIGN UP";
 
 /* Class = "UILabel"; text = "Sign In"; ObjectID = "oeJ-D0-ol5"; */
-"oeJ-D0-ol5.text" = "Sign In";
+"oeJ-D0-ol5.text" = "SIGN IN";
 
 /* Class = "UIButton"; normalTitle = "Get my profile"; ObjectID = "sla-gz-amO"; */
 "sla-gz-amO.normalTitle" = "Get my profile";
@@ -48,4 +48,4 @@
 "xYV-eE-Ila.placeholder" = "Email";
 
 /* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "zbs-uB-Nr7"; */
-"zbs-uB-Nr7.normalTitle" = "LOG IN";
+"zbs-uB-Nr7.normalTitle" = "SIGN IN";
