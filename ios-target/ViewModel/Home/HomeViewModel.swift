@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum HomeViewModelState: Equatable {
   case loading
@@ -19,12 +20,19 @@ protocol HomeViewModelDelegate: class {
   func didUpdateState()
 }
 
+protocol LocationDelegate: class {
+  func locationChanged(locations: [CLLocation])
+  func authorizationChanged(status: CLAuthorizationStatus)
+}
+
 class HomeViewModel {
   
   weak var delegate: HomeViewModelDelegate?
   
   var userEmail: String?
   var targets: [Target] = []
+  let locationManager = LocationManager()
+  let regionMeters: Double = 1000
   
   var state: HomeViewModelState = .idle {
     didSet {
@@ -41,7 +49,7 @@ class HomeViewModel {
     })
   }
   
-//TODO: 
+//TODO:
 //  func loadTargetPoints() {
 //    state = .loading
 //    TargetAPI.getTargets({ [weak self] targets in

@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class HomeViewController: UIViewController {
   
@@ -16,39 +15,34 @@ class HomeViewController: UIViewController {
   
   @IBOutlet weak var mapView: MKMapView!
   
-  let locationManager = CLLocationManager()
-  let regionMeters: Double = 1000
-  
   var viewModel = HomeViewModel()
   
   // MARK: - Lifecycle Events
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    checkLocationServices()
+    setLocationServices()
+    viewModel.locationManager.checkLocationServices()
+    setLocationServices()
     //TODO:
-    //viewModel.loadTargetPoints()
+//    viewModel.loadTargetPoints()
   }
   
-  func setUpLocationManager() {
-    locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+  // MARK: - Actions
+
+  @IBAction func tapOnAddTarget(_ sender: Any) {
+    //targetFrom.showTargetForm()
   }
   
-  func centerViewOnUserLocation() {
-    if let location = locationManager.location?.coordinate {
-      let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionMeters, longitudinalMeters: regionMeters)
-      mapView.setRegion(region, animated: true)
-    }
+  @IBAction func tapOnLogoutButton(_ sender: Any) {
+    viewModel.logoutUser()
   }
   
-  func checkLocationServices() {
+  func setLocationServices() {
     if CLLocationManager.locationServicesEnabled() {
-      setUpLocationManager()
+      viewModel.locationManager.setUpLocationManager()
       checkLocationAuthorization()
-    } else {
-      //TODO:
-      // show alert to turn on
     }
   }
   
@@ -62,7 +56,7 @@ class HomeViewController: UIViewController {
       //Show alert instricting them how to turn on permissions
       break
     case .notDetermined:
-      locationManager.requestWhenInUseAuthorization()
+      viewModel.locationManager.requestWhenInUseAuthorization()
     case .restricted:
       //TODO:
       //tell them why you cant show the location
@@ -72,10 +66,13 @@ class HomeViewController: UIViewController {
     }
   }
   
-  // MARK: - Actions
-
-  @IBAction func tapOnLogoutButton(_ sender: Any) {
-    viewModel.logoutUser()
+  func centerViewOnUserLocation() {
+    if let location = viewModel.locationManager.locationManager.location?.coordinate {
+      let region = MKCoordinateRegion.init(center: location,
+                                           latitudinalMeters: viewModel.regionMeters,
+                                           longitudinalMeters: viewModel.regionMeters)
+      mapView.setRegion(region, animated: true)
+    }
   }
 }
 
@@ -96,17 +93,15 @@ extension HomeViewController: HomeViewModelDelegate {
   }
 }
 
-extension HomeViewController: CLLocationManagerDelegate {
-  
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+extension HomeViewController: LocationDelegate {
+  func locationChanged(locations: [CLLocation]) {
     guard let location = locations.last else { return }
     let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-    let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionMeters, longitudinalMeters: regionMeters)
+    let region = MKCoordinateRegion.init(center: center, latitudinalMeters: viewModel.regionMeters, longitudinalMeters: viewModel.regionMeters)
     mapView.setRegion(region, animated: true)
   }
   
-  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+  func authorizationChanged(status: CLAuthorizationStatus) {
     checkLocationAuthorization()
   }
-  
 }

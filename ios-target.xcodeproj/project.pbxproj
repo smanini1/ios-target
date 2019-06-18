@@ -11,6 +11,8 @@
 		07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07741D71218CDED600DB3B97 /* FirstViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
+		8179D4D422B81FC100CAD8F4 /* TargetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* TargetForm.swift */; };
+		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D50978A365F9A7760AB4BF /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */; };
 		81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */; };
 		81EF2F2E22AAB801006254E7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */; };
@@ -93,6 +95,8 @@
 		3EB58579A8A91DD2B9E3FA28 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
+		8179D4D322B81FC100CAD8F4 /* TargetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetForm.swift; sourceTree = "<group>"; };
+		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		81EF2F3122B02DD9006254E7 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -358,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */,
+				8179D4D322B81FC100CAD8F4 /* TargetForm.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				FABDC9211EE1EB2B000DDAC3 /* ConfigurationManager.swift */,
 				E8FBB1C01DD21D18000D6740 /* SessionManager.swift */,
 				9B77E0741E2FB66F0020E450 /* UserDataManager.swift */,
+				8179D4D522B9515F00CAD8F4 /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -800,6 +806,7 @@
 				9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */,
 				E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
+				8179D4D422B81FC100CAD8F4 /* TargetForm.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				81EF2F2E22AAB801006254E7 /* ProfileViewModel.swift in Sources */,
@@ -819,6 +826,7 @@
 				9B88CC671CAB305900AE60C5 /* Constants.swift in Sources */,
 				9BAFB7BF2114D9910099DC61 /* HomeViewModel.swift in Sources */,
 				9B715A461E28083600C0C039 /* PlaceholderTextView.swift in Sources */,
+				8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
