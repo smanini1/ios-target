@@ -19,7 +19,6 @@ enum HomeViewModelState: Equatable {
 
 protocol HomeViewModelDelegate: class {
   func didUpdateState()
-  func didUpdateLocation(region: MKCoordinateRegion)
   func showUserLocation(region: MKCoordinateRegion)
   func showLocationError(message: String)
   func showMap()
@@ -69,7 +68,7 @@ class HomeViewModel {
   
   func changeLocation(location: CLLocation) {
     let region = defineRegion(location: location)
-    delegate?.didUpdateLocation(region: region)
+    delegate?.showUserLocation(region: region)
   }
   
   func checkLocationAuthorization() {

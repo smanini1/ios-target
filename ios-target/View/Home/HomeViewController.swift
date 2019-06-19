@@ -54,10 +54,6 @@ extension HomeViewController: HomeViewModelDelegate {
     changeLocation(region: region)
   }
   
-  func didUpdateLocation(region: MKCoordinateRegion) {
-    changeLocation(region: region)
-  }
-  
   func didUpdateState() {
     switch viewModel.state {
     case .idle:
