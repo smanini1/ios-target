@@ -29,11 +29,7 @@ extension UILabel {
     }
     
     get {
-      if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
-        return currentLetterSpace
-      } else {
-        return 0
-      }
+      return attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat ?? 0
     }
   }
 }

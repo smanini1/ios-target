@@ -22,9 +22,6 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    setLocationServices()
-    viewModel.locationManager.checkLocationServices()
-    setLocationServices()
     //TODO:
 //    viewModel.loadTargetPoints()
   }
@@ -39,44 +36,28 @@ class HomeViewController: UIViewController {
     viewModel.logoutUser()
   }
   
-  func setLocationServices() {
-    if CLLocationManager.locationServicesEnabled() {
-      viewModel.locationManager.setUpLocationManager()
-      checkLocationAuthorization()
-    }
-  }
-  
-  func checkLocationAuthorization() {
-    switch CLLocationManager.authorizationStatus() {
-    case .authorizedWhenInUse:
-      mapView.showsUserLocation = true
-      centerViewOnUserLocation()
-    case .denied:
-      //TODO:
-      //Show alert instricting them how to turn on permissions
-      break
-    case .notDetermined:
-      viewModel.locationManager.requestWhenInUseAuthorization()
-    case .restricted:
-      //TODO:
-      //tell them why you cant show the location
-      break
-    case .authorizedAlways:
-      break
-    }
-  }
-  
-  func centerViewOnUserLocation() {
-    if let location = viewModel.locationManager.locationManager.location?.coordinate {
-      let region = MKCoordinateRegion.init(center: location,
-                                           latitudinalMeters: viewModel.regionMeters,
-                                           longitudinalMeters: viewModel.regionMeters)
-      mapView.setRegion(region, animated: true)
-    }
+  func changeLocation(region: MKCoordinateRegion) {
+    mapView.setRegion(region, animated: true)
   }
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+  func showMap() {
+    mapView.showsUserLocation = true
+  }
+  
+  func showLocationError(message: String) {
+    showMessage(title: "Oops", message: message)
+  }
+  
+  func showUserLocation(region: MKCoordinateRegion) {
+    changeLocation(region: region)
+  }
+  
+  func didUpdateLocation(region: MKCoordinateRegion) {
+    changeLocation(region: region)
+  }
+  
   func didUpdateState() {
     switch viewModel.state {
     case .idle:
@@ -90,18 +71,5 @@ extension HomeViewController: HomeViewModelDelegate {
       UIApplication.hideNetworkActivity()
       UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateInitialViewController()
     }
-  }
-}
-
-extension HomeViewController: LocationDelegate {
-  func locationChanged(locations: [CLLocation]) {
-    guard let location = locations.last else { return }
-    let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-    let region = MKCoordinateRegion.init(center: center, latitudinalMeters: viewModel.regionMeters, longitudinalMeters: viewModel.regionMeters)
-    mapView.setRegion(region, animated: true)
-  }
-  
-  func authorizationChanged(status: CLAuthorizationStatus) {
-    checkLocationAuthorization()
   }
 }

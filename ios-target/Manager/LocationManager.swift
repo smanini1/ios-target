@@ -10,10 +10,14 @@ import UIKit
 import CoreLocation
 import MapKit
 
+protocol LocationDelegate: class {
+  func locationChanged(location: CLLocation)
+  func authorizationChanged(status: CLAuthorizationStatus)
+}
+
 class LocationManager: NSObject {
   
   let locationManager = CLLocationManager()
-  var mapView = MKMapView()
   weak var locationDelegate: LocationDelegate?
   
   func setUpLocationManager() {
@@ -21,29 +25,31 @@ class LocationManager: NSObject {
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
   }
   
-  func checkLocationServices() {
-    if CLLocationManager.locationServicesEnabled() {
-      setUpLocationManager()
-    } else {
-      //TODO:
-      // show alert to turn on
-    }
+  func checkLocationAuthorization() -> CLAuthorizationStatus {
+    return CLLocationManager.authorizationStatus()
   }
   
   func requestWhenInUseAuthorization() {
     locationManager.requestWhenInUseAuthorization()
+  }
+  
+  func startListening() {
+    locationManager.startUpdatingLocation()
+  }
+  
+  func stopListening() {
+    locationManager.stopUpdatingLocation()
   }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    locationDelegate?.locationChanged(locations: locations)
+    guard let location = locations.last else { return }
+    locationDelegate?.locationChanged(location: location)
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     locationDelegate?.authorizationChanged(status: status)
-    
   }
-  
 }

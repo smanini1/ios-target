@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 enum HomeViewModelState: Equatable {
   case loading
@@ -18,11 +19,10 @@ enum HomeViewModelState: Equatable {
 
 protocol HomeViewModelDelegate: class {
   func didUpdateState()
-}
-
-protocol LocationDelegate: class {
-  func locationChanged(locations: [CLLocation])
-  func authorizationChanged(status: CLAuthorizationStatus)
+  func didUpdateLocation(region: MKCoordinateRegion)
+  func showUserLocation(region: MKCoordinateRegion)
+  func showLocationError(message: String)
+  func showMap()
 }
 
 class HomeViewModel {
@@ -31,12 +31,25 @@ class HomeViewModel {
   
   var userEmail: String?
   var targets: [Target] = []
-  let locationManager = LocationManager()
+  var locationManager: LocationManager!
   let regionMeters: Double = 1000
   
   var state: HomeViewModelState = .idle {
     didSet {
         delegate?.didUpdateState()
+    }
+  }
+  
+  init(locationManager: LocationManager = LocationManager()) {
+    self.locationManager = locationManager
+    self.locationManager.locationDelegate = self
+    self.setLocationServices()
+  }
+  
+  func setLocationServices() {
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.setUpLocationManager()
+      checkLocationAuthorization()
     }
   }
   
@@ -49,6 +62,36 @@ class HomeViewModel {
     })
   }
   
+  func defineRegion(location: CLLocation) -> MKCoordinateRegion {
+    let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    return MKCoordinateRegion.init(center: center, latitudinalMeters: regionMeters, longitudinalMeters: regionMeters)
+  }
+  
+  func changeLocation(location: CLLocation) {
+    let region = defineRegion(location: location)
+    delegate?.didUpdateLocation(region: region)
+  }
+  
+  func checkLocationAuthorization() {
+    locationManager.stopListening()
+    switch locationManager.checkLocationAuthorization() {
+    case .authorizedWhenInUse:
+      delegate?.showMap()
+      guard let location = locationManager.locationManager.location else { return }
+      let region = defineRegion(location: location)
+      locationManager.startListening()
+      delegate?.showUserLocation(region: region)
+    case .denied:
+      delegate?.showLocationError(message: "Please change location permissions")
+    case .notDetermined:
+      locationManager.requestWhenInUseAuthorization()
+    case .restricted:
+      delegate?.showLocationError(message: "Sorry! We can't show your location")
+    case .authorizedAlways:
+      break
+    }
+  }
+  
 //TODO:
 //  func loadTargetPoints() {
 //    state = .loading
@@ -59,4 +102,14 @@ class HomeViewModel {
 //        self?.state = .error(error.localizedDescription)
 //    })
 //  }
+}
+
+extension HomeViewModel: LocationDelegate {
+  func locationChanged(location: CLLocation) {
+    changeLocation(location: location)
+  }
+  
+  func authorizationChanged(status: CLAuthorizationStatus) {
+    checkLocationAuthorization()
+  }
 }

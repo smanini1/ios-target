@@ -344,8 +344,6 @@
                         <outlet property="emailField" destination="SGW-mB-J78" id="Igq-cd-igL"/>
                         <outlet property="logIn" destination="zbs-uB-Nr7" id="FZU-bN-WOI"/>
                         <outlet property="passwordField" destination="VXP-E8-PA8" id="l9a-Ym-8Mg"/>
-                        <outlet property="signUpButton" destination="OQU-kb-ZZ8" id="FRD-fX-ntG"/>
-                        <outlet property="titleLabel" destination="oeJ-D0-ol5" id="vrm-sd-OcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMa-tk-i2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,7 +417,7 @@
                                 <rect key="frame" x="0.0" y="667" width="375" height="347"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-Oh-L7g">
-                                        <rect key="frame" x="37.5" y="15" width="300" height="317"/>
+                                        <rect key="frame" x="38" y="15" width="300" height="317"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIFY AREA LENGTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyY-TZ-Cmm" userLabel="Area Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.5" height="20"/>

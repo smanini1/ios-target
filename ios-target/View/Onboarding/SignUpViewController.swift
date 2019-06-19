@@ -40,7 +40,6 @@ class SignUpViewController: UIViewController {
     backgroundImage.image = UIImage(named: "background-main")
     backgroundImage.contentMode = .scaleAspectFill
     view.bringSubviewToFront(titleLabel)
-    // self.view.insertSubview(self.backgroundImage, at: 0)
   }
   
   // MARK: - Actions
