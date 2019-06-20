@@ -22,6 +22,8 @@ protocol HomeViewModelDelegate: class {
   func showUserLocation(region: MKCoordinateRegion)
   func showLocationError(message: String)
   func showMap()
+  //  TODO:
+//  func addAnnotations(annotations: [MKPointAnnotation])
 }
 
 class HomeViewModel {
@@ -31,7 +33,7 @@ class HomeViewModel {
   var userEmail: String?
   var targets: [Target] = []
   var locationManager: LocationManager!
-  let regionMeters: Double = 1000
+  let regionMeters: Double = 10000
   
   var state: HomeViewModelState = .idle {
     didSet {
@@ -100,11 +102,22 @@ class HomeViewModel {
         self?.state = .error(error.localizedDescription)
     })
   }
+  
+  // TODO:
+//  func addAnnotations() {
+//    let appleParkAnnotation = MKPointAnnotation()
+//    appleParkAnnotation.title = "Apple Park"
+//    appleParkAnnotation.coordinate = CLLocationCoordinate2D(latitude: 37.333303, longitude: -122.011252)
+//
+//    delegate?.addAnnotations(annotations: [appleParkAnnotation])
+//  }
 }
 
 extension HomeViewModel: LocationDelegate {
   func locationChanged(location: CLLocation) {
     changeLocation(location: location)
+    // TODO:
+//    addAnnotations()
   }
   
   func authorizationChanged(status: CLAuthorizationStatus) {

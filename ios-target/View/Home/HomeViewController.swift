@@ -44,6 +44,13 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+  //  TODO:
+//  func addAnnotations(annotations: [MKPointAnnotation]) {
+//    annotations.forEach {
+//      mapView.addAnnotation($0)
+//    }
+//  }
+  
   func showMap() {
     mapView.showsUserLocation = true
   }
