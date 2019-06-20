@@ -16,20 +16,22 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   var viewModel = HomeViewModel()
+  //  TODO:
+  //  let targetForm = TargetForm()
   
   // MARK: - Lifecycle Events
   
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    //TODO:
-//    viewModel.loadTargetPoints()
+    viewModel.loadTargetPoints()
   }
   
   // MARK: - Actions
 
   @IBAction func tapOnAddTarget(_ sender: Any) {
-    //targetFrom.showTargetForm()
+    //  TODO:
+    //    targetForm.showTargetForm()
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {

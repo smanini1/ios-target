@@ -91,16 +91,15 @@ class HomeViewModel {
     }
   }
   
-//TODO:
-//  func loadTargetPoints() {
-//    state = .loading
-//    TargetAPI.getTargets({ [weak self] targets in
-//      self?.targets = targets
-//      self?.state = .idle
-//      }, failure: { [weak self] error in
-//        self?.state = .error(error.localizedDescription)
-//    })
-//  }
+  func loadTargetPoints() {
+    state = .loading
+    TargetAPI.getTargets({ [weak self] targets in
+      self?.targets = targets
+      self?.state = .idle
+      }, failure: { [weak self] error in
+        self?.state = .error(error.localizedDescription)
+    })
+  }
 }
 
 extension HomeViewModel: LocationDelegate {
