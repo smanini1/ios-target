@@ -7,40 +7,57 @@
 //
 
 import UIKit
+import MapKit
 
 class HomeViewController: UIViewController {
   
   // MARK: - Outlets
   
-  @IBOutlet weak var welcomeLabel: UILabel!
-  @IBOutlet weak var logOut: UIButton!
+  @IBOutlet weak var mapView: MKMapView!
   
   var viewModel = HomeViewModel()
   
   // MARK: - Lifecycle Events
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    logOut.setRoundBorders(22)
+    //TODO:
+//    viewModel.loadTargetPoints()
   }
   
   // MARK: - Actions
-  
-  @IBAction func tapOnGetMyProfile(_ sender: Any) {
-    viewModel.loadUserProfile()
-  }
 
-  @IBAction func tapOnLogOutButton(_ sender: Any) {
+  @IBAction func tapOnAddTarget(_ sender: Any) {
+    //targetFrom.showTargetForm()
+  }
+  
+  @IBAction func tapOnLogoutButton(_ sender: Any) {
     viewModel.logoutUser()
+  }
+  
+  func changeLocation(region: MKCoordinateRegion) {
+    mapView.setRegion(region, animated: true)
   }
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+  func showMap() {
+    mapView.showsUserLocation = true
+  }
+  
+  func showLocationError(message: String) {
+    showMessage(title: "Oops", message: message)
+  }
+  
+  func showUserLocation(region: MKCoordinateRegion) {
+    changeLocation(region: region)
+  }
+  
   func didUpdateState() {
     switch viewModel.state {
     case .idle:
       UIApplication.hideNetworkActivity()
-      showMessage(title: "My Profile", message: "email: \(viewModel.userEmail ?? "")")
     case .loading:
       UIApplication.showNetworkActivity()
     case .error(let errorDescription):

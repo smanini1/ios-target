@@ -3,10 +3,10 @@
 "3he-61-Jm3.normalTitle" = "CONECTA CON FACEBOOK";
 
 /* Class = "UILabel"; text = "Sign Up"; ObjectID = "AaK-dC-F7z"; */
-"AaK-dC-F7z.text" = "Registrate";
+"AaK-dC-F7z.text" = "REGISTRATE";
 
 /* Class = "UIButton"; normalTitle = "Don’t have an account? Let’s create one ►"; ObjectID = "EN8-2n-nei"; */
-"EN8-2n-nei.normalTitle" = "No tienes una cuenta? Creemos una ►";
+"EN8-2n-nei.normalTitle" = "CREAR CUENTA";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "GqP-oe-fcZ"; */
 "GqP-oe-fcZ.placeholder" = "Contraseña";
@@ -29,14 +29,14 @@
 /* Class = "UILabel"; text = "You are signed in/up"; ObjectID = "deB-Nf-PW5"; */
 "deB-Nf-PW5.text" = "Has iniciado session o creado una cuenta";
 
-/* Class = "UILabel"; text = "Welcome to\nRS iOS BASE."; ObjectID = "nMy-eR-RsW"; */
-"nMy-eR-RsW.text" = "Bienvendio/a a\nRS iOS BASE.";
+/* Class = "UILabel"; text = "TARGET MVD"; */
+"nMy-eR-RsW.text" = "TARGET MVD.";
 
 /* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "oRD-MA-2oV"; */
 "oRD-MA-2oV.normalTitle" = "REGISTRATE";
 
 /* Class = "UILabel"; text = "Sign In"; ObjectID = "oeJ-D0-ol5"; */
-"oeJ-D0-ol5.text" = "Inicia sesión";
+"oeJ-D0-ol5.text" = "INICIAR SESIÓN";
 
 /* Class = "UIButton"; normalTitle = "Get my profile"; ObjectID = "sla-gz-amO"; */
 "sla-gz-amO.normalTitle" = "Ver mi perfil";

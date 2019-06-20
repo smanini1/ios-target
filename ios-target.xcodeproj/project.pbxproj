@@ -11,7 +11,25 @@
 		07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07741D71218CDED600DB3B97 /* FirstViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
+		8179D4D422B81FC100CAD8F4 /* TargetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* TargetForm.swift */; };
+		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D50978A365F9A7760AB4BF /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */; };
+		81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */; };
+		81EF2F2E22AAB801006254E7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */; };
+		81EF2F3B22B02DD9006254E7 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3122B02DD9006254E7 /* OpenSans-LightItalic.ttf */; };
+		81EF2F3C22B02DD9006254E7 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3222B02DD9006254E7 /* OpenSans-SemiBoldItalic.ttf */; };
+		81EF2F3D22B02DD9006254E7 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3322B02DD9006254E7 /* OpenSans-ExtraBold.ttf */; };
+		81EF2F3E22B02DD9006254E7 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3422B02DD9006254E7 /* OpenSans-Italic.ttf */; };
+		81EF2F3F22B02DD9006254E7 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3522B02DD9006254E7 /* OpenSans-SemiBold.ttf */; };
+		81EF2F4022B02DD9006254E7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3622B02DD9006254E7 /* OpenSans-Bold.ttf */; };
+		81EF2F4122B02DD9006254E7 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3722B02DD9006254E7 /* OpenSans-BoldItalic.ttf */; };
+		81EF2F4222B02DD9006254E7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3822B02DD9006254E7 /* OpenSans-Regular.ttf */; };
+		81EF2F4322B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3922B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf */; };
+		81EF2F4422B02DD9006254E7 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81EF2F3A22B02DD9006254E7 /* OpenSans-Light.ttf */; };
+		81EF2F4622B034E8006254E7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F4522B034E8006254E7 /* UILabelExtension.swift */; };
+		81EF2F4822B14BCD006254E7 /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */; };
+		81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F4922B177C1006254E7 /* TargetAPI.swift */; };
+		81EF2F4C22B17836006254E7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F4B22B17836006254E7 /* Target.swift */; };
 		9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */; };
 		9B0C72721C738D3400BAF3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */; };
 		9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C726C1C738D3400BAF3B1 /* APIClient.swift */; };
@@ -77,6 +95,24 @@
 		3EB58579A8A91DD2B9E3FA28 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
+		8179D4D322B81FC100CAD8F4 /* TargetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetForm.swift; sourceTree = "<group>"; };
+		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		81EF2F3122B02DD9006254E7 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		81EF2F3222B02DD9006254E7 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		81EF2F3322B02DD9006254E7 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "../../../../../../../Downloads/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		81EF2F3422B02DD9006254E7 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "../../../../../../../Downloads/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		81EF2F3522B02DD9006254E7 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../../../../../../../Downloads/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		81EF2F3622B02DD9006254E7 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../../../../Downloads/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		81EF2F3722B02DD9006254E7 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		81EF2F3822B02DD9006254E7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../../../../Downloads/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		81EF2F3922B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		81EF2F3A22B02DD9006254E7 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "../../../../../../../Downloads/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		81EF2F4522B034E8006254E7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
+		81EF2F4922B177C1006254E7 /* TargetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAPI.swift; sourceTree = "<group>"; };
+		81EF2F4B22B17836006254E7 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		8612F94CD5B4305093E45F40 /* Pods_ios_target.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_target.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,8 +198,48 @@
 				F986CD64B40A6647F6381137 /* Pods-ios-target.staging.xcconfig */,
 				D3FE6CBCC03648A291B372EB /* Pods-ios-target.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		81EF2F2722AAB552006254E7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		81EF2F2822AAB674006254E7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		81EF2F2F22B02CB4006254E7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81EF2F3022B02DB1006254E7 /* OpenSans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		81EF2F3022B02DB1006254E7 /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				81EF2F3622B02DD9006254E7 /* OpenSans-Bold.ttf */,
+				81EF2F3722B02DD9006254E7 /* OpenSans-BoldItalic.ttf */,
+				81EF2F3322B02DD9006254E7 /* OpenSans-ExtraBold.ttf */,
+				81EF2F3922B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf */,
+				81EF2F3422B02DD9006254E7 /* OpenSans-Italic.ttf */,
+				81EF2F3A22B02DD9006254E7 /* OpenSans-Light.ttf */,
+				81EF2F3122B02DD9006254E7 /* OpenSans-LightItalic.ttf */,
+				81EF2F3822B02DD9006254E7 /* OpenSans-Regular.ttf */,
+				81EF2F3522B02DD9006254E7 /* OpenSans-SemiBold.ttf */,
+				81EF2F3222B02DD9006254E7 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = OpenSans;
 			sourceTree = "<group>";
 		};
 		9B0C72511C738C3100BAF3B1 /* ios-target */ = {
@@ -286,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */,
+				8179D4D322B81FC100CAD8F4 /* TargetForm.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -293,6 +370,7 @@
 		9B8D306720AB45160050697F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				81EF2F2F22B02CB4006254E7 /* Fonts */,
 				9B8D306820AB451E0050697F /* Localization */,
 			);
 			path = Resources;
@@ -319,6 +397,7 @@
 		9BAFB7BC2114CA8D0099DC61 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81EF2F2822AAB674006254E7 /* Profile */,
 				9B8574DB212C8C330063A3E2 /* Home */,
 				9B8574DA212C8BF10063A3E2 /* Onboarding */,
 				E8290BFB1D832D4100599960 /* CustomControls */,
@@ -329,6 +408,7 @@
 		9BAFB7BD2114CA9E0099DC61 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				81EF2F2722AAB552006254E7 /* Profile */,
 				9BAFB7C12114E3A80099DC61 /* Home */,
 				9BAFB7C02114E39C0099DC61 /* Onboarding */,
 			);
@@ -370,6 +450,7 @@
 				FABDC9211EE1EB2B000DDAC3 /* ConfigurationManager.swift */,
 				E8FBB1C01DD21D18000D6740 /* SessionManager.swift */,
 				9B77E0741E2FB66F0020E450 /* UserDataManager.swift */,
+				8179D4D522B9515F00CAD8F4 /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -388,6 +469,7 @@
 			children = (
 				E8FBB1BE1DD21A32000D6740 /* Session.swift */,
 				9B77E0721E2FB6350020E450 /* User.swift */,
+				81EF2F4B22B17836006254E7 /* Target.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0C726E1C738D3400BAF3B1 /* UserAPI.swift */,
+				81EF2F4922B177C1006254E7 /* TargetAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -422,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
+				81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -438,6 +522,7 @@
 				9B8D306F20AB47E90050697F /* JSONEncodingExtension.swift */,
 				9B8574D8212C84130063A3E2 /* UIImageExtension.swift */,
 				071CD2612228544700E6D385 /* FontExtension.swift */,
+				81EF2F4522B034E8006254E7 /* UILabelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -547,9 +632,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81EF2F3C22B02DD9006254E7 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				9B9C6BFE20C7160700EB0523 /* README.md in Resources */,
+				81EF2F4022B02DD9006254E7 /* OpenSans-Bold.ttf in Resources */,
+				81EF2F3F22B02DD9006254E7 /* OpenSans-SemiBold.ttf in Resources */,
+				81EF2F3D22B02DD9006254E7 /* OpenSans-ExtraBold.ttf in Resources */,
+				81EF2F3E22B02DD9006254E7 /* OpenSans-Italic.ttf in Resources */,
 				0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */,
+				81EF2F4322B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				81EF2F3B22B02DD9006254E7 /* OpenSans-LightItalic.ttf in Resources */,
+				81EF2F4122B02DD9006254E7 /* OpenSans-BoldItalic.ttf in Resources */,
+				81EF2F4422B02DD9006254E7 /* OpenSans-Light.ttf in Resources */,
 				9BFA84F31C776827009F64E4 /* LaunchScreen.storyboard in Resources */,
+				81EF2F4222B02DD9006254E7 /* OpenSans-Regular.ttf in Resources */,
 				9B8D306B20AB456C0050697F /* Localization.strings in Resources */,
 				9B0C72721C738D3400BAF3B1 /* Assets.xcassets in Resources */,
 				9B12AF6C1F269B03005FD465 /* ThirdPartyKeys.example.plist in Resources */,
@@ -695,10 +790,13 @@
 			files = (
 				E8290BFE1D832D9200599960 /* UIViewExtension.swift in Sources */,
 				07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */,
+				81EF2F4622B034E8006254E7 /* UILabelExtension.swift in Sources */,
 				9BD409101CE9F19E005223C9 /* UIHelper.swift in Sources */,
 				E8B30E021E72FF8000131DCF /* UIStoryboardExtension.swift in Sources */,
+				81EF2F4C22B17836006254E7 /* Target.swift in Sources */,
 				9B3AA3A11ED4D014005A4D26 /* HomeViewController.swift in Sources */,
 				9B77E0751E2FB66F0020E450 /* UserDataManager.swift in Sources */,
+				81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */,
 				9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */,
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
@@ -708,12 +806,16 @@
 				9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */,
 				E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
+				8179D4D422B81FC100CAD8F4 /* TargetForm.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
+				81EF2F2E22AAB801006254E7 /* ProfileViewModel.swift in Sources */,
 				FABDC9221EE1EB2B000DDAC3 /* ConfigurationManager.swift in Sources */,
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
+				81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */,
 				9BE3669D1F101737007CAECD /* MultipartMedia.swift in Sources */,
+				81EF2F4822B14BCD006254E7 /* UITextFieldPadding.swift in Sources */,
 				9B8574D9212C84130063A3E2 /* UIImageExtension.swift in Sources */,
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
@@ -724,6 +826,7 @@
 				9B88CC671CAB305900AE60C5 /* Constants.swift in Sources */,
 				9BAFB7BF2114D9910099DC61 /* HomeViewModel.swift in Sources */,
 				9B715A461E28083600C0C039 /* PlaceholderTextView.swift in Sources */,
+				8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,7 +1041,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://rails5-api-base.herokuapp.com/api/v1";
+				BASE_URL = "https://target-mvd-api.herokuapp.com/api/v1";
 				BUNDLE_DOMAIN = com.rootstrap;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -964,7 +1067,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://rails5-api-base.herokuapp.com/api/v1";
+				BASE_URL = "https://target-mvd-api.herokuapp.com/api/v1";
 				BUNDLE_DOMAIN = com.rootstrap;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1046,7 +1149,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "https://rails5-api-base.herokuapp.com/api/v1";
+				BASE_URL = "https://target-mvd-api.herokuapp.com/api/v1";
 				BUNDLE_DOMAIN = com.rootstrap;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

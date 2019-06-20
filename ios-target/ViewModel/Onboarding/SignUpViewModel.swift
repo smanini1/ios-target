@@ -49,19 +49,26 @@ class SignUpViewModelWithEmail {
     }
   }
   
+  var username = "" {
+    didSet {
+      delegate?.formDidChange()
+    }
+  }
+  
   var hasValidData: Bool {
-    return email.isEmailFormatted() && !password.isEmpty && password == passwordConfirmation
+    return email.isEmailFormatted() && !password.isEmpty && password == passwordConfirmation && !username.isEmpty
   }
   
   func signup() {
     state = .loading
-    UserAPI.signup(email, password: password,
-                   avatar64: UIImage.random(),
+    UserAPI.signup(email, password: password, username: username,
                    success: { [weak self] _ in
                     self?.state = .signedUp
                    },
                    failure: { [weak self] error in
-                    self?.state = .error(error.localizedDescription)
+                    let failReason = (error as NSError).localizedFailureReason ?? ""
+                    let errorMessage = failReason.isEmpty ? error.localizedDescription : failReason
+                    self?.state = .error(errorMessage)
                   })
   }
 }

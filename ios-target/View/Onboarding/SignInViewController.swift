@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
   @IBOutlet weak var logIn: UIButton!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var backgroundImage: UIImageView!
   
   var viewModel = SignInViewModelWithCredentials()
   
@@ -22,9 +23,15 @@ class SignInViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    logIn.setRoundBorders(22)
     viewModel.delegate = self
     setLoginButton(enabled: false)
+    setBackground()
+  }
+  
+  func setBackground() {
+    backgroundImage.image = UIImage(named: "background-main")
+    backgroundImage.contentMode = .scaleAspectFill
+    view.sendSubviewToBack(backgroundImage)
   }
   
   override func viewWillAppear(_ animated: Bool) {

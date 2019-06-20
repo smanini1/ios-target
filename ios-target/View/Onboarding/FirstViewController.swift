@@ -15,6 +15,8 @@ class FirstViewController: UIViewController {
   @IBOutlet weak var facebookSign: UIButton!
   @IBOutlet weak var signIn: UIButton!
   @IBOutlet weak var signUp: UIButton!
+  @IBOutlet weak var backgroundImage: UIImageView!
+  @IBOutlet weak var titleLabel: UILabel!
   
   var viewModel = FirstViewModel()
 
@@ -23,7 +25,13 @@ class FirstViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    [signIn, facebookSign].forEach({ $0?.setRoundBorders(22) })
+    setBackground()
+  }
+  
+  func setBackground() {
+    backgroundImage.image = UIImage(named: "background-main")
+    backgroundImage.contentMode = .scaleAspectFill
+    view.bringSubviewToFront(titleLabel)
   }
   
   override func viewWillAppear(_ animated: Bool) {
