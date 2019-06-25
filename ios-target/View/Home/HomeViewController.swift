@@ -25,10 +25,11 @@ class HomeViewController: UIViewController {
     super.viewDidLoad()
     viewModel.delegate = self
     viewModel.loadTargetPoints()
+    mapView.delegate = self
   }
   
   // MARK: - Actions
-
+  
   @IBAction func tapOnAddTarget(_ sender: Any) {
     //  TODO:
     //    targetForm.showTargetForm()
@@ -38,18 +39,31 @@ class HomeViewController: UIViewController {
     viewModel.logoutUser()
   }
   
+  func removeLocationOverlay() {
+    if let locationOverlay = viewModel.locationOverlay {
+      mapView.removeOverlay(locationOverlay)
+      viewModel.locationOverlay = nil
+    }
+  }
+  
   func changeLocation(region: MKCoordinateRegion) {
-    mapView.setRegion(region, animated: true)
+    removeLocationOverlay()
+    mapView.setRegion(region, animated: false)
+    viewModel.locationOverlay = TargetCircle(radius: 60,
+                                        backgroundColor: .white70,
+                                        borderColor: .macaroniAndCheese,
+                                        coordinates: region.center)
+    if let overlay = viewModel.locationOverlay {
+      mapView.addOverlay(overlay)
+    }
   }
 }
 
 extension HomeViewController: HomeViewModelDelegate {
-  //  TODO:
-//  func addAnnotations(annotations: [MKPointAnnotation]) {
-//    annotations.forEach {
-//      mapView.addAnnotation($0)
-//    }
-//  }
+  func addAnnotations(annotations: [TargetAnnotation], circleOverlays: [TargetCircle]) {
+    mapView.addAnnotations(annotations)
+    mapView.addOverlays(circleOverlays)
+  }
   
   func showMap() {
     mapView.showsUserLocation = true
@@ -76,5 +90,34 @@ extension HomeViewController: HomeViewModelDelegate {
       UIApplication.hideNetworkActivity()
       UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateInitialViewController()
     }
+  }
+}
+
+extension HomeViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    
+    let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "TargetAnnotationView") ?? TargetAnnotationView(annotation: annotation, reuseIdentifier: "TargetAnnotationView")
+    
+    annotationView.canShowCallout = true
+    
+    if annotation === mapView.userLocation {
+      annotationView.image = UIImage(named: "location-pin")
+      if let imageHeight = UIImage(named: "location-pin")?.size.height {
+        annotationView.centerOffset =  CGPoint(x: 0, y: -imageHeight / 2)
+      }
+    }
+    return annotationView
+  }
+  
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    if let targetCircle = overlay as? TargetCircle {
+      let circleView = MKCircleRenderer(overlay: targetCircle)
+      circleView.strokeColor = targetCircle.borderColor
+      circleView.fillColor = targetCircle.backgroundColor
+      circleView.lineWidth = 1
+      return circleView
+    }
+    
+    return MKOverlayRenderer()
   }
 }

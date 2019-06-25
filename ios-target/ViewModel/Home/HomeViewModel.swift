@@ -22,8 +22,7 @@ protocol HomeViewModelDelegate: class {
   func showUserLocation(region: MKCoordinateRegion)
   func showLocationError(message: String)
   func showMap()
-  //  TODO:
-//  func addAnnotations(annotations: [MKPointAnnotation])
+  func addAnnotations(annotations: [TargetAnnotation], circleOverlays: [TargetCircle])
 }
 
 class HomeViewModel {
@@ -33,7 +32,8 @@ class HomeViewModel {
   var userEmail: String?
   var targets: [Target] = []
   var locationManager: LocationManager!
-  let regionMeters: Double = 10000
+  let regionMeters: Double = 1000
+  var locationOverlay: TargetCircle?
   
   var state: HomeViewModelState = .idle {
     didSet {
@@ -97,27 +97,35 @@ class HomeViewModel {
     state = .loading
     TargetAPI.getTargets({ [weak self] targets in
       self?.targets = targets
+      self?.addAnnotations()
       self?.state = .idle
       }, failure: { [weak self] error in
         self?.state = .error(error.localizedDescription)
     })
   }
   
-  // TODO:
-//  func addAnnotations() {
-//    let appleParkAnnotation = MKPointAnnotation()
-//    appleParkAnnotation.title = "Apple Park"
-//    appleParkAnnotation.coordinate = CLLocationCoordinate2D(latitude: 37.333303, longitude: -122.011252)
-//
-//    delegate?.addAnnotations(annotations: [appleParkAnnotation])
-//  }
+  func addAnnotations() {
+    var annontations: [TargetAnnotation] = []
+    var circleOverlays: [TargetCircle] = []
+    targets.forEach { target in
+      let coordinates = CLLocationCoordinate2D(latitude: target.latitude, longitude: target.longitude)
+      let annotation = TargetAnnotation(coordinate: coordinates,
+                                        title: target.title,
+                                        subtitle: "",
+                                        type: .travel,
+                                        radius: target.radius)
+      annontations.append(annotation)
+      
+      let circleOverlay = TargetCircle(radius: target.radius/500, backgroundColor: .macaroniAndCheese70, borderColor: .macaroniAndCheese70, coordinates: coordinates)
+      circleOverlays.append(circleOverlay)
+    }
+    delegate?.addAnnotations(annotations: annontations, circleOverlays: circleOverlays)
+  }
 }
 
 extension HomeViewModel: LocationDelegate {
   func locationChanged(location: CLLocation) {
     changeLocation(location: location)
-    // TODO:
-//    addAnnotations()
   }
   
   func authorizationChanged(status: CLAuthorizationStatus) {
