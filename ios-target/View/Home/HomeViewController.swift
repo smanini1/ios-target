@@ -49,10 +49,10 @@ class HomeViewController: UIViewController {
   func changeLocation(region: MKCoordinateRegion) {
     removeLocationOverlay()
     mapView.setRegion(region, animated: false)
-    viewModel.locationOverlay = TargetCircle(radius: 60,
-                                        backgroundColor: .white70,
-                                        borderColor: .macaroniAndCheese,
-                                        coordinates: region.center)
+    viewModel.locationOverlay = TargetCircle(radius: viewModel.locationPinRadius,
+                                             backgroundColor: .white70,
+                                             borderColor: .macaroniAndCheese,
+                                             coordinates: region.center)
     if let overlay = viewModel.locationOverlay {
       mapView.addOverlay(overlay)
     }
@@ -95,16 +95,15 @@ extension HomeViewController: HomeViewModelDelegate {
 
 extension HomeViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    
-    let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "TargetAnnotationView") ?? TargetAnnotationView(annotation: annotation, reuseIdentifier: "TargetAnnotationView")
+    let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: TargetAnnotationView.reuseIdentifier) ??
+      TargetAnnotationView(annotation: annotation, reuseIdentifier: TargetAnnotationView.reuseIdentifier)
     
     annotationView.canShowCallout = true
     
-    if annotation === mapView.userLocation {
-      annotationView.image = UIImage(named: "location-pin")
-      if let imageHeight = UIImage(named: "location-pin")?.size.height {
-        annotationView.centerOffset =  CGPoint(x: 0, y: -imageHeight / 2)
-      }
+    if annotation === mapView.userLocation,
+      let pinImage = UIImage(named: "location-pin") {
+      annotationView.image = pinImage
+      annotationView.centerOffset =  CGPoint(x: 0, y: -pinImage.size.height / 2)
     }
     return annotationView
   }
@@ -121,3 +120,4 @@ extension HomeViewController: MKMapViewDelegate {
     return MKOverlayRenderer()
   }
 }
+

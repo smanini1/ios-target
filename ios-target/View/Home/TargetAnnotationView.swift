@@ -11,6 +11,8 @@ import MapKit
 
 class TargetAnnotationView: MKAnnotationView {
   
+  static let reuseIdentifier = "TargetAnnotationView"
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }

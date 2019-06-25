@@ -11,8 +11,8 @@ import MapKit
 
 class TargetCircle: MKCircle {
   
-  var backgroundColor: UIColor?
-  var borderColor: UIColor?
+  var backgroundColor: UIColor = .macaroniAndCheese70
+  var borderColor: UIColor = .macaroniAndCheese70
   
   convenience init(radius: Double,
                    backgroundColor: UIColor,

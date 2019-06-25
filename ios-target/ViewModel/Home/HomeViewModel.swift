@@ -33,6 +33,8 @@ class HomeViewModel {
   var targets: [Target] = []
   var locationManager: LocationManager!
   let regionMeters: Double = 1000
+  let radiusDivisor: Double = 500
+  let locationPinRadius: Double = 60
   var locationOverlay: TargetCircle?
   
   var state: HomeViewModelState = .idle {
@@ -116,7 +118,10 @@ class HomeViewModel {
                                         radius: target.radius)
       annontations.append(annotation)
       
-      let circleOverlay = TargetCircle(radius: target.radius/500, backgroundColor: .macaroniAndCheese70, borderColor: .macaroniAndCheese70, coordinates: coordinates)
+      let circleOverlay = TargetCircle(radius: target.radius / radiusDivisor,
+                                       backgroundColor: .macaroniAndCheese70,
+                                       borderColor: .macaroniAndCheese70,
+                                       coordinates: coordinates)
       circleOverlays.append(circleOverlay)
     }
     delegate?.addAnnotations(annotations: annontations, circleOverlays: circleOverlays)
