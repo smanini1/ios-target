@@ -16,8 +16,7 @@
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
 		8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79722C2782B00F7C7DF /* UIColorExtension.swift */; };
 		8151D79C22C3AA2400F7C7DF /* TargetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */; };
-		8151D79E22C3B23C00F7C7DF /* SlideAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */; };
-		8179D4D422B81FC100CAD8F4 /* TargetFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */; };
+		8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */; };
 		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D50978A365F9A7760AB4BF /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */; };
 		81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */; };
@@ -105,8 +104,7 @@
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
 		8151D79722C2782B00F7C7DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewController.swift; sourceTree = "<group>"; };
-		8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimationController.swift; sourceTree = "<group>"; };
-		8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormView.swift; sourceTree = "<group>"; };
+		8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = ../Home/ModalViewController.swift; sourceTree = "<group>"; };
 		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */,
-				8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */,
 				8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */,
 				8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */,
 			);
@@ -517,9 +514,9 @@
 		E8290BFB1D832D4100599960 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */,
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
 				81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */,
-				8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -823,7 +820,7 @@
 				E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */,
 				8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
-				8179D4D422B81FC100CAD8F4 /* TargetFormView.swift in Sources */,
+				8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */,
@@ -839,7 +836,6 @@
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
 				E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */,
-				8151D79E22C3B23C00F7C7DF /* SlideAnimationController.swift in Sources */,
 				9B77E0791E2FCF710020E450 /* Media.swift in Sources */,
 				9BE3669F1F10175E007CAECD /* Base64Media.swift in Sources */,
 				9BAFB7C32114E3CD0099DC61 /* SignInViewModel.swift in Sources */,
