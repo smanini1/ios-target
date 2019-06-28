@@ -11,6 +11,7 @@
 		07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07741D71218CDED600DB3B97 /* FirstViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
+		81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2722C569C100582F02 /* TargetFormViewModel.swift */; };
 		8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79122BD235400F7C7DF /* TargetAnnotation.swift */; };
 		8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */; };
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
@@ -99,6 +100,7 @@
 		3EB58579A8A91DD2B9E3FA28 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
+		81110A2722C569C100582F02 /* TargetFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewModel.swift; sourceTree = "<group>"; };
 		8151D79122BD235400F7C7DF /* TargetAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotation.swift; sourceTree = "<group>"; };
 		8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotationView.swift; sourceTree = "<group>"; };
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				9BAFB7BE2114D9910099DC61 /* HomeViewModel.swift */,
+				81110A2722C569C100582F02 /* TargetFormViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
 				8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
+				81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */,
 				071CD2622228544700E6D385 /* FontExtension.swift in Sources */,
 				8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */,
 				9B8D307020AB47E90050697F /* JSONEncodingExtension.swift in Sources */,

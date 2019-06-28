@@ -29,7 +29,8 @@ class HomeViewController: UIViewController {
   // MARK: - Actions
   
   @IBAction func tapOnAddTarget(_ sender: Any) {
-   // target.showTargetForm()
+    //TODO:
+//    target.showTargetForm()
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {

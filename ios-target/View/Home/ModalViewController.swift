@@ -24,8 +24,8 @@ class ModalViewController: UIViewController {
     NSLayoutConstraint.activate([
       view.leadingAnchor.constraint(equalTo: blackView.leadingAnchor),
       view.trailingAnchor.constraint(equalTo: blackView.trailingAnchor),
-      view.widthAnchor.constraint(equalTo: blackView.widthAnchor),
-      view.heightAnchor.constraint(equalTo: blackView.heightAnchor)
+      view.topAnchor.constraint(equalTo: blackView.topAnchor),
+      view.bottomAnchor.constraint(equalTo: blackView.bottomAnchor)
       ])
     
     blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -34,13 +34,13 @@ class ModalViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    dimBackground(isSet: false)
+    darkenBackground(show: true)
   }
   
-  func dimBackground(isSet: Bool = false, completion: ((Bool) -> Void)? = nil) {
-    UIView.animate(withDuration: isSet ? 0.2 : 0.3,
+  func darkenBackground(show: Bool = false, completion: ((Bool) -> Void)? = nil) {
+    UIView.animate(withDuration: show ? 0.3 : 0.2,
                    animations: {
-                    self.blackView.alpha = isSet ? 0 : 1
+                    self.blackView.alpha = show ? 1 : 0
     }, completion: completion)
   }
   
@@ -50,7 +50,7 @@ class ModalViewController: UIViewController {
   }
   
   override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-    dimBackground(isSet: true, completion: { _ in
+    darkenBackground(show: false, completion: { _ in
       super.dismiss(animated: flag)
     })
   }

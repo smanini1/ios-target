@@ -992,7 +992,7 @@
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <connections>
-                                            <action selector="credentialsChanged:" destination="8qd-iW-5fg" eventType="editingChanged" id="uuq-pk-bV6"/>
+                                            <action selector="forEditingChange:" destination="aMj-ZR-7oi" eventType="editingChanged" id="l4o-y3-Bzw"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDo-uS-0z3" userLabel="Title Label">
@@ -1021,7 +1021,7 @@
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="credentialsChanged:" destination="8qd-iW-5fg" eventType="editingChanged" id="P58-LQ-d8V"/>
+                                            <action selector="forEditingChange:" destination="aMj-ZR-7oi" eventType="editingDidEnd" id="DNo-9b-zUs"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A TOPIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH3-jF-WGy" userLabel="Topic Label">
@@ -1049,9 +1049,6 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <connections>
-                                            <action selector="credentialsChanged:" destination="8qd-iW-5fg" eventType="editingChanged" id="rqQ-c0-M7e"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYI-MS-6SC" userLabel="Save Target Button">
                                         <rect key="frame" x="75" y="282" width="225" height="45"/>
@@ -1103,6 +1100,11 @@
                             <constraint firstItem="S9i-WN-JnM" firstAttribute="centerX" secondItem="eY1-Lo-aXv" secondAttribute="centerX" id="MvK-CO-idh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="areaTextField" destination="fSz-N5-81E" id="qki-mt-Bai"/>
+                        <outlet property="titleTextField" destination="RmV-9t-o96" id="SqB-zr-CnT"/>
+                        <outlet property="topicSelect" destination="3zd-gy-5N3" id="DiM-vW-AnH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1A-FI-lvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
