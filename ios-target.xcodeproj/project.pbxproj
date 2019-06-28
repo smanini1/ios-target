@@ -11,13 +11,13 @@
 		07741D72218CDED600DB3B97 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07741D71218CDED600DB3B97 /* FirstViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
+		81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2722C569C100582F02 /* TargetFormViewModel.swift */; };
 		8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79122BD235400F7C7DF /* TargetAnnotation.swift */; };
 		8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */; };
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
 		8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79722C2782B00F7C7DF /* UIColorExtension.swift */; };
 		8151D79C22C3AA2400F7C7DF /* TargetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */; };
-		8151D79E22C3B23C00F7C7DF /* SlideAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */; };
-		8179D4D422B81FC100CAD8F4 /* TargetFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */; };
+		8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */; };
 		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D50978A365F9A7760AB4BF /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */; };
 		81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */; };
@@ -100,13 +100,13 @@
 		3EB58579A8A91DD2B9E3FA28 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
+		81110A2722C569C100582F02 /* TargetFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewModel.swift; sourceTree = "<group>"; };
 		8151D79122BD235400F7C7DF /* TargetAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotation.swift; sourceTree = "<group>"; };
 		8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotationView.swift; sourceTree = "<group>"; };
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
 		8151D79722C2782B00F7C7DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewController.swift; sourceTree = "<group>"; };
-		8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimationController.swift; sourceTree = "<group>"; };
-		8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormView.swift; sourceTree = "<group>"; };
+		8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = ../Home/ModalViewController.swift; sourceTree = "<group>"; };
 		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81EF2F2D22AAB801006254E7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -371,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */,
-				8179D4D322B81FC100CAD8F4 /* TargetFormView.swift */,
 				8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */,
 				8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */,
 			);
@@ -440,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				9BAFB7BE2114D9910099DC61 /* HomeViewModel.swift */,
+				81110A2722C569C100582F02 /* TargetFormViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -517,9 +517,9 @@
 		E8290BFB1D832D4100599960 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */,
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
 				81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */,
-				8151D79D22C3B23C00F7C7DF /* SlideAnimationController.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -815,6 +815,7 @@
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
 				8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
+				81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */,
 				071CD2622228544700E6D385 /* FontExtension.swift in Sources */,
 				8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */,
 				9B8D307020AB47E90050697F /* JSONEncodingExtension.swift in Sources */,
@@ -823,7 +824,7 @@
 				E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */,
 				8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
-				8179D4D422B81FC100CAD8F4 /* TargetFormView.swift in Sources */,
+				8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */,
@@ -839,7 +840,6 @@
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
 				E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */,
-				8151D79E22C3B23C00F7C7DF /* SlideAnimationController.swift in Sources */,
 				9B77E0791E2FCF710020E450 /* Media.swift in Sources */,
 				9BE3669F1F10175E007CAECD /* Base64Media.swift in Sources */,
 				9BAFB7C32114E3CD0099DC61 /* SignInViewModel.swift in Sources */,

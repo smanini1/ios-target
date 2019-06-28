@@ -16,17 +16,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   var viewModel = HomeViewModel()
-  
-  lazy var slidingController: SlideAnimationController = { [unowned self] in
-    let animVC = SlideAnimationController(withEffect: .over,
-                                          proportion: 0.5,
-                                          from: .down,
-                                          duration: 0.35,
-                                          dismissalThreshold: 0.6,
-                                          dimLevel: 0.5)
-    return animVC
-    }()
-  
+
   // MARK: - Lifecycle Events
   
   override func viewDidLoad() {
@@ -36,15 +26,11 @@ class HomeViewController: UIViewController {
     mapView.delegate = self
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //Sets the presentingViewController transition delegate to the current VC
-    segue.destination.transitioningDelegate = self
-  }
-  
   // MARK: - Actions
   
   @IBAction func tapOnAddTarget(_ sender: Any) {
-    //targetForm.showTargetForm()
+    //TODO:
+//    target.showTargetForm()
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {
@@ -130,24 +116,5 @@ extension HomeViewController: MKMapViewDelegate {
     }
     
     return MKOverlayRenderer()
-  }
-}
-
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    slidingController.presenting = false
-    return slidingController
-  }
-  
-  func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    slidingController.presenting = false
-    return slidingController.inProgress ? slidingController : nil
-  }
-  
-  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    slidingController.presenting = true
-    //Needed for interactive transitioning
-    slidingController.wireTo(viewController: presenting)
-    return slidingController
   }
 }

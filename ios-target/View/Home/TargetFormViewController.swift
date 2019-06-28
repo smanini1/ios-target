@@ -8,13 +8,9 @@
 
 import UIKit
 
-class TargetFormViewController: UIViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
-  @IBAction func tapSaveButton(_ sender: UIButton) {
-    dismiss(animated: true, completion: nil)
+class TargetFormViewController: ModalViewController {
+
+  @IBAction func tapSaveTargetButton(_ sender: Any) {
+    dismiss(animated: true)
   }
 }
