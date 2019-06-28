@@ -25,12 +25,18 @@ class HomeViewController: UIViewController {
     viewModel.loadTargetPoints()
     mapView.delegate = self
   }
-  
+
   // MARK: - Actions
-  
-  @IBAction func tapOnAddTarget(_ sender: Any) {
-    //TODO:
-//    target.showTargetForm()
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.destination is TargetFormViewController,
+      let viewController = segue.destination as? TargetFormViewController,
+      let locationLatitude = viewModel.locationLatitude,
+      let locationLongitude = viewModel.locationLongitude
+    {
+      viewController.delegate = self
+      viewController.viewModel.targetLongitude = locationLongitude
+      viewController.viewModel.targetLatitude = locationLatitude
+    }
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {
@@ -116,5 +122,11 @@ extension HomeViewController: MKMapViewDelegate {
     }
     
     return MKOverlayRenderer()
+  }
+}
+
+extension HomeViewController: TargetActionsDelegate {
+  func newTargetCreated(targets: [Target]) {
+    viewModel.addAnnotations(targets: targets)
   }
 }

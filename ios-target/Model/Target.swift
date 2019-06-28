@@ -36,7 +36,6 @@ struct Target: Codable {
         parsedTargets.append(parsedTarget)
       }
     }
-    
     return parsedTargets
   }
 }
