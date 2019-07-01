@@ -342,7 +342,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="CfQ-X9-Loh" id="fZj-Di-qip"/>
                         <outlet property="emailField" destination="SGW-mB-J78" id="Igq-cd-igL"/>
-                        <outlet property="logIn" destination="zbs-uB-Nr7" id="FZU-bN-WOI"/>
+                        <outlet property="logInButton" destination="zbs-uB-Nr7" id="FZU-bN-WOI"/>
                         <outlet property="passwordField" destination="VXP-E8-PA8" id="l9a-Ym-8Mg"/>
                     </connections>
                 </viewController>
@@ -410,7 +410,6 @@
                                 </constraints>
                                 <state key="normal" image="target-icon"/>
                                 <connections>
-                                    <action selector="tapOnAddTarget:" destination="K4y-mn-w4p" eventType="touchUpInside" id="nsP-gU-g6x"/>
                                     <segue destination="aMj-ZR-7oi" kind="presentation" modalPresentationStyle="overFullScreen" id="iUX-EL-Ttc"/>
                                 </connections>
                             </button>
@@ -822,7 +821,7 @@
                         <outlet property="emailField" destination="xYV-eE-Ila" id="eJu-Ky-1eT"/>
                         <outlet property="passwordConfirmationField" destination="v9r-co-4vM" id="u15-GJ-ejU"/>
                         <outlet property="passwordField" destination="GqP-oe-fcZ" id="U48-eO-YFg"/>
-                        <outlet property="signUp" destination="oRD-MA-2oV" id="FVU-88-BaX"/>
+                        <outlet property="signUpButton" destination="oRD-MA-2oV" id="FVU-88-BaX"/>
                         <outlet property="titleLabel" destination="AaK-dC-F7z" id="2m9-X9-sl8"/>
                         <outlet property="usernameField" destination="Ws0-2a-BWv" id="wgE-Q0-nZw"/>
                     </connections>
@@ -992,7 +991,7 @@
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <connections>
-                                            <action selector="forEditingChange:" destination="aMj-ZR-7oi" eventType="editingChanged" id="l4o-y3-Bzw"/>
+                                            <action selector="formEditingChange:" destination="aMj-ZR-7oi" eventType="editingChanged" id="L8h-BO-cHX"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDo-uS-0z3" userLabel="Title Label">
@@ -1019,9 +1018,9 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="forEditingChange:" destination="aMj-ZR-7oi" eventType="editingDidEnd" id="DNo-9b-zUs"/>
+                                            <action selector="formEditingChange:" destination="aMj-ZR-7oi" eventType="editingChanged" id="AVT-GM-Vzp"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A TOPIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH3-jF-WGy" userLabel="Topic Label">
@@ -1048,7 +1047,10 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="formEditingChange:" destination="aMj-ZR-7oi" eventType="editingChanged" id="8N2-x8-q7H"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYI-MS-6SC" userLabel="Save Target Button">
                                         <rect key="frame" x="75" y="282" width="225" height="45"/>
@@ -1102,8 +1104,9 @@
                     </view>
                     <connections>
                         <outlet property="areaTextField" destination="fSz-N5-81E" id="qki-mt-Bai"/>
+                        <outlet property="createTargetButton" destination="gYI-MS-6SC" id="t2B-cO-mji"/>
                         <outlet property="titleTextField" destination="RmV-9t-o96" id="SqB-zr-CnT"/>
-                        <outlet property="topicSelect" destination="3zd-gy-5N3" id="DiM-vW-AnH"/>
+                        <outlet property="topicTextField" destination="3zd-gy-5N3" id="DiM-vW-AnH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1A-FI-lvT" userLabel="First Responder" sceneMemberID="firstResponder"/>

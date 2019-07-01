@@ -12,6 +12,7 @@
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
 		81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2722C569C100582F02 /* TargetFormViewModel.swift */; };
+		81110A2A22CA804F00582F02 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2922CA804F00582F02 /* UIButtonExtension.swift */; };
 		8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79122BD235400F7C7DF /* TargetAnnotation.swift */; };
 		8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */; };
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
@@ -101,6 +102,7 @@
 		6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
 		81110A2722C569C100582F02 /* TargetFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewModel.swift; sourceTree = "<group>"; };
+		81110A2922CA804F00582F02 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		8151D79122BD235400F7C7DF /* TargetAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotation.swift; sourceTree = "<group>"; };
 		8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotationView.swift; sourceTree = "<group>"; };
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				071CD2612228544700E6D385 /* FontExtension.swift */,
 				81EF2F4522B034E8006254E7 /* UILabelExtension.swift */,
 				8151D79722C2782B00F7C7DF /* UIColorExtension.swift */,
+				81110A2922CA804F00582F02 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				E8B30E021E72FF8000131DCF /* UIStoryboardExtension.swift in Sources */,
 				81EF2F4C22B17836006254E7 /* Target.swift in Sources */,
 				9B3AA3A11ED4D014005A4D26 /* HomeViewController.swift in Sources */,
+				81110A2A22CA804F00582F02 /* UIButtonExtension.swift in Sources */,
 				9B77E0751E2FB66F0020E450 /* UserDataManager.swift in Sources */,
 				81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */,
 				9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */,

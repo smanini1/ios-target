@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
   
   // MARK: - Outlets
   
-  @IBOutlet weak var logIn: UIButton!
+  @IBOutlet weak var logInButton: UIButton!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var backgroundImage: UIImageView!
@@ -24,7 +24,7 @@ class SignInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    setLoginButton(enabled: false)
+    logInButton.enableButton(enable: false)
     setBackground()
   }
   
@@ -60,16 +60,11 @@ class SignInViewController: UIViewController {
     let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
     UIApplication.shared.keyWindow?.rootViewController = homeVC
   }
-  
-  func setLoginButton(enabled: Bool) {
-    logIn.alpha = enabled ? 1 : 0.5
-    logIn.isEnabled = enabled
-  }
 }
 
 extension SignInViewController: SignInViewModelDelegate {
   func didUpdateCredentials() {
-    setLoginButton(enabled: viewModel.hasValidCredentials)
+    logInButton.enableButton(enable: viewModel.hasValidCredentials)
   }
   
   func didUpdateState() {

@@ -36,6 +36,7 @@ class HomeViewModel {
   let radiusDivisor: Double = 500
   let locationPinRadius: Double = 60
   var locationOverlay: TargetCircle?
+  var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   
   var state: HomeViewModelState = .idle {
     didSet {
@@ -72,6 +73,8 @@ class HomeViewModel {
   
   func changeLocation(location: CLLocation) {
     let region = defineRegion(location: location)
+    locationCoordinates.longitude = region.center.longitude
+    locationCoordinates.latitude = region.center.latitude
     delegate?.showUserLocation(region: region)
   }
   
@@ -99,14 +102,14 @@ class HomeViewModel {
     state = .loading
     TargetAPI.getTargets({ [weak self] targets in
       self?.targets = targets
-      self?.addAnnotations()
+      self?.addAnnotations(targets: targets)
       self?.state = .idle
       }, failure: { [weak self] error in
         self?.state = .error(error.localizedDescription)
     })
   }
   
-  func addAnnotations() {
+  func addAnnotations(targets: [Target]) {
     var annontations: [TargetAnnotation] = []
     var circleOverlays: [TargetCircle] = []
     targets.forEach { target in
