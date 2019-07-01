@@ -342,7 +342,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="CfQ-X9-Loh" id="fZj-Di-qip"/>
                         <outlet property="emailField" destination="SGW-mB-J78" id="Igq-cd-igL"/>
-                        <outlet property="logIn" destination="zbs-uB-Nr7" id="FZU-bN-WOI"/>
+                        <outlet property="logInButton" destination="zbs-uB-Nr7" id="FZU-bN-WOI"/>
                         <outlet property="passwordField" destination="VXP-E8-PA8" id="l9a-Ym-8Mg"/>
                     </connections>
                 </viewController>
@@ -821,7 +821,7 @@
                         <outlet property="emailField" destination="xYV-eE-Ila" id="eJu-Ky-1eT"/>
                         <outlet property="passwordConfirmationField" destination="v9r-co-4vM" id="u15-GJ-ejU"/>
                         <outlet property="passwordField" destination="GqP-oe-fcZ" id="U48-eO-YFg"/>
-                        <outlet property="signUp" destination="oRD-MA-2oV" id="FVU-88-BaX"/>
+                        <outlet property="signUpButton" destination="oRD-MA-2oV" id="FVU-88-BaX"/>
                         <outlet property="titleLabel" destination="AaK-dC-F7z" id="2m9-X9-sl8"/>
                         <outlet property="usernameField" destination="Ws0-2a-BWv" id="wgE-Q0-nZw"/>
                     </connections>

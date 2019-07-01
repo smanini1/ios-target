@@ -22,18 +22,13 @@ class TargetAPI {
     }, failure: failure)
   }
   
-  class func createTarget(_ targetTitle: String, targetArea: Double, targetTopic: Int, targetLocation: CLLocationCoordinate2D, success: @escaping (_ response: Target) -> Void, failure: @escaping (_ error: Error) -> Void) {
-    let parameters = [
-      "target": [
-        "title": targetTitle,
-        "lat": targetLocation.latitude,
-        "lng": targetLocation.longitude,
-        "radius": targetArea,
-        "topic_id": targetTopic
-      ]
-    ]
+  class func createTarget(_ target: Target, success: @escaping (_ response: Target) -> Void, failure: @escaping (_ error: Error) -> Void) {
+    let parameters = Target.buildParams(target: target)
     APIClient.request(.post, url: targetsUrl, params: parameters, success: { response, _ in
-      guard let target = response["target"] as? [String: Any], !target.isEmpty, let parsedTarget = try? JSONDecoder().decode(Target.self, from: target) else {
+      guard let target = response["target"] as? [String: Any],
+        !target.isEmpty,
+        let parsedTarget = try? JSONDecoder().decode(Target.self, from: target)
+      else {
         failure(App.error(domain: .parsing, localizedDescription: "Could not parse valid targets".localized))
         return
       }

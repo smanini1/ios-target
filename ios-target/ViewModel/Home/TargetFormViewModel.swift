@@ -14,7 +14,6 @@ enum TargetFormViewModelState: Equatable {
   case loading
   case error(String)
   case idle
-  case saved
 }
 
 protocol TargetFormViewModelDelegate: class {
@@ -42,17 +41,7 @@ class TargetFormViewModel {
     }
   }
   
-  var targetLongitude: Double = 0 {
-    didSet {
-      delegate?.formDidChange()
-    }
-  }
-  
-  var targetLatitude: Double = 0 {
-    didSet {
-      delegate?.formDidChange()
-    }
-  }
+  var targetLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   
   var targetArea: Double = 0 {
     didSet {
@@ -74,18 +63,20 @@ class TargetFormViewModel {
   
   var hasValidData: Bool {
     return !targetTitle.isEmpty && targetArea != 0 && targetTopic != 0
-      && targetLongitude != 0 && targetLatitude != 0
+      && targetLocation.latitude != 0 && targetLocation.longitude != 0
   }
   
   func createTarget() {
     state = .loading
-    let location = CLLocationCoordinate2D(latitude: targetLatitude, longitude: targetLongitude)
-    TargetAPI.createTarget(targetTitle,
-                           targetArea: targetArea,
-                           targetTopic: targetTopic,
-                           targetLocation: location,
+    let target = Target(id: nil,
+                        title: targetTitle,
+                        latitude: targetLocation.latitude,
+                        longitude: targetLocation.longitude,
+                        radius: targetArea,
+                        topicId: targetTopic)
+    TargetAPI.createTarget(target,
                            success: {[weak self] target in
-                            self?.state = .saved
+                            self?.state = .idle
                             self?.delegate?.newTargetCreated(targets: [target])
       },
                            failure: { [weak self] error in

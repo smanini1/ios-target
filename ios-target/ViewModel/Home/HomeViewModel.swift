@@ -36,8 +36,7 @@ class HomeViewModel {
   let radiusDivisor: Double = 500
   let locationPinRadius: Double = 60
   var locationOverlay: TargetCircle?
-  var locationLongitude: Double?
-  var locationLatitude: Double?
+  var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   
   var state: HomeViewModelState = .idle {
     didSet {
@@ -74,8 +73,8 @@ class HomeViewModel {
   
   func changeLocation(location: CLLocation) {
     let region = defineRegion(location: location)
-    locationLongitude = region.center.longitude
-    locationLatitude = region.center.latitude
+    locationCoordinates.longitude = region.center.longitude
+    locationCoordinates.latitude = region.center.latitude
     delegate?.showUserLocation(region: region)
   }
   

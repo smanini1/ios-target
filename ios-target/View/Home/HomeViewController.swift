@@ -28,14 +28,11 @@ class HomeViewController: UIViewController {
 
   // MARK: - Actions
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.destination is TargetFormViewController,
-      let viewController = segue.destination as? TargetFormViewController,
-      let locationLatitude = viewModel.locationLatitude,
-      let locationLongitude = viewModel.locationLongitude
+    if let viewController = segue.destination as? TargetFormViewController
     {
       viewController.delegate = self
-      viewController.viewModel.targetLongitude = locationLongitude
-      viewController.viewModel.targetLatitude = locationLatitude
+      viewController.viewModel.targetLocation.longitude = viewModel.locationCoordinates.longitude
+      viewController.viewModel.targetLocation.latitude = viewModel.locationCoordinates.latitude
     }
   }
   

@@ -22,7 +22,7 @@ class TargetFormViewController: ModalViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    setCreateTargetButton(enabled: false)
+    createTargetButton.enableButton(enable: false)
   }
   
   @IBAction func formEditingChange(_ sender: UITextField) {
@@ -41,11 +41,6 @@ class TargetFormViewController: ModalViewController {
   @IBAction func tapSaveTargetButton(_ sender: Any) {
     viewModel.createTarget()
   }
-  
-  func setCreateTargetButton(enabled: Bool) {
-    createTargetButton.alpha = enabled ? 1 : 0.5
-    createTargetButton.isEnabled = enabled
-  }
 }
 
 extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate {
@@ -55,20 +50,18 @@ extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDe
   }
   
   func didUpdateState() {
-    switch viewModel.state {
-    case .idle:
-      UIApplication.hideNetworkActivity()
-    case .loading:
+    if viewModel.state == .loading {
       UIApplication.showNetworkActivity()
-    case .error(let errorDescription):
+    } else {
       UIApplication.hideNetworkActivity()
-      showMessage(title: "Error", message: errorDescription)
-    case .saved:
-      UIApplication.hideNetworkActivity()
+    }
+    
+    if case .error(let description) = viewModel.state {
+      showMessage(title: "Error", message: description)
     }
   }
   
   func formDidChange() {
-    setCreateTargetButton(enabled: viewModel.hasValidData)
+    createTargetButton.enableButton(enable: viewModel.hasValidData)
   }
 }

@@ -12,7 +12,7 @@ class SignUpViewController: UIViewController {
   
   // MARK: - Outlets
   
-  @IBOutlet weak var signUp: UIButton!
+  @IBOutlet weak var signUpButton: UIButton!
   @IBOutlet weak var usernameField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    setSignUpButton(enabled: false)
+    signUpButton.enableButton(enable: false)
     setUpBackground()
   }
   
@@ -67,16 +67,11 @@ class SignUpViewController: UIViewController {
     let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
     UIApplication.shared.keyWindow?.rootViewController = homeVC
   }
-  
-  func setSignUpButton(enabled: Bool) {
-    signUp.alpha = enabled ? 1 : 0.5
-    signUp.isEnabled = enabled
-  }
 }
 
 extension SignUpViewController: SignUpViewModelDelegate {
   func formDidChange() {
-    setSignUpButton(enabled: viewModel.hasValidData)
+    signUpButton.enableButton(enable: viewModel.hasValidData)
   }
   
   func didUpdateState() {
