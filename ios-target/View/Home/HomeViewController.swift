@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     if let viewController = segue.destination as? TargetFormViewController
     {
       viewController.delegate = self
+      viewController.viewModel.topics = viewModel.topics
       viewController.viewModel.targetLocation.longitude = viewModel.locationCoordinates.longitude
       viewController.viewModel.targetLocation.latitude = viewModel.locationCoordinates.latitude
     }

@@ -24,7 +24,7 @@ class SignInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    logInButton.enableButton(enable: false)
+    logInButton.enableButton(false)
     setBackground()
   }
   
@@ -64,7 +64,7 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInViewModelDelegate {
   func didUpdateCredentials() {
-    logInButton.enableButton(enable: viewModel.hasValidCredentials)
+    logInButton.enableButton(viewModel.hasValidCredentials)
   }
   
   func didUpdateState() {

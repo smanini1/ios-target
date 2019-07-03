@@ -12,7 +12,7 @@ class TargetFormViewController: ModalViewController {
 
   @IBOutlet weak var areaTextField: UITextFieldPadding!
   @IBOutlet weak var titleTextField: UITextFieldPadding!
-  @IBOutlet weak var topicTextField: UITextFieldPadding!
+  @IBOutlet weak var selectTopicButton: UIButton!
   @IBOutlet weak var createTargetButton: UIButton!
   
   var viewModel = TargetFormViewModel()
@@ -22,7 +22,16 @@ class TargetFormViewController: ModalViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    createTargetButton.enableButton(enable: false)
+    createTargetButton.enableButton(false)
+    selectTopicButton.addBorder(color: .black, weight: 1)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let viewController = segue.destination as? TopicsViewController
+    {
+      viewController.delegate = self
+      viewController.viewModel.topics = viewModel.topics
+    }
   }
   
   @IBAction func formEditingChange(_ sender: UITextField) {
@@ -32,8 +41,6 @@ class TargetFormViewController: ModalViewController {
       viewModel.targetArea = Double(newValue) ?? 0
     case titleTextField:
       viewModel.targetTitle = newValue
-    case topicTextField:
-      viewModel.targetTopic = Int(newValue) ?? 0
     default: break
     }
   }
@@ -62,6 +69,23 @@ extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDe
   }
   
   func formDidChange() {
-    createTargetButton.enableButton(enable: viewModel.hasValidData)
+    createTargetButton.enableButton(viewModel.hasValidData)
+  }
+}
+
+extension TargetFormViewController: TopicViewModelDelegate {
+  func topicSelected(topic: Topic) {
+    selectTopicButton.setTitle(topic.label.uppercased(), for: .normal)
+    selectTopicButton.setImage(topic.image?.withRenderingMode(.alwaysTemplate),
+                               for: .normal)
+    selectTopicButton.tintColor = .black
+    selectTopicButton.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                                     left: 10,
+                                                     bottom: 0,
+                                                     right: 0)
+    selectTopicButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+    if let id = topic.id {
+      viewModel.targetTopic = id
+    }
   }
 }

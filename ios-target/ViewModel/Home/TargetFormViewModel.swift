@@ -27,6 +27,8 @@ protocol TargetActionsDelegate: class {
 
 class TargetFormViewModel {
   
+  var topics: [Topic] = []
+  
   var state: TargetFormViewModelState = .idle {
     didSet {
       delegate?.didUpdateState()
