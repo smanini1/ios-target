@@ -13,6 +13,12 @@
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
 		81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2722C569C100582F02 /* TargetFormViewModel.swift */; };
 		81110A2A22CA804F00582F02 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2922CA804F00582F02 /* UIButtonExtension.swift */; };
+		81110A2C22CA951700582F02 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2B22CA951700582F02 /* Topic.swift */; };
+		81110A3022CAA1EB00582F02 /* TopicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A2F22CAA1EB00582F02 /* TopicAPI.swift */; };
+		81110A3222CAA9D800582F02 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A3122CAA9D800582F02 /* TopicsViewController.swift */; };
+		81110A3422CBA7C200582F02 /* TopicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A3322CBA7C200582F02 /* TopicsViewModel.swift */; };
+		81110A3922CBD53C00582F02 /* TopicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110A3722CBD53C00582F02 /* TopicsCollectionViewCell.swift */; };
+		81110A3A22CBD53C00582F02 /* TopicsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81110A3822CBD53C00582F02 /* TopicsCollectionViewCell.xib */; };
 		8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79122BD235400F7C7DF /* TargetAnnotation.swift */; };
 		8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */; };
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
@@ -103,6 +109,12 @@
 		6E5D0942FC767A47138787DA /* Pods-ios-target.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-target.debug.xcconfig"; path = "Target Support Files/Pods-ios-target/Pods-ios-target.debug.xcconfig"; sourceTree = "<group>"; };
 		81110A2722C569C100582F02 /* TargetFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewModel.swift; sourceTree = "<group>"; };
 		81110A2922CA804F00582F02 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		81110A2B22CA951700582F02 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		81110A2F22CAA1EB00582F02 /* TopicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicAPI.swift; sourceTree = "<group>"; };
+		81110A3122CAA9D800582F02 /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		81110A3322CBA7C200582F02 /* TopicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewModel.swift; sourceTree = "<group>"; };
+		81110A3722CBD53C00582F02 /* TopicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		81110A3822CBD53C00582F02 /* TopicsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsCollectionViewCell.xib; sourceTree = "<group>"; };
 		8151D79122BD235400F7C7DF /* TargetAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotation.swift; sourceTree = "<group>"; };
 		8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAnnotationView.swift; sourceTree = "<group>"; };
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
@@ -375,6 +387,9 @@
 				9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */,
 				8151D79322C173CE00F7C7DF /* TargetAnnotationView.swift */,
 				8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */,
+				81110A3122CAA9D800582F02 /* TopicsViewController.swift */,
+				81110A3722CBD53C00582F02 /* TopicsCollectionViewCell.swift */,
+				81110A3822CBD53C00582F02 /* TopicsCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -442,6 +457,7 @@
 			children = (
 				9BAFB7BE2114D9910099DC61 /* HomeViewModel.swift */,
 				81110A2722C569C100582F02 /* TargetFormViewModel.swift */,
+				81110A3322CBA7C200582F02 /* TopicsViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -485,6 +501,7 @@
 				81EF2F4B22B17836006254E7 /* Target.swift */,
 				8151D79122BD235400F7C7DF /* TargetAnnotation.swift */,
 				8151D79522C246B600F7C7DF /* TargetCircle.swift */,
+				81110A2B22CA951700582F02 /* Topic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -503,6 +520,7 @@
 			children = (
 				9B0C726E1C738D3400BAF3B1 /* UserAPI.swift */,
 				81EF2F4922B177C1006254E7 /* TargetAPI.swift */,
+				81110A2F22CAA1EB00582F02 /* TopicAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -656,6 +674,7 @@
 				81EF2F3F22B02DD9006254E7 /* OpenSans-SemiBold.ttf in Resources */,
 				81EF2F3D22B02DD9006254E7 /* OpenSans-ExtraBold.ttf in Resources */,
 				81EF2F3E22B02DD9006254E7 /* OpenSans-Italic.ttf in Resources */,
+				81110A3A22CBD53C00582F02 /* TopicsCollectionViewCell.xib in Resources */,
 				0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */,
 				81EF2F4322B02DD9006254E7 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				81EF2F3B22B02DD9006254E7 /* OpenSans-LightItalic.ttf in Resources */,
@@ -821,6 +840,7 @@
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
 				81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */,
 				071CD2622228544700E6D385 /* FontExtension.swift in Sources */,
+				81110A3422CBA7C200582F02 /* TopicsViewModel.swift in Sources */,
 				8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */,
 				9B8D307020AB47E90050697F /* JSONEncodingExtension.swift in Sources */,
 				E81171921DE5EFB7003D3DF5 /* UIViewControllerExtension.swift in Sources */,
@@ -829,6 +849,7 @@
 				8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
 				8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */,
+				81110A2C22CA951700582F02 /* Topic.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */,
@@ -838,13 +859,16 @@
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
 				81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */,
+				81110A3022CAA1EB00582F02 /* TopicAPI.swift in Sources */,
 				9BE3669D1F101737007CAECD /* MultipartMedia.swift in Sources */,
 				81EF2F4822B14BCD006254E7 /* UITextFieldPadding.swift in Sources */,
 				9B8574D9212C84130063A3E2 /* UIImageExtension.swift in Sources */,
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
+				81110A3922CBD53C00582F02 /* TopicsCollectionViewCell.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
 				E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */,
 				9B77E0791E2FCF710020E450 /* Media.swift in Sources */,
+				81110A3222CAA9D800582F02 /* TopicsViewController.swift in Sources */,
 				9BE3669F1F10175E007CAECD /* Base64Media.swift in Sources */,
 				9BAFB7C32114E3CD0099DC61 /* SignInViewModel.swift in Sources */,
 				9B88CC671CAB305900AE60C5 /* Constants.swift in Sources */,

@@ -31,6 +31,7 @@ class HomeViewModel {
   
   var userEmail: String?
   var targets: [Target] = []
+  var topics: [Topic] = []
   var locationManager: LocationManager!
   let regionMeters: Double = 1000
   let radiusDivisor: Double = 500
@@ -100,13 +101,36 @@ class HomeViewModel {
   
   func loadTargetPoints() {
     state = .loading
+    var error: Error?
+    let dispatchGroup = DispatchGroup()
+    
+    dispatchGroup.enter()
+    TopicAPI.getTopics({ [weak self] topics in
+      self?.topics = topics
+      dispatchGroup.leave()
+      }, failure: { topicError in
+        error = topicError
+        dispatchGroup.leave()
+    })
+    
+    dispatchGroup.enter()
     TargetAPI.getTargets({ [weak self] targets in
       self?.targets = targets
-      self?.addAnnotations(targets: targets)
-      self?.state = .idle
-      }, failure: { [weak self] error in
-        self?.state = .error(error.localizedDescription)
+      dispatchGroup.leave()
+      }, failure: { targetError in
+        error = targetError
+        dispatchGroup.leave()
     })
+    
+    dispatchGroup.notify(queue: .main) { [weak self] in
+      guard let self = self else { return }
+      self.addAnnotations(targets: self.targets)
+      if let error = error {
+        self.state = .error(error.localizedDescription)
+      } else {
+        self.state = .idle
+      }
+    }
   }
   
   func addAnnotations(targets: [Target]) {
@@ -114,13 +138,8 @@ class HomeViewModel {
     var circleOverlays: [TargetCircle] = []
     targets.forEach { target in
       let coordinates = CLLocationCoordinate2D(latitude: target.latitude, longitude: target.longitude)
-      let annotation = TargetAnnotation(coordinate: coordinates,
-                                        title: target.title,
-                                        subtitle: "",
-                                        type: .travel,
-                                        radius: target.radius)
+      let annotation = createAnnotation(target: target, coordinates: coordinates)
       annontations.append(annotation)
-      
       let circleOverlay = TargetCircle(radius: target.radius / radiusDivisor,
                                        backgroundColor: .macaroniAndCheese70,
                                        borderColor: .macaroniAndCheese70,
@@ -128,6 +147,17 @@ class HomeViewModel {
       circleOverlays.append(circleOverlay)
     }
     delegate?.addAnnotations(annotations: annontations, circleOverlays: circleOverlays)
+  }
+  
+  func createAnnotation(target: Target, coordinates: CLLocationCoordinate2D) -> TargetAnnotation {
+    let topic = topics.first(where: { $0.id == target.topicId })
+    let targetType = TargetType(rawValue: topic?.label.lowercased() ?? "travel") ?? .travel
+    let annotation = TargetAnnotation(coordinate: coordinates,
+                                      title: target.title,
+                                      subtitle: "",
+                                      type: targetType,
+                                      radius: target.radius)
+    return annotation
   }
 }
 

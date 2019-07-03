@@ -17,4 +17,8 @@ extension UIApplication {
   class func hideNetworkActivity() {
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
   }
+  
+  class func toggleNetworkActivity(_ active: Bool) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = active
+  }
 }

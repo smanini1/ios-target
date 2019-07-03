@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    signUpButton.enableButton(enable: false)
+    signUpButton.enable(false)
     setUpBackground()
   }
   
@@ -71,7 +71,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: SignUpViewModelDelegate {
   func formDidChange() {
-    signUpButton.enableButton(enable: viewModel.hasValidData)
+    signUpButton.enable(viewModel.hasValidData)
   }
   
   func didUpdateState() {

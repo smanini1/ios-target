@@ -28,9 +28,9 @@ class HomeViewController: UIViewController {
 
   // MARK: - Actions
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let viewController = segue.destination as? TargetFormViewController
-    {
+    if let viewController = segue.destination as? TargetFormViewController {
       viewController.delegate = self
+      viewController.viewModel.topics = viewModel.topics
       viewController.viewModel.targetLocation.longitude = viewModel.locationCoordinates.longitude
       viewController.viewModel.targetLocation.latitude = viewModel.locationCoordinates.latitude
     }
@@ -79,16 +79,10 @@ extension HomeViewController: HomeViewModelDelegate {
   }
   
   func didUpdateState() {
-    switch viewModel.state {
-    case .idle:
-      UIApplication.hideNetworkActivity()
-    case .loading:
-      UIApplication.showNetworkActivity()
-    case .error(let errorDescription):
-      UIApplication.hideNetworkActivity()
-      print(errorDescription)
-    case .loggedOut:
-      UIApplication.hideNetworkActivity()
+    UIApplication.toggleNetworkActivity(viewModel.state == .loading)
+    if case .error(let errorDescription) = viewModel.state {
+      showMessage(title: "Error", message: errorDescription)
+    } else if viewModel.state == .loggedOut {
       UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateInitialViewController()
     }
   }
