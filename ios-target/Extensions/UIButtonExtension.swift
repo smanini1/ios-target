@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
   
-  func enableButton(_ enable: Bool) {
+  func enable(_ enable: Bool) {
     alpha = enable ? 1 : 0.5
     isEnabled = enable
   }

@@ -14,6 +14,11 @@ class TopicsViewController: ModalViewController {
   @IBOutlet weak var topicsCollectionView: UICollectionView!
   
   var viewModel = TopicsViewModel()
+  var cellHeight = 50
+  
+  var collectionHeight: Int {
+    return viewModel.topicsCount * cellHeight + cellHeight
+  }
   
   weak var delegate: TopicViewModelDelegate?
   
@@ -24,7 +29,7 @@ class TopicsViewController: ModalViewController {
   }
   
   func setupView() {
-    topicsCollectionHeightContraint.constant = CGFloat(self.viewModel.collectionHeight)
+    topicsCollectionHeightContraint.constant = CGFloat(collectionHeight)
     topicsCollectionView.register(UINib(nibName: TopicsCollectionViewCell.reuseIdentifier,
                                         bundle: nil), forCellWithReuseIdentifier: TopicsCollectionViewCell.reuseIdentifier)
     topicsCollectionView.dataSource = self
@@ -33,21 +38,9 @@ class TopicsViewController: ModalViewController {
 }
 
 extension TopicsViewController: TopicViewModelDelegate {
-  func topicSelected(topic: Topic) {
-    delegate?.topicSelected(topic: topic)
+  func topicSelected(at: Int) {
+    delegate?.topicSelected(at: at)
   }
-  
-  func didUpdateState() {
-    if viewModel.state == .loading {
-      UIApplication.showNetworkActivity()
-    } else {
-      UIApplication.hideNetworkActivity()  
-    }
-    
-    if case .error(let errorDescription) = viewModel.state {
-      showMessage(title: "Error", message: errorDescription)
-    }
-  }  
 }
 
 extension TopicsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -56,7 +49,8 @@ extension TopicsViewController: UICollectionViewDataSource, UICollectionViewDele
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopicsCollectionViewCell.reuseIdentifier, for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopicsCollectionViewCell.reuseIdentifier,
+                                                  for: indexPath)
     
     if let cell = cell as? TopicsCollectionViewCell {
       let topic = viewModel.topics[indexPath.item]
@@ -66,15 +60,14 @@ extension TopicsViewController: UICollectionViewDataSource, UICollectionViewDele
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let topic = viewModel.topics[indexPath.item]
-    delegate?.topicSelected(topic: topic)
+    delegate?.topicSelected(at: indexPath.item)
     dismiss(animated: true)
   }
 }
 
 extension TopicsViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.width, height: CGFloat(viewModel.cellHeight))
+    return CGSize(width: collectionView.frame.width, height: CGFloat(cellHeight))
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

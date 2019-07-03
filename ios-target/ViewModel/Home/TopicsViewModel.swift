@@ -8,34 +8,16 @@
 
 import Foundation
 
-enum TopicsViewModelState: Equatable {
-  case loading
-  case error(String)
-  case idle
-}
-
 protocol TopicViewModelDelegate: class {
-  func didUpdateState()
-  func topicSelected(topic: Topic)
+  func topicSelected(at: Int)
 }
 
 class TopicsViewModel {
   var topics: [Topic] = []
-  var cellHeight = 50
   
   var topicsCount: Int {
     return topics.count
   }
-  
-  var collectionHeight: Int {
-    return topicsCount * cellHeight + cellHeight
-  }
-  
+
   weak var delegate: TopicViewModelDelegate?
-  
-  var state: TopicsViewModelState = .idle {
-    didSet {
-      delegate?.didUpdateState()
-    }
-  }
 }

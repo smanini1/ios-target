@@ -22,13 +22,12 @@ class TargetFormViewController: ModalViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    createTargetButton.enableButton(false)
+    createTargetButton.enable(false)
     selectTopicButton.addBorder(color: .black, weight: 1)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let viewController = segue.destination as? TopicsViewController
-    {
+    if let viewController = segue.destination as? TopicsViewController {
       viewController.delegate = self
       viewController.viewModel.topics = viewModel.topics
     }
@@ -57,32 +56,25 @@ extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDe
   }
   
   func didUpdateState() {
-    if viewModel.state == .loading {
-      UIApplication.showNetworkActivity()
-    } else {
-      UIApplication.hideNetworkActivity()
-    }
-    
+    UIApplication.toggleNetworkActivity(viewModel.state == .loading)
     if case .error(let description) = viewModel.state {
       showMessage(title: "Error", message: description)
     }
   }
   
   func formDidChange() {
-    createTargetButton.enableButton(viewModel.hasValidData)
+    createTargetButton.enable(viewModel.hasValidData)
   }
 }
 
 extension TargetFormViewController: TopicViewModelDelegate {
-  func topicSelected(topic: Topic) {
+  func topicSelected(at: Int) {
+    let topic = viewModel.topics[at]
     selectTopicButton.setTitle(topic.label.uppercased(), for: .normal)
     selectTopicButton.setImage(topic.image?.withRenderingMode(.alwaysTemplate),
                                for: .normal)
     selectTopicButton.tintColor = .black
-    selectTopicButton.titleEdgeInsets = UIEdgeInsets(top: 0,
-                                                     left: 10,
-                                                     bottom: 0,
-                                                     right: 0)
+    selectTopicButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     selectTopicButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
     if let id = topic.id {
       viewModel.targetTopic = id

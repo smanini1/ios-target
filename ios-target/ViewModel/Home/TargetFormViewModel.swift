@@ -77,7 +77,7 @@ class TargetFormViewModel {
                         radius: targetArea,
                         topicId: targetTopic)
     TargetAPI.createTarget(target,
-                           success: {[weak self] target in
+                           success: { [weak self] target in
                             self?.state = .idle
                             self?.delegate?.newTargetCreated(targets: [target])
       },

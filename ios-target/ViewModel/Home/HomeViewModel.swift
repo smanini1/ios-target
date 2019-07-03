@@ -101,18 +101,36 @@ class HomeViewModel {
   
   func loadTargetPoints() {
     state = .loading
+    var error: Error?
+    let dispatchGroup = DispatchGroup()
+    
+    dispatchGroup.enter()
     TopicAPI.getTopics({ [weak self] topics in
       self?.topics = topics
-      TargetAPI.getTargets({ [weak self] targets in
-        self?.targets = targets
-        self?.addAnnotations(targets: targets)
-        self?.state = .idle
-        }, failure: { [weak self] error in
-          self?.state = .error(error.localizedDescription)
-      })
-      }, failure: {[weak self] error in
-        self?.state = .error(error.localizedDescription)
+      dispatchGroup.leave()
+      }, failure: { topicError in
+        error = topicError
+        dispatchGroup.leave()
     })
+    
+    dispatchGroup.enter()
+    TargetAPI.getTargets({ [weak self] targets in
+      self?.targets = targets
+      dispatchGroup.leave()
+      }, failure: { targetError in
+        error = targetError
+        dispatchGroup.leave()
+    })
+    
+    dispatchGroup.notify(queue: .main) { [weak self] in
+      guard let self = self else { return }
+      self.addAnnotations(targets: self.targets)
+      if let error = error {
+        self.state = .error(error.localizedDescription)
+      } else {
+        self.state = .idle
+      }
+    }
   }
   
   func addAnnotations(targets: [Target]) {

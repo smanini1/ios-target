@@ -24,8 +24,4 @@ class TopicsCollectionViewCell: UICollectionViewCell {
       }
     }
   }
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
 }
