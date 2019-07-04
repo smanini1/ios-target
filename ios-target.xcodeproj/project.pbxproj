@@ -24,6 +24,9 @@
 		8151D79622C246B600F7C7DF /* TargetCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79522C246B600F7C7DF /* TargetCircle.swift */; };
 		8151D79822C2782B00F7C7DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79722C2782B00F7C7DF /* UIColorExtension.swift */; };
 		8151D79C22C3AA2400F7C7DF /* TargetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */; };
+		816A972022CD253C001F92DA /* MatchNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A971F22CD253C001F92DA /* MatchNotificationViewController.swift */; };
+		816A972222CE3E04001F92DA /* MatchNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972122CE3E04001F92DA /* MatchNotificationViewModel.swift */; };
+		816A972422CE46FF001F92DA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972322CE46FF001F92DA /* UIImageViewExtension.swift */; };
 		8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */; };
 		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D50978A365F9A7760AB4BF /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF52C6C1B992A3AE08279F8 /* Pods_AcceptanceTests.framework */; };
@@ -120,6 +123,9 @@
 		8151D79522C246B600F7C7DF /* TargetCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCircle.swift; sourceTree = "<group>"; };
 		8151D79722C2782B00F7C7DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8151D79B22C3AA2400F7C7DF /* TargetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetFormViewController.swift; sourceTree = "<group>"; };
+		816A971F22CD253C001F92DA /* MatchNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNotificationViewController.swift; sourceTree = "<group>"; };
+		816A972122CE3E04001F92DA /* MatchNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNotificationViewModel.swift; sourceTree = "<group>"; };
+		816A972322CE46FF001F92DA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = ../Home/ModalViewController.swift; sourceTree = "<group>"; };
 		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		81EF2F2B22AAB775006254E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +396,7 @@
 				81110A3122CAA9D800582F02 /* TopicsViewController.swift */,
 				81110A3722CBD53C00582F02 /* TopicsCollectionViewCell.swift */,
 				81110A3822CBD53C00582F02 /* TopicsCollectionViewCell.xib */,
+				816A971F22CD253C001F92DA /* MatchNotificationViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -458,6 +465,7 @@
 				9BAFB7BE2114D9910099DC61 /* HomeViewModel.swift */,
 				81110A2722C569C100582F02 /* TargetFormViewModel.swift */,
 				81110A3322CBA7C200582F02 /* TopicsViewModel.swift */,
+				816A972122CE3E04001F92DA /* MatchNotificationViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -559,6 +567,7 @@
 				81EF2F4522B034E8006254E7 /* UILabelExtension.swift */,
 				8151D79722C2782B00F7C7DF /* UIColorExtension.swift */,
 				81110A2922CA804F00582F02 /* UIButtonExtension.swift */,
+				816A972322CE46FF001F92DA /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -763,6 +772,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RSFontSizes/RSFontSizes.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -775,6 +785,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSFontSizes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -835,6 +846,7 @@
 				9B77E0751E2FB66F0020E450 /* UserDataManager.swift in Sources */,
 				81EF2F2C22AAB775006254E7 /* ProfileViewController.swift in Sources */,
 				9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */,
+				816A972022CD253C001F92DA /* MatchNotificationViewController.swift in Sources */,
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
 				8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
@@ -855,10 +867,12 @@
 				8151D79422C173CE00F7C7DF /* TargetAnnotationView.swift in Sources */,
 				81EF2F2E22AAB801006254E7 /* ProfileViewModel.swift in Sources */,
 				FABDC9221EE1EB2B000DDAC3 /* ConfigurationManager.swift in Sources */,
+				816A972422CE46FF001F92DA /* UIImageViewExtension.swift in Sources */,
 				8151D79C22C3AA2400F7C7DF /* TargetFormViewController.swift in Sources */,
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
 				81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */,
+				816A972222CE3E04001F92DA /* MatchNotificationViewModel.swift in Sources */,
 				81110A3022CAA1EB00582F02 /* TopicAPI.swift in Sources */,
 				9BE3669D1F101737007CAECD /* MultipartMedia.swift in Sources */,
 				81EF2F4822B14BCD006254E7 /* UITextFieldPadding.swift in Sources */,

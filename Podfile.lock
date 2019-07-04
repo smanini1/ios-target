@@ -32,6 +32,9 @@ PODS:
     - OHHTTPStubs/Default
   - RSFontSizes (1.0.2):
     - Device (~> 3.1.2)
+  - SDWebImage (5.0.3):
+    - SDWebImage/Core (= 5.0.3)
+  - SDWebImage/Core (5.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
@@ -42,6 +45,7 @@ DEPENDENCIES:
   - KIF/IdentifierTests (~> 3.7.3)
   - OHHTTPStubs/Swift (~> 6.1.0)
   - RSFontSizes (~> 1.0.2)
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -54,6 +58,7 @@ SPEC REPOS:
     - KIF
     - OHHTTPStubs
     - RSFontSizes
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -65,7 +70,8 @@ SPEC CHECKSUMS:
   KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   RSFontSizes: cf14ae41c2807b66573f7064528ccff8c98251c9
+  SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
 
-PODFILE CHECKSUM: 0f52045ed8945c5b2f99e478fb7800da38c51ca6
+PODFILE CHECKSUM: 40c78b393a404b7d1ecad35da7b31af69fd6e9ea
 
 COCOAPODS: 1.6.1

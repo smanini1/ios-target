@@ -120,4 +120,8 @@ extension HomeViewController: TargetActionsDelegate {
   func newTargetCreated(targets: [Target]) {
     viewModel.addAnnotations(targets: targets)
   }
+  
+  func newMatchFound(target: Target, topicId: Int, user: User) {
+    performSegue(withIdentifier: "matchNotification", sender: nil)
+  }
 }

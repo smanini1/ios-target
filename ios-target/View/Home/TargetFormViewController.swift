@@ -27,7 +27,12 @@ class TargetFormViewController: ModalViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let viewController = segue.destination as? TopicsViewController {
+    if segue.identifier == "matchNotificationSegue",
+      let viewController = segue.destination as? MatchNotificationViewController {
+      viewController.viewModel.user = viewModel.userMatch
+      viewController.delegate = self
+    } else if segue.identifier == "topicsSegue",
+      let viewController = segue.destination as? TopicsViewController {
       viewController.delegate = self
       viewController.viewModel.topics = viewModel.topics
     }
@@ -49,10 +54,21 @@ class TargetFormViewController: ModalViewController {
   }
 }
 
-extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate {
+extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate, TargetExitDelegate {
+  func dismissTargetView() {
+    dismiss(animated: true)
+  }
+  
+  func newMatchFound(target: Target, topicId: Int, user: User) {
+    viewModel.userMatch = user
+    viewModel.topicMatch = topicId
+    performSegue(withIdentifier: "matchNotificationSegue", sender: nil)
+//    TODO
+//    delegate?.newMatchFound(target: target, topicId: topicId, user: user)
+  }
+  
   func newTargetCreated(targets: [Target]) {
     delegate?.newTargetCreated(targets: targets)
-    dismiss(animated: true)
   }
   
   func didUpdateState() {
@@ -79,5 +95,12 @@ extension TargetFormViewController: TopicViewModelDelegate {
     if let id = topic.id {
       viewModel.targetTopic = id
     }
+  }
+}
+
+extension TargetFormViewController: MatchNotificationViewModelDelegate {
+  func matchAccepted() {
+    //TODO
+//    Start conversation
   }
 }
