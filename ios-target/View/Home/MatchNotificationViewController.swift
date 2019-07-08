@@ -15,28 +15,22 @@ class MatchNotificationViewController: ModalViewController {
   @IBOutlet weak var userImage: UIImageView!
   
   var viewModel = MatchNotificationViewModel()
+  
   weak var delegate: MatchNotificationViewModelDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     connectMatchButton.backgroundColor = .macaroniAndCheese
-    if let userEmail = viewModel.user?.email {
-      userNameLabel.text = userEmail
-    }
-    setImage()
-    
+    userNameLabel.text = viewModel.userEmail
+    setImageOnUserImageView()
   }
   
-  func setImage() {
-    if let imageURL = viewModel.user?.image {
-      userImage.setImage(with: imageURL, placeholder: "userPlaceholder")
-    } else {
-      userImage.image = UIImage.random()
-    }
+  func setImageOnUserImageView() {
+    userImage.setImage(with: viewModel.userImage, placeholder: "profile-icon")
     userImage.layer.borderWidth = 1
     userImage.layer.masksToBounds = false
     userImage.layer.borderColor = UIColor.codGray.cgColor
-    userImage.layer.cornerRadius = userImage.frame.height/2
+    userImage.layer.cornerRadius = userImage.frame.height / 2
     userImage.clipsToBounds = true
   }
   

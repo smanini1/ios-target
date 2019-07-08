@@ -19,6 +19,8 @@ class TargetFormViewController: ModalViewController {
   
   weak var delegate: TargetActionsDelegate?
   
+  let topicsSegue = "topicsSegue"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
@@ -27,12 +29,7 @@ class TargetFormViewController: ModalViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "matchNotificationSegue",
-      let viewController = segue.destination as? MatchNotificationViewController {
-      viewController.viewModel.user = viewModel.userMatch
-      viewController.delegate = self
-    } else if segue.identifier == "topicsSegue",
-      let viewController = segue.destination as? TopicsViewController {
+    if let viewController = segue.destination as? TopicsViewController {
       viewController.delegate = self
       viewController.viewModel.topics = viewModel.topics
     }
@@ -54,21 +51,18 @@ class TargetFormViewController: ModalViewController {
   }
 }
 
-extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate, TargetExitDelegate {
-  func dismissTargetView() {
-    dismiss(animated: true)
+extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate {
+  func newMatchFound(match: Match) {
+    delegate?.newMatchFound(match: match)
   }
   
-  func newMatchFound(target: Target, topicId: Int, user: User) {
-    viewModel.userMatch = user
-    viewModel.topicMatch = topicId
-    performSegue(withIdentifier: "matchNotificationSegue", sender: nil)
-//    TODO
-//    delegate?.newMatchFound(target: target, topicId: topicId, user: user)
-  }
-  
-  func newTargetCreated(targets: [Target]) {
-    delegate?.newTargetCreated(targets: targets)
+  func newTargetCreated(match: Match) {
+    delegate?.newTargetCreated(match: match)
+    dismiss(animated: true, completion: {
+      if match.user != nil, match.conversation?.topicId != nil {
+        self.newMatchFound(match: match)
+      }
+    })
   }
   
   func didUpdateState() {
@@ -95,12 +89,5 @@ extension TargetFormViewController: TopicViewModelDelegate {
     if let id = topic.id {
       viewModel.targetTopic = id
     }
-  }
-}
-
-extension TargetFormViewController: MatchNotificationViewModelDelegate {
-  func matchAccepted() {
-    //TODO
-//    Start conversation
   }
 }

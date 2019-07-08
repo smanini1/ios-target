@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   var viewModel = HomeViewModel()
+  let matchNotificationSegue = "matchNotificationSegue"
+  let targetFormSegue = "targetFormSegue"
 
   // MARK: - Lifecycle Events
   
@@ -28,7 +30,12 @@ class HomeViewController: UIViewController {
 
   // MARK: - Actions
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let viewController = segue.destination as? TargetFormViewController {
+    if segue.identifier == matchNotificationSegue,
+      let viewController = segue.destination as? MatchNotificationViewController {
+      viewController.viewModel.user = viewModel.userMatch
+      viewController.delegate = self
+    } else if segue.identifier == targetFormSegue,
+      let viewController = segue.destination as? TargetFormViewController {
       viewController.delegate = self
       viewController.viewModel.topics = viewModel.topics
       viewController.viewModel.targetLocation.longitude = viewModel.locationCoordinates.longitude
@@ -117,11 +124,18 @@ extension HomeViewController: MKMapViewDelegate {
 }
 
 extension HomeViewController: TargetActionsDelegate {
-  func newTargetCreated(targets: [Target]) {
-    viewModel.addAnnotations(targets: targets)
+  func newTargetCreated(match: Match) {
+    viewModel.addAnnotations(targets: [match.target])
   }
   
-  func newMatchFound(target: Target, topicId: Int, user: User) {
-    performSegue(withIdentifier: "matchNotification", sender: nil)
+  func newMatchFound(match: Match) {
+    viewModel.userMatch = match.user
+    performSegue(withIdentifier: matchNotificationSegue, sender: nil)
+  }
+}
+
+extension HomeViewController: MatchNotificationViewModelDelegate {
+  func matchAccepted() {
+    //TODO
   }
 }

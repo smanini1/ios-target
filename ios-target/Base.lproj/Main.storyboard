@@ -413,7 +413,7 @@
                                 </constraints>
                                 <state key="normal" image="target-icon"/>
                                 <connections>
-                                    <segue destination="aMj-ZR-7oi" kind="presentation" modalPresentationStyle="overFullScreen" id="iUX-EL-Ttc"/>
+                                    <segue destination="aMj-ZR-7oi" kind="presentation" identifier="targetFormSegue" modalPresentationStyle="overFullScreen" id="iUX-EL-Ttc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jy6-iI-qpE" userLabel="Target Form View">
@@ -584,6 +584,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="iJB-0x-e4c" id="h5o-1o-MdB"/>
+                        <segue destination="dXW-9B-m8O" kind="presentation" identifier="matchNotificationSegue" modalPresentationStyle="overFullScreen" id="nTp-JU-cv5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCL-Vt-8BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1247,7 +1248,6 @@
                         <outlet property="createTargetButton" destination="gYI-MS-6SC" id="t2B-cO-mji"/>
                         <outlet property="selectTopicButton" destination="OFF-wj-7FC" id="suE-kO-rHH"/>
                         <outlet property="titleTextField" destination="RmV-9t-o96" id="SqB-zr-CnT"/>
-                        <segue destination="dXW-9B-m8O" kind="presentation" identifier="matchNotificationSegue" modalPresentationStyle="overFullScreen" id="adQ-Pl-jDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1A-FI-lvT" userLabel="First Responder" sceneMemberID="firstResponder"/>

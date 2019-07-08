@@ -14,4 +14,12 @@ protocol MatchNotificationViewModelDelegate: class {
 
 class MatchNotificationViewModel {
   var user: User?
+  
+  var userEmail: String? {
+    return user?.email
+  }
+  
+  var userImage: URL? {
+    return user?.image
+  }
 }

@@ -11,6 +11,6 @@ import SDWebImage
 
 extension UIImageView {
   func setImage(with url: URL?, placeholder: String) {
-    self.sd_setImage(with: url, placeholderImage: UIImage(named: placeholder), options: .refreshCached)
+    sd_setImage(with: url, placeholderImage: UIImage(named: placeholder), options: .refreshCached)
   }
 }
