@@ -22,7 +22,8 @@ protocol TargetFormViewModelDelegate: class {
 }
 
 protocol TargetActionsDelegate: class {
-  func newTargetCreated(targets: [Target])
+  func newTargetCreated(match: Match)
+  func newMatchFound(match: Match)
 }
 
 class TargetFormViewModel {
@@ -77,9 +78,9 @@ class TargetFormViewModel {
                         radius: targetArea,
                         topicId: targetTopic)
     TargetAPI.createTarget(target,
-                           success: { [weak self] target in
+                           success: { [weak self] match in
                             self?.state = .idle
-                            self?.delegate?.newTargetCreated(targets: [target])
+                            self?.delegate?.newTargetCreated(match: match)
       },
                            failure: { [weak self] error in
                             let failReason = (error as NSError).localizedFailureReason ?? ""

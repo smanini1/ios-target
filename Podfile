@@ -6,6 +6,7 @@ target 'ios-target' do
   pod 'Alamofire', '~> 4.7.3'
   pod 'IQKeyboardManagerSwift', '~> 6.1.1'
   pod 'RSFontSizes', '~> 1.0.2'
+  pod 'SDWebImage', '~> 5.0'
 
   # FB SDK ---
   pod 'FBSDKCoreKit', '~> 4.33.0'

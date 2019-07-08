@@ -51,7 +51,7 @@ class ModalViewController: UIViewController {
   
   override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
     darkenBackground(show: false, completion: { _ in
-      super.dismiss(animated: flag)
+      super.dismiss(animated: flag, completion: completion)
     })
   }
 }

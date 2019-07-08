@@ -20,7 +20,7 @@ class TargetAnnotationView: MKAnnotationView {
   override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
     super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
     guard let targetAnnotation = self.annotation as? TargetAnnotation else { return }
-    
+  
     image = targetAnnotation.type.image()
   }
 }

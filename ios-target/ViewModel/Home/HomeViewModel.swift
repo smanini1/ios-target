@@ -38,6 +38,7 @@ class HomeViewModel {
   let locationPinRadius: Double = 60
   var locationOverlay: TargetCircle?
   var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+  var userMatch: User?
   
   var state: HomeViewModelState = .idle {
     didSet {

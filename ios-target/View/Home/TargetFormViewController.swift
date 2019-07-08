@@ -19,6 +19,8 @@ class TargetFormViewController: ModalViewController {
   
   weak var delegate: TargetActionsDelegate?
   
+  let topicsSegue = "topicsSegue"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
@@ -50,9 +52,17 @@ class TargetFormViewController: ModalViewController {
 }
 
 extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate {
-  func newTargetCreated(targets: [Target]) {
-    delegate?.newTargetCreated(targets: targets)
-    dismiss(animated: true)
+  func newMatchFound(match: Match) {
+    delegate?.newMatchFound(match: match)
+  }
+  
+  func newTargetCreated(match: Match) {
+    delegate?.newTargetCreated(match: match)
+    dismiss(animated: true, completion: {
+      if match.user != nil, match.conversation?.topicId != nil {
+        self.newMatchFound(match: match)
+      }
+    })
   }
   
   func didUpdateState() {
