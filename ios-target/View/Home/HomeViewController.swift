@@ -36,11 +36,24 @@ class HomeViewController: UIViewController {
       viewController.delegate = self
     } else if segue.identifier == targetFormSegue,
       let viewController = segue.destination as? TargetFormViewController {
-      viewController.delegate = self
-      viewController.viewModel.topics = viewModel.topics
-      viewController.viewModel.targetLocation.longitude = viewModel.locationCoordinates.longitude
-      viewController.viewModel.targetLocation.latitude = viewModel.locationCoordinates.latitude
+      setupController(viewController)
     }
+  }
+  
+  func setupController(_ viewController: TargetFormViewController) {
+    viewController.delegate = self
+    viewController.viewModel.target = viewModel.target
+    viewController.viewModel.topics = viewModel.topics
+  }
+  
+  @IBAction func tapOnCreateTargetButton(_ sender: Any) {
+    viewModel.target = Target(id: nil,
+                              title: "",
+                              latitude: viewModel.locationLatitude,
+                              longitude: viewModel.locationLongitude,
+                              radius: 0,
+                              topicId: 0)
+    performSegue(withIdentifier: targetFormSegue, sender: nil)
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {
@@ -100,7 +113,7 @@ extension HomeViewController: MKMapViewDelegate {
     let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: TargetAnnotationView.reuseIdentifier) ??
       TargetAnnotationView(annotation: annotation, reuseIdentifier: TargetAnnotationView.reuseIdentifier)
     
-    annotationView.canShowCallout = true
+    annotationView.canShowCallout = false
     
     if annotation === mapView.userLocation,
       let pinImage = UIImage(named: "location-pin") {
@@ -120,6 +133,13 @@ extension HomeViewController: MKMapViewDelegate {
     }
     
     return MKOverlayRenderer()
+  }
+
+  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    if let annotation = view.annotation as? TargetAnnotation {
+      viewModel.target = annotation.target
+      performSegue(withIdentifier: targetFormSegue, sender: nil)
+    }
   }
 }
 
