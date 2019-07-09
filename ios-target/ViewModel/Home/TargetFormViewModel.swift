@@ -36,7 +36,13 @@ class TargetFormViewModel {
     }
   }
   
-  weak var delegate: (TargetFormViewModelDelegate & TargetActionsDelegate)?
+  weak var delegate: (TargetFormViewModelDelegate & TargetActionsDelegate & TopicViewModelDelegate)?
+  
+  var target: Target?
+  
+  var isEditingTarget: Bool {
+    return target?.id != 0
+  }
   
   var targetTitle = "" {
     didSet {
@@ -67,6 +73,14 @@ class TargetFormViewModel {
   var hasValidData: Bool {
     return !targetTitle.isEmpty && targetArea != 0 && targetTopic != 0
       && targetLocation.latitude != 0 && targetLocation.longitude != 0
+  }
+  
+  func setTarget() {
+    guard let target = target else { return }
+    targetTitle = target.title
+    targetTopic = target.topicId
+    targetArea = target.radius
+    targetLocation = CLLocationCoordinate2D(latitude: target.latitude, longitude: target.longitude)
   }
   
   func createTarget() {
