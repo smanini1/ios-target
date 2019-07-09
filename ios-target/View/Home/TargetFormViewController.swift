@@ -14,7 +14,6 @@ class TargetFormViewController: ModalViewController {
   @IBOutlet weak var titleTextField: UITextFieldPadding!
   @IBOutlet weak var selectTopicButton: UIButton!
   @IBOutlet weak var createTargetButton: UIButton!
-  @IBOutlet weak var deleteTargetButton: UIButton!
   
   var viewModel = TargetFormViewModel()
   
@@ -26,20 +25,7 @@ class TargetFormViewController: ModalViewController {
     super.viewDidLoad()
     viewModel.delegate = self
     createTargetButton.enable(false)
-    deleteTargetButton.isHidden = viewModel.isEditingTarget
     selectTopicButton.addBorder(color: .black, weight: 1)
-    viewModel.setTarget()
-    setView()
-  }
-  
-  func setView() {
-    titleTextField.text = viewModel.targetTitle
-    areaTextField.text = viewModel.targetArea != 0 ? String(viewModel.targetArea) : ""
-    guard viewModel.targetTopic != 0,
-    let index = viewModel.topics.index(where: {$0.id == viewModel.targetTopic}) else { return }
-    topicSelected(at: index)
-    deleteTargetButton.isHidden = false
-    deleteTargetButton.backgroundColor = .scarlet
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,11 +44,6 @@ class TargetFormViewController: ModalViewController {
       viewModel.targetTitle = newValue
     default: break
     }
-  }
-  
-  @IBAction func tapDeleteTargetButton(_ sender: Any) {
-    // TODO:
-    //    viewModel.deleteTarget()
   }
   
   @IBAction func tapSaveTargetButton(_ sender: Any) {

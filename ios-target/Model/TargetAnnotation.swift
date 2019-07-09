@@ -29,15 +29,17 @@ enum TargetType: String {
 }
 
 class TargetAnnotation: NSObject, MKAnnotation {
-  var id: Int?
   var coordinate: CLLocationCoordinate2D
+  var title: String?
+  var subtitle: String?
   var type: TargetType
-  var target: Target
+  var radius: Double
   
-  init(id: Int, coordinate: CLLocationCoordinate2D, type: TargetType, target: Target) {
-    self.id = id
+  init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, type: TargetType, radius: Double) {
     self.coordinate = coordinate
+    self.title = title
+    self.subtitle = subtitle
     self.type = type
-    self.target = target
+    self.radius = radius
   }
 }

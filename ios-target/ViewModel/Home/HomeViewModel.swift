@@ -38,21 +38,11 @@ class HomeViewModel {
   let locationPinRadius: Double = 60
   var locationOverlay: TargetCircle?
   var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-  
-  var locationLatitude: CLLocationDegrees {
-    return locationCoordinates.latitude
-  }
-  
-  var locationLongitude: CLLocationDegrees {
-    return locationCoordinates.longitude
-  }
-  
   var userMatch: User?
-  var target: Target?
   
   var state: HomeViewModelState = .idle {
     didSet {
-      delegate?.didUpdateState()
+        delegate?.didUpdateState()
     }
   }
   
@@ -163,10 +153,11 @@ class HomeViewModel {
   func createAnnotation(target: Target, coordinates: CLLocationCoordinate2D) -> TargetAnnotation {
     let topic = topics.first(where: { $0.id == target.topicId })
     let targetType = TargetType(rawValue: topic?.label.lowercased() ?? "travel") ?? .travel
-    let annotation = TargetAnnotation(id: target.id ?? 0,
-                                      coordinate: coordinates,
+    let annotation = TargetAnnotation(coordinate: coordinates,
+                                      title: target.title,
+                                      subtitle: "",
                                       type: targetType,
-                                      target: target)
+                                      radius: target.radius)
     return annotation
   }
 }
