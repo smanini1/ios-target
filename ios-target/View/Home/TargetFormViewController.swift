@@ -29,14 +29,16 @@ class TargetFormViewController: ModalViewController {
     deleteTargetButton.isHidden = viewModel.isEditingTarget
     selectTopicButton.addBorder(color: .black, weight: 1)
     viewModel.setTarget()
-    setView()
+    consigureView()
   }
   
-  func setView() {
+  func consigureView() {
     titleTextField.text = viewModel.targetTitle
     areaTextField.text = viewModel.targetArea != 0 ? String(viewModel.targetArea) : ""
-    guard viewModel.targetTopic != 0,
-    let index = viewModel.topics.index(where: {$0.id == viewModel.targetTopic}) else { return }
+    guard
+      viewModel.targetTopic != 0,
+      let index = viewModel.topics.index(where: {$0.id == viewModel.targetTopic})
+    else { return }
     topicSelected(at: index)
     deleteTargetButton.isHidden = false
     deleteTargetButton.backgroundColor = .scarlet
@@ -61,8 +63,7 @@ class TargetFormViewController: ModalViewController {
   }
   
   @IBAction func tapDeleteTargetButton(_ sender: Any) {
-    // TODO:
-    //    viewModel.deleteTarget()
+    viewModel.deleteTarget()
   }
   
   @IBAction func tapSaveTargetButton(_ sender: Any) {
@@ -71,6 +72,11 @@ class TargetFormViewController: ModalViewController {
 }
 
 extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDelegate {
+  func targetDeleted(targetId: Int) {
+    delegate?.targetDeleted(targetId: targetId)
+    dismiss(animated: true)
+  }
+  
   func newMatchFound(match: Match) {
     delegate?.newMatchFound(match: match)
   }

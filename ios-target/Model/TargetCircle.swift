@@ -13,6 +13,7 @@ class TargetCircle: MKCircle {
   
   var backgroundColor: UIColor = .macaroniAndCheese70
   var borderColor: UIColor = .macaroniAndCheese70
+  var targetId: Int?
   
   convenience init(radius: Double,
                    backgroundColor: UIColor,

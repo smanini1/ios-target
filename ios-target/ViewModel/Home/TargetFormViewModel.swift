@@ -24,6 +24,7 @@ protocol TargetFormViewModelDelegate: class {
 protocol TargetActionsDelegate: class {
   func newTargetCreated(match: Match)
   func newMatchFound(match: Match)
+  func targetDeleted(targetId: Int)
 }
 
 class TargetFormViewModel {
@@ -96,6 +97,20 @@ class TargetFormViewModel {
                             self?.state = .idle
                             self?.delegate?.newTargetCreated(match: match)
       },
+                           failure: { [weak self] error in
+                            let failReason = (error as NSError).localizedFailureReason ?? ""
+                            let errorMessage = failReason.isEmpty ? error.localizedDescription : failReason
+                            self?.state = .error(errorMessage)
+    })
+  }
+  
+  func deleteTarget() {
+    guard let targetId = target?.id else { return }
+    TargetAPI.deleteTarget(targetId,
+                           success: {
+                            self.state = .idle
+                            self.delegate?.targetDeleted(targetId: targetId)
+    },
                            failure: { [weak self] error in
                             let failReason = (error as NSError).localizedFailureReason ?? ""
                             let errorMessage = failReason.isEmpty ? error.localizedDescription : failReason

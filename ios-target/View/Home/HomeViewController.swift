@@ -36,11 +36,11 @@ class HomeViewController: UIViewController {
       viewController.delegate = self
     } else if segue.identifier == targetFormSegue,
       let viewController = segue.destination as? TargetFormViewController {
-      setupController(viewController)
+      setupTargetController(viewController)
     }
   }
   
-  func setupController(_ viewController: TargetFormViewController) {
+  func setupTargetController(_ viewController: TargetFormViewController) {
     viewController.delegate = self
     viewController.viewModel.target = viewModel.target
     viewController.viewModel.topics = viewModel.topics
@@ -77,6 +77,28 @@ class HomeViewController: UIViewController {
     if let overlay = viewModel.locationOverlay {
       mapView.addOverlay(overlay)
     }
+  }
+  
+  func removeTargetAnnotation(targetId: Int) {
+    viewModel.removeTarget(targetId: targetId)
+    
+    mapView.annotations.forEach {
+      if
+        let annotation = $0 as? TargetAnnotation,
+        annotation.target.id == targetId
+      {
+        mapView.removeAnnotation(annotation)
+        removeTargetOverlay(targetId: targetId)
+      }
+    }
+  }
+  
+  func removeTargetOverlay(targetId: Int) {
+    guard
+      let overlays = mapView.overlays as? [TargetCircle],
+      let index = overlays.index(where: {$0.targetId == targetId})
+    else { return }
+    mapView.removeOverlay(mapView.overlays[index])
   }
 }
 
@@ -144,6 +166,10 @@ extension HomeViewController: MKMapViewDelegate {
 }
 
 extension HomeViewController: TargetActionsDelegate {
+  func targetDeleted(targetId: Int) {
+    removeTargetAnnotation(targetId: targetId)
+  }
+  
   func newTargetCreated(match: Match) {
     viewModel.addAnnotations(targets: [match.target])
   }

@@ -155,6 +155,7 @@ class HomeViewModel {
                                        backgroundColor: .macaroniAndCheese70,
                                        borderColor: .macaroniAndCheese70,
                                        coordinates: coordinates)
+      circleOverlay.targetId = target.id
       circleOverlays.append(circleOverlay)
     }
     delegate?.addAnnotations(annotations: annontations, circleOverlays: circleOverlays)
@@ -168,6 +169,11 @@ class HomeViewModel {
                                       type: targetType,
                                       target: target)
     return annotation
+  }
+  
+  func removeTarget(targetId: Int) {
+    guard let index = targets.index(where: {$0.id == targetId}) else { return }
+    targets.remove(at: index)
   }
 }
 
