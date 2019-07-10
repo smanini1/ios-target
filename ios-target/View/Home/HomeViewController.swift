@@ -96,7 +96,7 @@ class HomeViewController: UIViewController {
   func removeTargetOverlay(targetId: Int) {
     guard
       let overlays = mapView.overlays as? [TargetCircle],
-      let index = overlays.index(where: {$0.targetId == targetId})
+      let index = overlays.index(where: { $0.targetId == targetId })
     else { return }
     mapView.removeOverlay(mapView.overlays[index])
   }
