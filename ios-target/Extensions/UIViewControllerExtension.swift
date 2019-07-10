@@ -16,7 +16,7 @@ extension UIViewController {
                    cancelOption: String? = nil,
                    handler: ((_ action: UIAlertAction) -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "Ok".localized, style: UIAlertAction.Style.default, handler: handler))
+    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: handler))
     if cancelOption != nil {
       alert.addAction(UIAlertAction(title: cancelOption, style: .cancel))
     }
@@ -35,7 +35,7 @@ extension UIViewController {
     
     guard let viewController =
       storyboard?.instantiateViewController(withIdentifier: identifier) else {
-        assert(false, "No view controller found with that identifier".localized)
+        assert(false, "No view controller found with that identifier")
         return
     }
     
@@ -44,7 +44,7 @@ extension UIViewController {
     if modally {
       present(viewController, animated: true)
     } else {
-      assert(navigationController != nil, "navigation controller is nil".localized)
+      assert(navigationController != nil, "navigation controller is nil")
       navigationController?.pushViewController(viewController, animated: true)
     }
   }

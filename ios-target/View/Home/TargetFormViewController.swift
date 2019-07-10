@@ -63,7 +63,7 @@ class TargetFormViewController: ModalViewController {
   }
   
   @IBAction func tapDeleteTargetButton(_ sender: Any) {
-    let message = "Are you sure you want to delete " + viewModel.targetTitle + " target"
+    let message = String(format: NSLocalizedString("Are you sure you want to delete %@ target", comment: "target name"), viewModel.targetTitle)
     showMessage(title: "Delete Target".localized,
                 message: message,
                 cancelOption: "Cancel".localized,
