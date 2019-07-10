@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Alamofire
 
 class TargetAPI {
   
@@ -38,6 +39,20 @@ class TargetAPI {
       }
     }, failure: { error in
       failure(error)
+    })
+  }
+  
+  class func deleteTarget(_ targetId: Int, success: (() -> Void)? = nil, failure: ((_ error: Error) -> Void)? = nil) {
+    let url = targetsUrl + String(targetId)
+    APIClient.request(.delete, url: url, success: {_, _ in 
+      success?()
+    }, failure: { error in
+      // Dirty fix for backend error
+      if error is Alamofire.AFError {
+        success?()
+      } else {
+        failure?(error)
+      }
     })
   }
 }

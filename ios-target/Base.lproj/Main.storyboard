@@ -1213,7 +1213,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="tapDeleteTargetButton:" destination="aMj-ZR-7oi" eventType="touchUpInside" id="CHx-PN-hHG"/>
-                                                    <action selector="tapSaveTargetButton:" destination="aMj-ZR-7oi" eventType="touchUpInside" id="ysb-T1-hnp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYI-MS-6SC" userLabel="Save Target Button">

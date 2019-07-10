@@ -17,6 +17,7 @@ extension UIColor {
   static let scarlet = UIColor(red: 208, green: 1, blue: 27)
   static let brownGreyTwo = UIColor(white: 175.0 / 255.0, alpha: 1.0)
   static let white70 = UIColor(white: 245.0 / 255.0, alpha: 0.7)
+  static let darkSkyBlue70 = UIColor(red: 47.0 / 255.0, green: 188.0 / 255.0, blue: 247.0 / 255.0, alpha: 0.7)
   
   convenience init(red: Int, green: Int, blue: Int) {
     self.init(red: min(CGFloat(red), 255.0) / 255.0,
