@@ -42,7 +42,7 @@ class TargetFormViewModel {
   var target: Target?
   
   var isEditingTarget: Bool {
-    return target?.id != 0
+    return target?.id != nil
   }
   
   var targetTitle = "" {
@@ -104,6 +104,29 @@ class TargetFormViewModel {
     })
   }
   
+  // TODO: pending feature for missing backend 
+//  func editTarget() {
+//    state = .loading
+//    guard let targetId = target?.id else { return }
+//    let target = Target(id: targetId,
+//                        title: targetTitle,
+//                        latitude: targetLocation.latitude,
+//                        longitude: targetLocation.longitude,
+//                        radius: targetArea,
+//                        topicId: targetTopic)
+//    TargetAPI.editTarget(target,
+//                         targetId: targetId,
+//                         success: { [weak self] match in
+//                          self?.state = .idle
+//                          // elf?.delegate?.newTargetCreated(match: match)
+//      },
+//                         failure: { [weak self] error in
+//                          let failReason = (error as NSError).localizedFailureReason ?? ""
+//                          let errorMessage = failReason.isEmpty ? error.localizedDescription : failReason
+//                          self?.state = .error(errorMessage)
+//    })
+//  }
+//
   func deleteTarget() {
     guard let targetId = target?.id else { return }
     TargetAPI.deleteTarget(targetId,

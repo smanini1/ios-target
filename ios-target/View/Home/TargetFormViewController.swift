@@ -26,7 +26,7 @@ class TargetFormViewController: ModalViewController {
     super.viewDidLoad()
     viewModel.delegate = self
     createTargetButton.enable(false)
-    deleteTargetButton.isHidden = viewModel.isEditingTarget
+    deleteTargetButton.isHidden = !viewModel.isEditingTarget
     selectTopicButton.addBorder(color: .black, weight: 1)
     viewModel.setTarget()
     consigureView()
@@ -63,11 +63,22 @@ class TargetFormViewController: ModalViewController {
   }
   
   @IBAction func tapDeleteTargetButton(_ sender: Any) {
-    viewModel.deleteTarget()
+    let message = "Are you sure you want to delete " + viewModel.targetTitle + " target"
+    showMessage(title: "Delete Target".localized,
+                message: message,
+                cancelOption: "Cancel".localized,
+                handler: {  [weak self] _ in
+                  self?.viewModel.deleteTarget()
+    })
   }
   
   @IBAction func tapSaveTargetButton(_ sender: Any) {
-    viewModel.createTarget()
+    if viewModel.isEditingTarget {
+//      TODO: pending feature for missing backend
+//      viewModel.editTarget()
+    } else {
+      viewModel.createTarget()
+    }
   }
 }
 
@@ -93,7 +104,7 @@ extension TargetFormViewController: TargetFormViewModelDelegate, TargetActionsDe
   func didUpdateState() {
     UIApplication.toggleNetworkActivity(viewModel.state == .loading)
     if case .error(let description) = viewModel.state {
-      showMessage(title: "Error", message: description)
+      showMessage(title: "Error".localized, message: description)
     }
   }
   

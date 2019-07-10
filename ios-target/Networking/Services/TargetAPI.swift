@@ -55,4 +55,25 @@ class TargetAPI {
       }
     })
   }
+  
+  // TODO: pending feature for missing backend
+//  class func editTarget(_ target: Target, targetId: Int, success: @escaping (_ response: Match) -> Void, failure: @escaping (_ error: Error) -> Void) {
+//    let parameters = Target.buildParams(target: target)
+//    let url = targetsUrl + String(targetId)
+//    APIClient.request(.put, url: url, params: parameters, success: { response, _ in
+//      if let match = try? JSONDecoder().decode(Match.self, from: response) {
+//        if let matchedUser = response["matched_user"] as? [String: Any],
+//          let userAvatar = matchedUser["avatar"] as? [String: Any],
+//          let userSmallImage = userAvatar["small_thumb_url"] as? URL {
+//          match.user?.image = userSmallImage
+//        }
+//        success(match)
+//      } else {
+//        failure(App.error(domain: .parsing, localizedDescription: "Could not parse valid targets".localized))
+//        return
+//      }
+//    }, failure: { error in
+//      failure(error)
+//    })
+//  }
 }
