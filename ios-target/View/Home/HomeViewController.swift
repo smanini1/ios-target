@@ -46,6 +46,8 @@ class HomeViewController: UIViewController {
     viewController.viewModel.topics = viewModel.topics
   }
   
+  @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
+  
   @IBAction func tapOnCreateTargetButton(_ sender: Any) {
     viewModel.target = Target(id: nil,
                               title: "",

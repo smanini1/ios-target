@@ -27,8 +27,6 @@
 		816A972022CD253C001F92DA /* MatchNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A971F22CD253C001F92DA /* MatchNotificationViewController.swift */; };
 		816A972222CE3E04001F92DA /* MatchNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972122CE3E04001F92DA /* MatchNotificationViewModel.swift */; };
 		816A972422CE46FF001F92DA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972322CE46FF001F92DA /* UIImageViewExtension.swift */; };
-		816A972722D3CF38001F92DA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972622D3CF38001F92DA /* ProfileViewController.swift */; };
-		816A972A22D3CF67001F92DA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A972922D3CF67001F92DA /* ProfileViewModel.swift */; };
 		816A973522D3D039001F92DA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A972B22D3D038001F92DA /* OpenSans-BoldItalic.ttf */; };
 		816A973622D3D039001F92DA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A972C22D3D038001F92DA /* OpenSans-Bold.ttf */; };
 		816A973722D3D039001F92DA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A972D22D3D038001F92DA /* OpenSans-ExtraBold.ttf */; };
@@ -39,6 +37,9 @@
 		816A973C22D3D039001F92DA /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A973222D3D038001F92DA /* OpenSans-SemiBold.ttf */; };
 		816A973D22D3D039001F92DA /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A973322D3D038001F92DA /* OpenSans-SemiBoldItalic.ttf */; };
 		816A973E22D3D039001F92DA /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816A973422D3D039001F92DA /* OpenSans-ExtraBoldItalic.ttf */; };
+		816A974022D6506F001F92DA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A973F22D6506E001F92DA /* ProfileViewController.swift */; };
+		816A974222D6507F001F92DA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A974122D6507F001F92DA /* ProfileViewModel.swift */; };
+		816A974422D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A974322D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift */; };
 		8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */; };
 		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
 		81D0D96222CFBEA600CE5FE4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0D96122CFBEA600CE5FE4 /* Match.swift */; };
@@ -129,8 +130,6 @@
 		816A971F22CD253C001F92DA /* MatchNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNotificationViewController.swift; sourceTree = "<group>"; };
 		816A972122CE3E04001F92DA /* MatchNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNotificationViewModel.swift; sourceTree = "<group>"; };
 		816A972322CE46FF001F92DA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		816A972622D3CF38001F92DA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		816A972922D3CF67001F92DA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		816A972B22D3D038001F92DA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		816A972C22D3D038001F92DA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../../../../Downloads/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		816A972D22D3D038001F92DA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "../../../../../../../Downloads/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -141,6 +140,9 @@
 		816A973222D3D038001F92DA /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../../../../../../../Downloads/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		816A973322D3D038001F92DA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		816A973422D3D039001F92DA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../../../../../../../Downloads/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		816A973F22D6506E001F92DA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		816A974122D6507F001F92DA /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		816A974322D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueFromLeftToRight.swift; sourceTree = "<group>"; };
 		8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = ../Home/ModalViewController.swift; sourceTree = "<group>"; };
 		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		81D0D96122CFBEA600CE5FE4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -250,7 +252,7 @@
 		816A972522D3CF2B001F92DA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				816A972622D3CF38001F92DA /* ProfileViewController.swift */,
+				816A973F22D6506E001F92DA /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -258,7 +260,7 @@
 		816A972822D3CF56001F92DA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				816A972922D3CF67001F92DA /* ProfileViewModel.swift */,
+				816A974122D6507F001F92DA /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -566,6 +568,7 @@
 				8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */,
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
 				81EF2F4722B14BCD006254E7 /* UITextFieldPadding.swift */,
+				816A974322D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -843,15 +846,16 @@
 				81EF2F4622B034E8006254E7 /* UILabelExtension.swift in Sources */,
 				9BD409101CE9F19E005223C9 /* UIHelper.swift in Sources */,
 				E8B30E021E72FF8000131DCF /* UIStoryboardExtension.swift in Sources */,
+				816A974222D6507F001F92DA /* ProfileViewModel.swift in Sources */,
 				81EF2F4C22B17836006254E7 /* Target.swift in Sources */,
 				9B3AA3A11ED4D014005A4D26 /* HomeViewController.swift in Sources */,
 				81110A2A22CA804F00582F02 /* UIButtonExtension.swift in Sources */,
-				816A972722D3CF38001F92DA /* ProfileViewController.swift in Sources */,
 				81D0D96222CFBEA600CE5FE4 /* Match.swift in Sources */,
 				9B77E0751E2FB66F0020E450 /* UserDataManager.swift in Sources */,
 				9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */,
 				816A972022CD253C001F92DA /* MatchNotificationViewController.swift in Sources */,
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
+				816A974422D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift in Sources */,
 				8151D79222BD235400F7C7DF /* TargetAnnotation.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
 				81110A2822C569C100582F02 /* TargetFormViewModel.swift in Sources */,
@@ -875,7 +879,6 @@
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
 				81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */,
-				816A972A22D3CF67001F92DA /* ProfileViewModel.swift in Sources */,
 				816A972222CE3E04001F92DA /* MatchNotificationViewModel.swift in Sources */,
 				81110A3022CAA1EB00582F02 /* TopicAPI.swift in Sources */,
 				9BE3669D1F101737007CAECD /* MultipartMedia.swift in Sources */,
@@ -884,6 +887,7 @@
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
 				81110A3922CBD53C00582F02 /* TopicsCollectionViewCell.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
+				816A974022D6506F001F92DA /* ProfileViewController.swift in Sources */,
 				E8FBB1C11DD21D18000D6740 /* SessionManager.swift in Sources */,
 				9B77E0791E2FCF710020E450 /* Media.swift in Sources */,
 				81110A3222CAA9D800582F02 /* TopicsViewController.swift in Sources */,
