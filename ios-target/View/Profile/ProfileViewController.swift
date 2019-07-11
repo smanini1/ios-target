@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
   
   var viewModel = ProfileViewModel()
   
+  var unwindProfileSegue = "unwindProfileSegue"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
@@ -51,9 +53,17 @@ class ProfileViewController: UIViewController {
   @IBAction func tapLogoutButton(_ sender: Any) {
     viewModel.logoutUser()
   }
+  
+  @IBAction func tapSaveProfileButton(_ sender: Any) {
+    viewModel.saveUserProfile()
+  }
 }
 
 extension ProfileViewController: ProfileViewModelDelegate {
+  func didUpdateUserProfile() {
+    performSegue(withIdentifier: unwindProfileSegue, sender: nil)
+  }
+  
   func userDidSet() {
     configureView()
   }

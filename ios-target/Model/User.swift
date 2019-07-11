@@ -9,8 +9,8 @@
 import Foundation
 
 class User: Codable {
-  var id: String
-  var username: String
+  var id: String?
+  var username: String?
   var email: String
   var image: URL?
   var firstName: String?
@@ -25,11 +25,11 @@ class User: Codable {
     case lastName = "last_name"
   }
   
-  init(id: String, username: String = "", email: String, image: String = "") {
+  init(id: String? = nil, username: String? = nil, email: String, image: String? = nil) {
     self.id = id
     self.username = username
     self.email = email
-    self.image = URL(string: image)
+    self.image = URL(string: image ?? "")
   }
   
   //MARK: Codable
@@ -56,5 +56,20 @@ class User: Codable {
     image = URL(string: try container.decodeIfPresent(String.self, forKey: .image) ?? "")
     firstName = try container.decode(String.self, forKey: .firstName)
     lastName = try container.decode(String.self, forKey: .lastName)
+  }
+  
+  static func buildParams(user: User) -> [String: Any] {
+    let parameters = [
+      "user": [
+        "username": user.username,
+        "email": user.email,
+        "first_name": user.firstName,
+        "last_name": user.lastName,
+        "gender": "",
+        "avatar": ""
+      ]
+    ]
+    
+    return parameters
   }
 }

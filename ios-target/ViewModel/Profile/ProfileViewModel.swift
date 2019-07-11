@@ -19,6 +19,7 @@ protocol ProfileViewModelDelegate: class {
   func didUpdateState()
   func formDidChange()
   func userDidSet()
+  func didUpdateUserProfile()
 }
 
 class ProfileViewModel {
@@ -57,7 +58,7 @@ class ProfileViewModel {
   
   func setUser(_ user: User) {
     email = user.email
-    username = user.username
+    username = user.username ?? ""
     firstName = user.firstName ?? ""
     lastName = user.lastName ?? ""
   }
@@ -70,6 +71,22 @@ class ProfileViewModel {
       self?.state = .idle
       }, failure: { [weak self] error in
         self?.state = .error(error.localizedDescription)
+    })
+  }
+  
+  func saveUserProfile() {
+    state = .loading
+    let user = User(id: nil, username: username, email: email, image: nil)
+    user.username = username
+    user.firstName = firstName
+    user.lastName = lastName
+    UserAPI.updateUserProfile(user,
+                              success: { [weak self] in
+                                self?.delegate?.didUpdateUserProfile()
+                                self?.state = .idle
+      },
+                              failure: { [weak self] error in
+                                self?.state = .error(error.localizedDescription)
     })
   }
   
