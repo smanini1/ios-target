@@ -13,12 +13,16 @@ class User: Codable {
   var username: String
   var email: String
   var image: URL?
-  
+  var firstName: String?
+  var lastName: String?
+
   private enum CodingKeys: String, CodingKey {
     case id
     case username
     case email
     case image = "profile_picture"
+    case firstName = "first_name"
+    case lastName = "last_name"
   }
   
   init(id: String, username: String = "", email: String, image: String = "") {
@@ -36,6 +40,8 @@ class User: Codable {
     try container.encode(username, forKey: .username)
     try container.encode(email, forKey: .email)
     try container.encode(image?.absoluteString, forKey: .image)
+    try container.encode(firstName, forKey: .firstName)
+    try container.encode(lastName, forKey: .lastName)
   }
   
   required init(from decoder: Decoder) throws {
@@ -48,5 +54,7 @@ class User: Codable {
     username = try container.decode(String.self, forKey: .username)
     email = try container.decode(String.self, forKey: .email)
     image = URL(string: try container.decodeIfPresent(String.self, forKey: .image) ?? "")
+    firstName = try container.decode(String.self, forKey: .firstName)
+    lastName = try container.decode(String.self, forKey: .lastName)
   }
 }

@@ -59,7 +59,8 @@ class HomeViewController: UIViewController {
   }
   
   @IBAction func tapOnLogoutButton(_ sender: Any) {
-    viewModel.logoutUser()
+//    TODO
+//    viewModel.logoutUser()
   }
   
   func removeLocationOverlay() {
@@ -126,8 +127,6 @@ extension HomeViewController: HomeViewModelDelegate {
     UIApplication.toggleNetworkActivity(viewModel.state == .loading)
     if case .error(let errorDescription) = viewModel.state {
       showMessage(title: "Error", message: errorDescription)
-    } else if viewModel.state == .loggedOut {
-      UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateInitialViewController()
     }
   }
 }

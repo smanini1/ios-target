@@ -12,7 +12,7 @@ class UserAPI {
   
   fileprivate static let usersUrl = "/users/"
   fileprivate static let currentUserUrl = "/user/"
-
+  
   class func login(_ email: String, password: String, success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
     let url = usersUrl + "sign_in"
     let parameters = [
@@ -28,7 +28,7 @@ class UserAPI {
       failure(error)
     })
   }
-
+  
   class func signup(_ email: String, password: String, username: String, success: @escaping (_ response: [String: Any]) -> Void, failure: @escaping (_ error: Error) -> Void) {
     let parameters = [
       "user": [
@@ -69,12 +69,26 @@ class UserAPI {
   
   class func logout(_ success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
     let url = usersUrl + "sign_out"
-    APIClient.request(.delete, url: url, success: {_, _ in 
+    APIClient.request(.delete, url: url, success: {_, _ in
       UserDataManager.deleteUser()
       SessionManager.deleteSession()
       success()
     }, failure: { error in
       failure(error)
     })
+  }
+  
+  class func loadUserProfile(_ success: @escaping (User) -> Void, failure: @escaping (_ error: Error) -> Void) {
+    let url = usersUrl + "profile"
+    APIClient.request(.get, url: url, success: { response, _ in
+      guard
+        let user = response["user"] as? [String: Any],
+        let decodedUser = try? JSONDecoder().decode(User.self, from: user)
+      else {
+        failure(App.error(domain: .parsing, localizedDescription: "Could not parse valid user".localized))
+        return
+      }
+      success(decodedUser)
+    }, failure: failure)
   }
 }
