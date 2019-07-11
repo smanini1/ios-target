@@ -14,7 +14,6 @@ enum HomeViewModelState: Equatable {
   case loading
   case error(String)
   case idle
-  case loggedOut
 }
 
 protocol HomeViewModelDelegate: class {
@@ -67,15 +66,6 @@ class HomeViewModel {
       locationManager.setUpLocationManager()
       checkLocationAuthorization()
     }
-  }
-  
-  func logoutUser() {
-    state = .loading
-    UserAPI.logout({ [weak self] in
-      self?.state = .loggedOut
-    }, failure: { [weak self] error in
-      self?.state = .error(error.localizedDescription)
-    })
   }
   
   func defineRegion(location: CLLocation) -> MKCoordinateRegion {
