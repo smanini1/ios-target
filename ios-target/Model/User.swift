@@ -58,13 +58,13 @@ class User: Codable {
     lastName = try container.decode(String.self, forKey: .lastName)
   }
   
-  static func buildParams(user: User) -> [String: Any] {
+  func buildParams() -> [String: Any] {
     let parameters = [
       "user": [
-        "username": user.username,
-        "email": user.email,
-        "first_name": user.firstName,
-        "last_name": user.lastName,
+        "username": username,
+        "email": email,
+        "first_name": firstName,
+        "last_name": lastName,
         "gender": "",
         "avatar": ""
       ]

@@ -12,10 +12,10 @@ PODS:
   - FBSDKLoginKit (4.33.0):
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (6.1.1)
-  - KIF (3.7.4):
-    - KIF/Core (= 3.7.4)
-  - KIF/Core (3.7.4)
-  - KIF/IdentifierTests (3.7.4):
+  - KIF (3.7.8):
+    - KIF/Core (= 3.7.8)
+  - KIF/Core (3.7.8)
+  - KIF/IdentifierTests (3.7.8):
     - KIF/Core
   - OHHTTPStubs/Core (6.1.0)
   - OHHTTPStubs/Default (6.1.0):
@@ -32,9 +32,9 @@ PODS:
     - OHHTTPStubs/Default
   - RSFontSizes (1.0.2):
     - Device (~> 3.1.2)
-  - SDWebImage (5.0.3):
-    - SDWebImage/Core (= 5.0.3)
-  - SDWebImage/Core (5.0.3)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
@@ -67,11 +67,11 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
-  KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
+  KIF: 52e1af1a78cf6fe4ec6777b14776f3dd2eccc32e
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   RSFontSizes: cf14ae41c2807b66573f7064528ccff8c98251c9
-  SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
 
 PODFILE CHECKSUM: 40c78b393a404b7d1ecad35da7b31af69fd6e9ea
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.3

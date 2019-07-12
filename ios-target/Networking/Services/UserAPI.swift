@@ -94,7 +94,7 @@ class UserAPI {
   
   class func updateUserProfile(_ user: User, success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
     let url = usersUrl + "profile"
-    let params = User.buildParams(user: user)
+    let params = user.buildParams()
     APIClient.request(.put, url: url, params: params, success: { response, headers in
       UserAPI.saveUserSession(fromResponse: response, headers: headers)
       success()
