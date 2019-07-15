@@ -29,8 +29,9 @@ class TargetAPI {
       if let match = try? JSONDecoder().decode(Match.self, from: response) {
         if let matchedUser = response["matched_user"] as? [String: Any],
           let userAvatar = matchedUser["avatar"] as? [String: Any],
-          let userSmallImage = userAvatar["small_thumb_url"] as? URL {
-          match.user?.image = userSmallImage
+          let decodedAvatar = try? JSONDecoder().decode(Avatar.self, from: userAvatar)
+        {
+          match.user?.image = decodedAvatar.smallAvatar
         }
         success(match)
       } else {

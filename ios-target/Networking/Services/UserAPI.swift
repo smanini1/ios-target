@@ -83,18 +83,27 @@ class UserAPI {
     APIClient.request(.get, url: url, success: { response, _ in
       guard
         let user = response["user"] as? [String: Any],
-        let decodedUser = try? JSONDecoder().decode(User.self, from: user)
+        let decodedUser = try? JSONDecoder().decode(User.self, from: user),
+        let avatar = user["avatar"] as? [String: Any],
+        let decodedAvatar = try? JSONDecoder().decode(Avatar.self, from: avatar)
       else {
         failure(App.error(domain: .parsing, localizedDescription: "Could not parse valid user".localized))
         return
+      }
+      if let normalAvatar = decodedAvatar.normalAvatar {
+        decodedUser.image = normalAvatar
       }
       success(decodedUser)
     }, failure: failure)
   }
   
-  class func updateUserProfile(_ user: User, success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
+  class func updateUserProfile(_ user: User, avatar: UIImage?, success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
     let url = usersUrl + "profile"
-    let params = user.buildParams()
+    var image = ""
+    if let imageData = avatar?.jpegData(compressionQuality: 1.0)?.asBase64Param() {
+      image = imageData
+    }
+    let params = user.buildParams(image)
     APIClient.request(.put, url: url, params: params, success: { response, headers in
       UserAPI.saveUserSession(fromResponse: response, headers: headers)
       success()

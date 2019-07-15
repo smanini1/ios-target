@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var firstNameTextField: UITextFieldPadding!
   @IBOutlet weak var lastNameTextField: UITextFieldPadding!
   @IBOutlet weak var saveProfileButton: UIButton!
+  @IBOutlet weak var profileImage: UIImageView!
   
   var viewModel = ProfileViewModel()
   
@@ -32,6 +33,14 @@ class ProfileViewController: UIViewController {
     emailTextField.text = viewModel.email
     firstNameTextField.text = viewModel.firstName
     lastNameTextField.text = viewModel.lastName
+    profileImage.setRoundedShape(borderColor: .codGray, borderWidth: 1)
+  }
+  
+  @IBAction func tapProfileImageButton(_ sender: Any) {
+    let profileImagePicker = UIImagePickerController()
+    profileImagePicker.sourceType = .photoLibrary
+    profileImagePicker.delegate = self
+    present(profileImagePicker, animated: true, completion: nil)
   }
   
   @IBAction func formEditingChanged(_ sender: UITextField) {
@@ -60,6 +69,10 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileViewModelDelegate {
+  func imageDidSet() {
+    profileImage.image = viewModel.image
+  }
+  
   func didUpdateUserProfile() {
     performSegue(withIdentifier: unwindProfileSegue, sender: nil)
   }
@@ -79,5 +92,20 @@ extension ProfileViewController: ProfileViewModelDelegate {
   
   func formDidChange() {
     saveProfileButton.enable(viewModel.hasValidData())
+  }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let image = info[.originalImage] as? UIImage {
+      profileImage.image = image
+      profileImage.cropsToSquare()
+      viewModel.image = image
+    }
+    picker.dismiss(animated: true, completion:nil)
+  }
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.dismiss(animated: true, completion: nil)
   }
 }

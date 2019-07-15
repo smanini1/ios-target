@@ -27,11 +27,7 @@ class MatchNotificationViewController: ModalViewController {
   
   func setImageOnUserImageView() {
     userImage.setImage(with: viewModel.userImage, placeholder: "profile-icon")
-    userImage.layer.borderWidth = 1
-    userImage.layer.masksToBounds = false
-    userImage.layer.borderColor = UIColor.codGray.cgColor
-    userImage.layer.cornerRadius = userImage.frame.height / 2
-    userImage.clipsToBounds = true
+    userImage.setRoundedShape(borderColor: .codGray, borderWidth: 1)
   }
   
   @IBAction func tapOnSkipButton(_ sender: Any) {

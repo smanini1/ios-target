@@ -866,11 +866,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-image" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-JF-oBo" userLabel="Profile Image">
-                                <rect key="frame" x="142.5" y="111" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6Z-F8-7UR" userLabel="Profile Image Button">
+                                <rect key="frame" x="142.5" y="110" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="NIk-7s-dkh"/>
-                                    <constraint firstAttribute="width" constant="90" id="Y8S-BK-eNx"/>
+                                    <constraint firstAttribute="width" constant="90" id="6ny-1h-iSt"/>
+                                    <constraint firstAttribute="height" constant="90" id="YIf-8K-dhe"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tapProfileImageButton:" destination="whd-0M-nGp" eventType="touchUpInside" id="hcT-Ar-JtX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-image" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-JF-oBo" userLabel="Profile Image">
+                                <rect key="frame" x="127.5" y="111" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="NIk-7s-dkh"/>
+                                    <constraint firstAttribute="width" constant="120" id="Y8S-BK-eNx"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-X4-4VV" userLabel="Back Icon">
@@ -886,7 +899,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-ag-tCa" userLabel="Username Label">
-                                <rect key="frame" x="152.5" y="237" width="70.5" height="15"/>
+                                <rect key="frame" x="152.5" y="267" width="70.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="aWN-mo-gm2"/>
                                 </constraints>
@@ -894,7 +907,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVG-p6-T3l" userLabel="Username TextField" customClass="UITextFieldPadding" customModule="ios_target" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="258" width="300" height="40"/>
+                                <rect key="frame" x="37.5" y="288" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="E8d-U7-PSL"/>
                                 </constraints>
@@ -906,7 +919,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HON-cK-96j" userLabel="Email Label">
-                                <rect key="frame" x="168" y="307" width="39" height="23"/>
+                                <rect key="frame" x="168" y="337" width="39" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="u5m-dV-Bl2"/>
                                 </constraints>
@@ -914,7 +927,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqr-a5-HAo" userLabel="Email TextField" customClass="UITextFieldPadding" customModule="ios_target" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="338" width="300" height="40"/>
+                                <rect key="frame" x="37.5" y="368" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zTe-KD-51d"/>
                                 </constraints>
@@ -926,7 +939,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwm-y3-v58" userLabel="FirstName Label">
-                                <rect key="frame" x="150" y="387" width="75.5" height="23"/>
+                                <rect key="frame" x="150" y="417" width="75.5" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Mjp-i4-DOS"/>
                                 </constraints>
@@ -934,7 +947,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upm-ci-NIh" userLabel="FirstName TextField" customClass="UITextFieldPadding" customModule="ios_target" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="418" width="300" height="40"/>
+                                <rect key="frame" x="37.5" y="448" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="APS-WS-bBT"/>
                                 </constraints>
@@ -946,7 +959,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zV-3y-lA0" userLabel="LastName Label">
-                                <rect key="frame" x="151.5" y="466" width="72" height="23"/>
+                                <rect key="frame" x="151.5" y="496" width="72" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="5ib-18-Idm"/>
                                 </constraints>
@@ -954,7 +967,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJp-Ep-Dhv" userLabel="LastName TextField" customClass="UITextFieldPadding" customModule="ios_target" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="497" width="300" height="40"/>
+                                <rect key="frame" x="37.5" y="527" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YAz-AA-n2o"/>
                                 </constraints>
@@ -1002,6 +1015,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eqr-a5-HAo" firstAttribute="width" secondItem="b4x-YW-VNP" secondAttribute="width" multiplier="0.8" id="0aR-6v-zXX"/>
+                            <constraint firstItem="O6Z-F8-7UR" firstAttribute="top" secondItem="tI7-gN-Sog" secondAttribute="bottom" constant="40" id="7E5-nI-Vy9"/>
                             <constraint firstItem="pJp-Ep-Dhv" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="BEI-k4-pAa"/>
                             <constraint firstItem="upm-ci-NIh" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="ED5-Tq-qdb"/>
                             <constraint firstAttribute="trailing" secondItem="NGd-X4-4VV" secondAttribute="trailing" constant="31" id="ElE-Or-B8s"/>
@@ -1031,6 +1045,7 @@
                             <constraint firstItem="HON-cK-96j" firstAttribute="top" secondItem="BVG-p6-T3l" secondAttribute="bottom" constant="9" id="tje-z8-Wrf"/>
                             <constraint firstItem="DH6-JF-oBo" firstAttribute="top" secondItem="tI7-gN-Sog" secondAttribute="bottom" constant="41" id="tpe-cC-2U7"/>
                             <constraint firstItem="tI7-gN-Sog" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="uCe-TS-uje"/>
+                            <constraint firstItem="O6Z-F8-7UR" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="y9b-MB-aGc"/>
                             <constraint firstItem="eqr-a5-HAo" firstAttribute="top" secondItem="HON-cK-96j" secondAttribute="bottom" constant="8" id="zk1-3y-z3B"/>
                         </constraints>
                     </view>
@@ -1039,6 +1054,7 @@
                         <outlet property="emailTextField" destination="eqr-a5-HAo" id="Pvz-5e-hea"/>
                         <outlet property="firstNameTextField" destination="upm-ci-NIh" id="8t4-BP-Jy2"/>
                         <outlet property="lastNameTextField" destination="pJp-Ep-Dhv" id="Zo3-Qm-TZK"/>
+                        <outlet property="profileImage" destination="DH6-JF-oBo" id="4Mj-Ze-ynK"/>
                         <outlet property="saveProfileButton" destination="4kc-p6-nUf" id="xZ6-Nu-l04"/>
                         <outlet property="usernameTextField" destination="BVG-p6-T3l" id="Fbm-z1-VeO"/>
                     </connections>
@@ -1100,7 +1116,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGa-NC-obr" userLabel="Profile Name">
-                                                <rect key="frame" x="52" y="17" width="62" height="21"/>
+                                                <rect key="frame" x="52" y="17" width="58" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="6ec-sg-W2t"/>
                                                 </constraints>
