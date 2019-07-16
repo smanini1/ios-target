@@ -14,7 +14,7 @@ extension UIImageView {
     sd_setImage(with: url, placeholderImage: UIImage(named: placeholder), options: .refreshCached)
   }
   
-  func setRoundedShape(borderColor: UIColor, borderWidth: CGFloat) {
+  func setRoundedShape(borderColor: UIColor = .black, borderWidth: CGFloat = 1) {
     layer.borderWidth = 1
     layer.masksToBounds = false
     layer.borderColor = borderColor.cgColor
@@ -22,15 +22,14 @@ extension UIImageView {
     clipsToBounds = true
   }
   
-  func cropsToSquare() {
+  func cropToSquare() {
     guard
       let originalImage = image?.cgImage,
       let imageOrientation = image?.imageOrientation
     else { return }
-    let imageWidth = CGFloat((originalImage.width))
-    let imageHeight = CGFloat((originalImage.height))
-    let cropSize = imageWidth > imageHeight ? imageHeight : imageWidth
-    
+    let imageWidth = CGFloat(originalImage.width)
+    let imageHeight = CGFloat(originalImage.height)
+    let cropSize = min(imageWidth, imageHeight)
     let x = (imageWidth - cropSize) / 2
     let y = (imageHeight - cropSize) / 2
     

@@ -99,7 +99,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[.originalImage] as? UIImage {
       profileImage.image = image
-      profileImage.cropsToSquare()
+      profileImage.cropToSquare()
       viewModel.image = image
     }
     picker.dismiss(animated: true, completion:nil)
