@@ -25,11 +25,10 @@ class User: Codable {
     case lastName = "last_name"
   }
   
-  init(id: String? = nil, username: String? = nil, email: String, image: String? = nil) {
+  init(id: String? = nil, username: String? = nil, email: String) {
     self.id = id
     self.username = username
     self.email = email
-    self.image = URL(string: image ?? "")
   }
   
   //MARK: Codable
@@ -58,7 +57,7 @@ class User: Codable {
     lastName = try container.decode(String.self, forKey: .lastName)
   }
   
-  func buildParams() -> [String: Any] {
+  func buildParams(_ image: String) -> [String: Any] {
     let parameters = [
       "user": [
         "username": username,
@@ -66,7 +65,7 @@ class User: Codable {
         "first_name": firstName,
         "last_name": lastName,
         "gender": "",
-        "avatar": ""
+        "avatar": image
       ]
     ]
     

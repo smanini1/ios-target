@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ProfileViewModelState: Equatable {
   case idle
@@ -20,11 +21,14 @@ protocol ProfileViewModelDelegate: class {
   func formDidChange()
   func userDidSet()
   func didUpdateUserProfile()
+  func imageDidSet()
 }
 
 class ProfileViewModel {
   
   weak var delegate: ProfileViewModelDelegate?
+  
+  var image: UIImage?
   
   var username = "" {
     didSet {
@@ -61,6 +65,16 @@ class ProfileViewModel {
     username = user.username ?? ""
     firstName = user.firstName ?? ""
     lastName = user.lastName ?? ""
+    do {
+      if let userImage = user.image {
+        let data = try Data(contentsOf: userImage)
+        let profileImage = UIImage(data: data)
+          image = profileImage
+          delegate?.imageDidSet()
+      }
+    } catch {
+      print(error)
+    }
   }
   
   func loadUserProfile() {
@@ -76,11 +90,12 @@ class ProfileViewModel {
   
   func saveUserProfile() {
     state = .loading
-    let user = User(id: nil, username: username, email: email, image: nil)
+    let user = User(id: nil, username: username, email: email)
     user.username = username
     user.firstName = firstName
     user.lastName = lastName
     UserAPI.updateUserProfile(user,
+                              avatar: image,
                               success: { [weak self] in
                                 self?.delegate?.didUpdateUserProfile()
                                 self?.state = .idle
