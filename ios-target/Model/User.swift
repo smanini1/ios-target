@@ -8,10 +8,22 @@
 
 import Foundation
 
+struct MatchedUser: Codable {
+  var id: Int?
+  var avatar: Avatar?
+  var fullName: String?
+  
+  private enum CodingKeys: String, CodingKey {
+    case id
+    case fullName = "full_name"
+    case avatar = "avatar"
+  }
+}
+
 class User: Codable {
   var id: String?
   var username: String?
-  var email: String
+  var email: String?
   var image: URL?
   var firstName: String?
   var lastName: String?
@@ -25,7 +37,7 @@ class User: Codable {
     case lastName = "last_name"
   }
   
-  init(id: String? = nil, username: String? = nil, email: String) {
+  init(id: String? = nil, username: String? = nil, email: String? = nil) {
     self.id = id
     self.username = username
     self.email = email

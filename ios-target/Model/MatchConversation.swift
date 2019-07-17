@@ -9,16 +9,16 @@
 import Foundation
 
 struct MatchConversation: Codable {
-    let id: Int?
-    let topicId: Int?
-    
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case topicId = "topic_id"
-    }
-    
-    init(id: Int?, topicId: Int?) {
-        self.id = id
-        self.topicId = topicId
-    }
+  let id: Int?
+  let topicId: Int?
+  
+  private enum CodingKeys: String, CodingKey {
+    case id
+    case topicId = "topic_id"
+  }
+  
+  init(id: Int? = nil, topicId: Int? = nil) {
+    self.id = id
+    self.topicId = topicId
+  }
 }

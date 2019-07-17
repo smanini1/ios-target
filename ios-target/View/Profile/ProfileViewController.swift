@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var lastNameTextField: UITextFieldPadding!
   @IBOutlet weak var saveProfileButton: UIButton!
   @IBOutlet weak var profileImage: UIImageView!
+  @IBOutlet weak var backgroundImage: UIImageView!
   
   var viewModel = ProfileViewModel()
   
@@ -23,6 +24,7 @@ class ProfileViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.sendSubviewToBack(backgroundImage)
     viewModel.delegate = self
     saveProfileButton.enable(false)
     viewModel.loadUserProfile()
@@ -96,13 +98,13 @@ extension ProfileViewController: ProfileViewModelDelegate {
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
     if let image = info[.originalImage] as? UIImage {
       profileImage.image = image
       profileImage.cropToSquare()
       viewModel.image = image
     }
-    picker.dismiss(animated: true, completion:nil)
+    picker.dismiss(animated: true, completion: nil)
   }
   
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
