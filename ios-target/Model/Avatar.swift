@@ -14,22 +14,22 @@ class Avatar: Codable {
   var normalAvatar: URL?
   
   private enum CodingKeys: String, CodingKey {
-    case originalAvatar = "original_url"
-    case smallAvatar = "small_thumb_url"
-    case normalAvatar = "normal_url"
+    case originalUrl
+    case smallThumbUrl
+    case normalUrl
   }
   
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
-    try container.encode(originalAvatar, forKey: .originalAvatar)
-    try container.encode(smallAvatar, forKey: .smallAvatar)
-    try container.encode(normalAvatar, forKey: .normalAvatar)
+    try container.encode(originalAvatar, forKey: .originalUrl)
+    try container.encode(smallAvatar, forKey: .smallThumbUrl)
+    try container.encode(normalAvatar, forKey: .normalUrl)
   }
   
   required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    originalAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .originalAvatar) ?? "")
-    smallAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .smallAvatar) ?? "")
-    normalAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .normalAvatar) ?? "")
+    originalAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .originalUrl) ?? "")
+    smallAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .smallThumbUrl) ?? "")
+    normalAvatar = URL(string: try container.decodeIfPresent(String.self, forKey: .normalUrl) ?? "")
   }
 }

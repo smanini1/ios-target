@@ -20,11 +20,13 @@ class ChatListViewController: UIViewController {
     super.viewDidLoad()
     viewModel.delegate = self
     viewModel.loadConversations()
+    setupView()
   }
   
   func setupView() {
     chatsTableView.register(UINib(nibName: ChatListTableViewCell.reuseIdentifier,
-                                  bundle: nil), forCellReuseIdentifier: ChatListTableViewCell.reuseIdentifier)
+                                  bundle: nil),
+                            forCellReuseIdentifier: ChatListTableViewCell.reuseIdentifier)
     chatsTableView.dataSource = self
     chatsTableView.delegate = self
   }
@@ -32,7 +34,7 @@ class ChatListViewController: UIViewController {
 
 extension ChatListViewController: ChatListViewModelDelegate {
   func didLoadMatches() {
-    setupView()
+    chatsTableView.reloadData()
   }
   
   func didUpdateState() {

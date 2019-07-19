@@ -16,11 +16,11 @@ struct MatchListItem: Codable {
   let unreadMessages: Int?
   
   private enum CodingKeys: String, CodingKey {
-    case matchId = "match_id"
+    case matchId
     case user 
-    case lastMessage = "last_message"
-    case topicIcon = "topic_icon"
-    case unreadMessages = "unread_messages"
+    case lastMessage
+    case topicIcon
+    case unreadMessages
   }
   
   init(matchId: Int? = nil, user: MatchedUser? = nil, lastMessage: String? = nil, topicIcon: URL? = nil, unreadMessages: Int? = nil) {
@@ -34,7 +34,8 @@ struct MatchListItem: Codable {
   static func parse(_ matchListItems: [[String: Any]]) -> [MatchListItem] {
     var parsedMatchListItems: [MatchListItem] = []
     matchListItems.forEach { matchItem in
-      if let parsedMatch = try? JSONDecoder().decode(MatchListItem.self, from: matchItem) {
+      let decoder = JSONDecoder.camelCaseDecoder()
+      if let parsedMatch = try? decoder.decode(MatchListItem.self, from: matchItem) {
         parsedMatchListItems.append(parsedMatch)
       }
     }

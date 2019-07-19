@@ -15,8 +15,8 @@ struct MatchedUser: Codable {
   
   private enum CodingKeys: String, CodingKey {
     case id
-    case fullName = "full_name"
-    case avatar = "avatar"
+    case fullName
+    case avatar
   }
 }
 

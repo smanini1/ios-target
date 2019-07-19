@@ -14,4 +14,10 @@ extension JSONDecoder {
     let data = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
     return try decode(T.self, from: data ?? Data())
   }
+  
+  static func camelCaseDecoder() -> JSONDecoder {
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    return decoder
+  }
 }
