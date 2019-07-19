@@ -38,6 +38,8 @@
 		816A974422D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816A974322D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift */; };
 		8179D4D422B81FC100CAD8F4 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */; };
 		8179D4D622B9515F00CAD8F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D4D522B9515F00CAD8F4 /* LocationManager.swift */; };
+		818A4C6422E2677A00D4145F /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A4C6322E2677A00D4145F /* ConversationViewController.swift */; };
+		818A4C6622E267B600D4145F /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A4C6522E267B600D4145F /* ConversationViewModel.swift */; };
 		81CED41822DCD352008939E1 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CED41722DCD352008939E1 /* Avatar.swift */; };
 		81CED41922DCE09D008939E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B77E0721E2FB6350020E450 /* User.swift */; };
 		81D0D96222CFBEA600CE5FE4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0D96122CFBEA600CE5FE4 /* Match.swift */; };
@@ -149,6 +151,8 @@
 		816A974322D666A9001F92DA /* UIStoryboardSegueFromLeftToRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueFromLeftToRight.swift; sourceTree = "<group>"; };
 		8179D4D322B81FC100CAD8F4 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = ../Home/ModalViewController.swift; sourceTree = "<group>"; };
 		8179D4D522B9515F00CAD8F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		818A4C6322E2677A00D4145F /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		818A4C6522E267B600D4145F /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		81CED41722DCD352008939E1 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		81D0D96122CFBEA600CE5FE4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		81D0D96322CFC7D500CE5FE4 /* MatchConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConversation.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				811A4D1922DE69C00025156F /* ChatListViewModel.swift */,
+				818A4C6522E267B600D4145F /* ConversationViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				815B4B9722DE64F70052B149 /* ChatListViewController.swift */,
 				811A4D1422DE69720025156F /* ChatListTableViewCell.swift */,
 				811A4D1522DE69720025156F /* ChatListTableViewCell.xib */,
+				818A4C6322E2677A00D4145F /* ConversationViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -890,6 +896,7 @@
 				9B8574D7212C81950063A3E2 /* SignUpViewModel.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
 				8158078222DF74BB009F07A4 /* MatchListItem.swift in Sources */,
+				818A4C6422E2677A00D4145F /* ConversationViewController.swift in Sources */,
 				81EF2F4A22B177C1006254E7 /* TargetAPI.swift in Sources */,
 				816A972222CE3E04001F92DA /* MatchNotificationViewModel.swift in Sources */,
 				81110A3022CAA1EB00582F02 /* TopicAPI.swift in Sources */,
@@ -897,6 +904,7 @@
 				81EF2F4822B14BCD006254E7 /* UITextFieldPadding.swift in Sources */,
 				9B8574D9212C84130063A3E2 /* UIImageExtension.swift in Sources */,
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
+				818A4C6622E267B600D4145F /* ConversationViewModel.swift in Sources */,
 				81110A3922CBD53C00582F02 /* TopicsCollectionViewCell.swift in Sources */,
 				9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */,
 				816A974022D6506F001F92DA /* ProfileViewController.swift in Sources */,
