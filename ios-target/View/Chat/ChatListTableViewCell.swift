@@ -33,17 +33,16 @@ class ChatListTableViewCell: UITableViewCell {
       if let user = match?.user {
         userNameLabel.text = user.fullName == "" ? "unknown".localized : user.fullName
         userPictureImageView.setImage(with: user.avatar?.smallAvatar, placeholder: "profile-icon")
+        userPictureImageView.setRoundedShape(borderColor: .codGray, borderWidth: 1)
       }
       
-      lastMessageLabel.text = match?.lastMessage == nil ? "" : match?.lastMessage
+      lastMessageLabel.text = match?.lastMessage == nil ? "No messages found".localized : match?.lastMessage
       targetIconImageView.setImage(with: match?.topicIcon, placeholder: "travel-pin")
     }
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
+  }
 }

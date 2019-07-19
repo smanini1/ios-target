@@ -375,7 +375,7 @@
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyA-oH-VmX" userLabel="Title Label">
-                                <rect key="frame" x="146.5" y="52" width="82" height="18"/>
+                                <rect key="frame" x="149.5" y="52" width="76" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="m7h-Xg-u7T"/>
                                 </constraints>
@@ -391,19 +391,18 @@
                                 <rect key="frame" x="11" y="52" width="23" height="23"/>
                                 <state key="normal" backgroundImage="profile-icon"/>
                                 <connections>
-                                    <segue destination="whd-0M-nGp" kind="custom" customClass="UIStoryboardSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" id="2mA-2m-rNm"/>
+                                    <segue destination="whd-0M-nGp" kind="custom" identifier="" customClass="UIStoryboardSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" id="Ug5-L1-cow"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-v0-bAg" userLabel="Logot Icon">
                                 <rect key="frame" x="336" y="52" width="28" height="23"/>
                                 <state key="normal" backgroundImage="chat-icon"/>
                                 <connections>
-                                    <action selector="tapOnLogoutButton:" destination="K4y-mn-w4p" eventType="touchUpInside" id="9Yv-2Q-7oU"/>
-                                    <segue destination="8mn-ka-We7" kind="custom" customClass="UIStoryboardSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" id="EIh-VU-Jbf"/>
+                                    <segue destination="8mn-ka-We7" kind="custom" customClass="UIStoryboardSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" id="3RX-xb-L2G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENJ-1S-pIE" userLabel="New Target Text Button">
-                                <rect key="frame" x="132.5" y="640" width="110" height="15"/>
+                                <rect key="frame" x="130.5" y="640" width="114" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="MHv-MI-cTF"/>
                                 </constraints>
@@ -433,7 +432,7 @@
                                         <rect key="frame" x="37.5" y="15" width="300" height="317"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIFY AREA LENGTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyY-TZ-Cmm" userLabel="Area Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="kb0-Ic-wvU"/>
                                                 </constraints>
@@ -461,7 +460,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aee-oW-lTA" userLabel="Title Label">
-                                                <rect key="frame" x="0.0" y="79" width="71" height="20"/>
+                                                <rect key="frame" x="0.0" y="79" width="73" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="JBK-5W-IBa"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="e1r-E1-HAj"/>
@@ -490,7 +489,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A TOPIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-Nn-aq8" userLabel="Topic Label">
-                                                <rect key="frame" x="0.0" y="158" width="82.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="158" width="87" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82.5" id="C4H-aP-3aP"/>
                                                     <constraint firstAttribute="height" constant="20" id="htC-v3-ncn"/>
@@ -614,13 +613,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-icon-white" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-AN-2nn" userLabel="Profile Button">
-                                <rect key="frame" x="20" y="41" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="Tfd-q0-YK8"/>
-                                    <constraint firstAttribute="height" constant="25" id="vSr-hA-taa"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1j-3w-FVb" userLabel="Title Label">
                                 <rect key="frame" x="75" y="40" width="225" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="13"/>
@@ -643,17 +635,28 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrj-99-OMc" userLabel="Logot Icon">
+                                <rect key="frame" x="20" y="42" width="20" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="3B2-Fa-8Ov"/>
+                                    <constraint firstAttribute="height" constant="25" id="KCA-6G-abw"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="location-icon-white"/>
+                                <connections>
+                                    <segue destination="iQo-V3-sRR" kind="unwind" identifier="unwindChatSegue" customClass="UIStoryboardUnwindSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindChatSegueWithSegue:" id="Buq-o9-f7V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="p2X-e6-CWn" firstAttribute="top" secondItem="rrj-99-OMc" secondAttribute="bottom" constant="17" id="2Ba-cK-osj"/>
                             <constraint firstAttribute="trailing" secondItem="p2X-e6-CWn" secondAttribute="trailing" id="BKv-jb-QDX"/>
                             <constraint firstItem="O1j-3w-FVb" firstAttribute="top" secondItem="KxP-tD-BNv" secondAttribute="bottom" constant="20" id="Dpw-jn-764"/>
                             <constraint firstItem="p2X-e6-CWn" firstAttribute="leading" secondItem="coV-aP-5fl" secondAttribute="leading" id="EeZ-rj-38g"/>
                             <constraint firstItem="O1j-3w-FVb" firstAttribute="width" secondItem="coV-aP-5fl" secondAttribute="width" multiplier="0.6" id="GF0-2i-aNE"/>
-                            <constraint firstItem="FLw-nE-NBi" firstAttribute="top" secondItem="JqQ-AN-2nn" secondAttribute="bottom" constant="17" id="OaH-HT-lNF"/>
+                            <constraint firstItem="rrj-99-OMc" firstAttribute="leading" secondItem="coV-aP-5fl" secondAttribute="leading" constant="20" id="HOL-cB-hrL"/>
                             <constraint firstItem="iPV-qS-Cq3" firstAttribute="top" secondItem="p2X-e6-CWn" secondAttribute="bottom" id="Sk9-Aq-EIb"/>
                             <constraint firstItem="FLw-nE-NBi" firstAttribute="width" secondItem="coV-aP-5fl" secondAttribute="width" id="X9U-DW-Mhe"/>
-                            <constraint firstItem="JqQ-AN-2nn" firstAttribute="leading" secondItem="coV-aP-5fl" secondAttribute="leading" constant="20" id="cir-Ai-nRc"/>
                             <constraint firstItem="FLw-nE-NBi" firstAttribute="top" secondItem="O1j-3w-FVb" secondAttribute="bottom" constant="25" id="nYk-td-PU7"/>
                             <constraint firstItem="p2X-e6-CWn" firstAttribute="top" secondItem="FLw-nE-NBi" secondAttribute="bottom" id="qh1-yq-AEr"/>
                             <constraint firstItem="FLw-nE-NBi" firstAttribute="centerX" secondItem="coV-aP-5fl" secondAttribute="centerX" id="wVU-jd-vEL"/>
@@ -662,11 +665,11 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="backButton" destination="JqQ-AN-2nn" id="R8X-Iw-QX3"/>
                         <outlet property="chatsTableView" destination="p2X-e6-CWn" id="isD-DU-t0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JoU-9m-X0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iQo-V3-sRR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="428.63568215892059"/>
         </scene>
@@ -966,7 +969,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="back-icon"/>
                                 <connections>
-                                    <segue destination="5e3-CO-PES" kind="unwind" customClass="UIStoryboardUnwindSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindProfileWithSegue:" id="40O-ku-wcJ"/>
+                                    <segue destination="5e3-CO-PES" kind="unwind" identifier="unwindProfileSegue" customClass="UIStoryboardUnwindSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindProfileSegueWithSegue:" id="DPT-hT-TXX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-ag-tCa" userLabel="Username Label">
@@ -1530,6 +1533,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jg5-7v-oJ8"/>
-        <segue reference="gzI-wi-lZU"/>
+        <segue reference="h0g-Mt-v4v"/>
     </inferredMetricsTieBreakers>
 </document>

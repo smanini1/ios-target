@@ -47,6 +47,6 @@ class ChatListViewModel {
       }, failure: { [weak self] matchError in
         self?.state = .error(matchError.localizedDescription)
     })
-    
   }
 }
+

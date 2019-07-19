@@ -46,13 +46,9 @@ class HomeViewController: UIViewController {
     viewController.viewModel.topics = viewModel.topics
   }
   
-  @IBAction func prepareForUnwindProfile(segue: UIStoryboardSegue) {
-    
-  }
+  @IBAction func prepareForUnwindProfileSegue(segue: UIStoryboardSegue) {}
   
-  @IBAction func prepareForUnwindChat(segue: UIStoryboardSegue) {
-    
-  }
+  @IBAction func prepareForUnwindChatSegue(segue: UIStoryboardSegue) {}
   
   @IBAction func tapOnCreateTargetButton(_ sender: Any) {
     viewModel.target = Target(id: nil,

@@ -10,7 +10,6 @@ import UIKit
 
 class ChatListViewController: UIViewController {
   
-  @IBOutlet weak var backButton: UIImageView!
   @IBOutlet weak var chatsTableView: UITableView!
   
   var viewModel = ChatListViewModel()
@@ -40,7 +39,7 @@ extension ChatListViewController: ChatListViewModelDelegate {
     UIApplication.toggleNetworkActivity(viewModel.state == .loading)
     if case .error(let errorDescription) = viewModel.state {
       showMessage(title: "Error", message: errorDescription)
-    } 
+    }
   }
 }
 
@@ -59,3 +58,4 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     return cell
   }
 }
+
