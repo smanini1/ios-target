@@ -14,7 +14,8 @@ class ChatListViewController: UIViewController {
   
   var viewModel = ChatListViewModel()
   
-  var unwindChatSegue = "unwindChatSegue"
+  let unwindChatSegue = "unwindChatSegue"
+  let openConversationSegue = "openConversationSegue"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,6 +30,18 @@ class ChatListViewController: UIViewController {
                             forCellReuseIdentifier: ChatListTableViewCell.reuseIdentifier)
     chatsTableView.dataSource = self
     chatsTableView.delegate = self
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if
+      segue.identifier == openConversationSegue,
+      let viewController = segue.destination as? ConversationViewController,
+      let sender = sender as? ChatListTableViewCell,
+      let match = sender.match
+    {
+      viewController.viewModel.delegate = viewController
+      viewController.viewModel.match = match
+    }
   }
 }
 
@@ -58,6 +71,12 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
       cell.match = match
     }
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath)
+    tableView.deselectRow(at: indexPath, animated: true)
+    performSegue(withIdentifier: openConversationSegue, sender: cell)
   }
 }
 

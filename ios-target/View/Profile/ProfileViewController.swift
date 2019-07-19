@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
   
   var viewModel = ProfileViewModel()
   
-  var unwindProfileSegue = "unwindProfileSegue"
+  let unwindProfileSegue = "unwindProfileSegue"
   
   override func viewDidLoad() {
     super.viewDidLoad()

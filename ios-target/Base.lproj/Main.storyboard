@@ -635,7 +635,7 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrj-99-OMc" userLabel="Logot Icon">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrj-99-OMc" userLabel="Map Button">
                                 <rect key="frame" x="20" y="42" width="20" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="3B2-Fa-8Ov"/>
@@ -666,6 +666,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="chatsTableView" destination="p2X-e6-CWn" id="isD-DU-t0e"/>
+                        <segue destination="YPY-vh-ok9" kind="custom" identifier="openConversationSegue" customClass="UIStoryboardSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" id="mFG-AY-ius"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JoU-9m-X0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1148,6 +1149,92 @@
             </objects>
             <point key="canvasLocation" x="1945" y="-286"/>
         </scene>
+        <!--Conversation View Controller-->
+        <scene sceneID="3AK-6I-wSa">
+            <objects>
+                <viewController id="YPY-vh-ok9" customClass="ConversationViewController" customModule="ios_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aRu-HE-Ysp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uag-u3-8fd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1O-YH-nEE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvR-8Q-Wjf" userLabel="User Name Label">
+                                <rect key="frame" x="152.5" y="36" width="70.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="miI-65-4t2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cM7-gb-10C" userLabel="Chat Message List View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbg-Qs-BLN" userLabel="Back Button">
+                                <rect key="frame" x="20" y="42" width="15" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="BYm-84-E5W"/>
+                                    <constraint firstAttribute="width" constant="15" id="r4T-s1-WN9"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back-left-button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-YG-HTY" userLabel="Target Title Label">
+                                <rect key="frame" x="168" y="54" width="39.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="ZCR-x6-VIU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-Fe-OBR" userLabel="Separation Line View">
+                                <rect key="frame" x="0.0" y="83" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="LSL-yY-6cD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LsY-YG-HTY" firstAttribute="top" secondItem="IvR-8Q-Wjf" secondAttribute="bottom" id="9I0-Jn-qKU"/>
+                            <constraint firstItem="q0c-Fe-OBR" firstAttribute="width" secondItem="I1O-YH-nEE" secondAttribute="width" id="BHb-R5-5iV"/>
+                            <constraint firstItem="LsY-YG-HTY" firstAttribute="centerX" secondItem="I1O-YH-nEE" secondAttribute="centerX" id="Bua-Nl-0QD"/>
+                            <constraint firstAttribute="trailing" secondItem="cM7-gb-10C" secondAttribute="trailing" id="GDb-4h-eym"/>
+                            <constraint firstItem="cM7-gb-10C" firstAttribute="top" secondItem="LsY-YG-HTY" secondAttribute="bottom" constant="12" id="Jof-Uc-LvF"/>
+                            <constraint firstItem="cM7-gb-10C" firstAttribute="top" secondItem="Qbg-Qs-BLN" secondAttribute="bottom" constant="17" id="MIA-mg-7Tj"/>
+                            <constraint firstItem="Qbg-Qs-BLN" firstAttribute="leading" secondItem="I1O-YH-nEE" secondAttribute="leading" constant="20" id="MMM-tn-SGP"/>
+                            <constraint firstItem="q0c-Fe-OBR" firstAttribute="bottom" secondItem="cM7-gb-10C" secondAttribute="top" id="Thd-Og-rgW"/>
+                            <constraint firstItem="q0c-Fe-OBR" firstAttribute="centerX" secondItem="I1O-YH-nEE" secondAttribute="centerX" id="UYs-z5-9uc"/>
+                            <constraint firstItem="cM7-gb-10C" firstAttribute="leading" secondItem="I1O-YH-nEE" secondAttribute="leading" id="VsN-vM-plm"/>
+                            <constraint firstItem="IvR-8Q-Wjf" firstAttribute="top" secondItem="aRu-HE-Ysp" secondAttribute="bottom" constant="16" id="eoR-pE-938"/>
+                            <constraint firstItem="Uag-u3-8fd" firstAttribute="top" secondItem="cM7-gb-10C" secondAttribute="bottom" id="gyg-T8-jeM"/>
+                            <constraint firstItem="IvR-8Q-Wjf" firstAttribute="centerX" secondItem="I1O-YH-nEE" secondAttribute="centerX" id="yDT-CU-ibe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="targetNameLabel" destination="LsY-YG-HTY" id="6Rw-fC-2uL"/>
+                        <outlet property="userNameLabel" destination="IvR-8Q-Wjf" id="Fah-24-frG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6a-FP-HnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3434" y="429"/>
+        </scene>
         <!--Match Notification View Controller-->
         <scene sceneID="z8i-Yc-gWy">
             <objects>
@@ -1523,6 +1610,7 @@
     </scenes>
     <resources>
         <image name="back-icon" width="10" height="19"/>
+        <image name="back-left-button" width="10" height="19"/>
         <image name="chat-icon" width="28" height="23"/>
         <image name="location-icon-white" width="19" height="23"/>
         <image name="notification-icon" width="133" height="78"/>
