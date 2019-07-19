@@ -27,7 +27,8 @@ class TargetAPI {
     let parameters = Target.buildParams(target: target)
     APIClient.request(.post, url: targetsUrl, params: parameters, success: { response, _ in
       if let match = try? JSONDecoder().decode(Match.self, from: response) {
-        if let matchedUser = response["matched_user"] as? [String: Any],
+        if
+          let matchedUser = response["matched_user"] as? [String: Any],
           let userAvatar = matchedUser["avatar"] as? [String: Any],
           let decodedAvatar = try? JSONDecoder().decode(Avatar.self, from: userAvatar)
         {

@@ -81,11 +81,12 @@ class UserAPI {
   class func loadUserProfile(_ success: @escaping (User) -> Void, failure: @escaping (_ error: Error) -> Void) {
     let url = usersUrl + "profile"
     APIClient.request(.get, url: url, success: { response, _ in
+      let decoder = JSONDecoder.camelCaseDecoder()
       guard
         let user = response["user"] as? [String: Any],
         let decodedUser = try? JSONDecoder().decode(User.self, from: user),
         let avatar = user["avatar"] as? [String: Any],
-        let decodedAvatar = try? JSONDecoder().decode(Avatar.self, from: avatar)
+        let decodedAvatar = try? decoder.decode(Avatar.self, from: avatar)
       else {
         failure(App.error(domain: .parsing, localizedDescription: "Could not parse valid user".localized))
         return

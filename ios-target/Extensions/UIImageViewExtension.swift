@@ -15,7 +15,7 @@ extension UIImageView {
   }
   
   func setRoundedShape(borderColor: UIColor = .black, borderWidth: CGFloat = 1) {
-    layer.borderWidth = 1
+    layer.borderWidth = borderWidth
     layer.masksToBounds = false
     layer.borderColor = borderColor.cgColor
     layer.cornerRadius = frame.height / 2

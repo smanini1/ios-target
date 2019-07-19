@@ -19,6 +19,9 @@
         <array key="OpenSans-SemiBold.ttf">
             <string>OpenSans-SemiBold</string>
         </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -372,7 +375,7 @@
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyA-oH-VmX" userLabel="Title Label">
-                                <rect key="frame" x="146.5" y="52" width="82" height="18"/>
+                                <rect key="frame" x="149.5" y="52" width="76" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="m7h-Xg-u7T"/>
                                 </constraints>
@@ -388,18 +391,18 @@
                                 <rect key="frame" x="11" y="52" width="23" height="23"/>
                                 <state key="normal" backgroundImage="profile-icon"/>
                                 <connections>
-                                    <segue destination="whd-0M-nGp" kind="custom" customClass="UIStoryboardSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" id="vHs-lI-BNb"/>
+                                    <segue destination="whd-0M-nGp" kind="custom" identifier="" customClass="UIStoryboardSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" id="Ug5-L1-cow"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-v0-bAg" userLabel="Logot Icon">
-                                <rect key="frame" x="334" y="52" width="30" height="30"/>
-                                <state key="normal" backgroundImage="logout-icon"/>
+                                <rect key="frame" x="336" y="52" width="28" height="23"/>
+                                <state key="normal" backgroundImage="chat-icon"/>
                                 <connections>
-                                    <action selector="tapOnLogoutButton:" destination="K4y-mn-w4p" eventType="touchUpInside" id="9Yv-2Q-7oU"/>
+                                    <segue destination="8mn-ka-We7" kind="custom" customClass="UIStoryboardSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" id="3RX-xb-L2G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENJ-1S-pIE" userLabel="New Target Text Button">
-                                <rect key="frame" x="132.5" y="640" width="110" height="15"/>
+                                <rect key="frame" x="130.5" y="640" width="114" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="MHv-MI-cTF"/>
                                 </constraints>
@@ -429,7 +432,7 @@
                                         <rect key="frame" x="37.5" y="15" width="300" height="317"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIFY AREA LENGTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyY-TZ-Cmm" userLabel="Area Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="kb0-Ic-wvU"/>
                                                 </constraints>
@@ -457,7 +460,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aee-oW-lTA" userLabel="Title Label">
-                                                <rect key="frame" x="0.0" y="79" width="71" height="20"/>
+                                                <rect key="frame" x="0.0" y="79" width="73" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="JBK-5W-IBa"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="e1r-E1-HAj"/>
@@ -486,7 +489,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A TOPIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-Nn-aq8" userLabel="Topic Label">
-                                                <rect key="frame" x="0.0" y="158" width="82.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="158" width="87" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82.5" id="C4H-aP-3aP"/>
                                                     <constraint firstAttribute="height" constant="20" id="htC-v3-ncn"/>
@@ -597,6 +600,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCL-Vt-8BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.8" y="428.63568215892059"/>
+        </scene>
+        <!--Chat List View Controller-->
+        <scene sceneID="8ec-hp-3ls">
+            <objects>
+                <viewController id="8mn-ka-We7" customClass="ChatListViewController" customModule="ios_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KxP-tD-BNv"/>
+                        <viewControllerLayoutGuide type="bottom" id="iPV-qS-Cq3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="coV-aP-5fl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1j-3w-FVb" userLabel="Title Label">
+                                <rect key="frame" x="75" y="40" width="225" height="18"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLw-nE-NBi" userLabel="Separation Line View">
+                                <rect key="frame" x="0.0" y="83" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="15K-7o-70E"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p2X-e6-CWn" userLabel="Chat List Table View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrj-99-OMc" userLabel="Logot Icon">
+                                <rect key="frame" x="20" y="42" width="20" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="3B2-Fa-8Ov"/>
+                                    <constraint firstAttribute="height" constant="25" id="KCA-6G-abw"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="location-icon-white"/>
+                                <connections>
+                                    <segue destination="iQo-V3-sRR" kind="unwind" identifier="unwindChatSegue" customClass="UIStoryboardUnwindSegueFromRightToLeft" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindChatSegueWithSegue:" id="Buq-o9-f7V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p2X-e6-CWn" firstAttribute="top" secondItem="rrj-99-OMc" secondAttribute="bottom" constant="17" id="2Ba-cK-osj"/>
+                            <constraint firstAttribute="trailing" secondItem="p2X-e6-CWn" secondAttribute="trailing" id="BKv-jb-QDX"/>
+                            <constraint firstItem="O1j-3w-FVb" firstAttribute="top" secondItem="KxP-tD-BNv" secondAttribute="bottom" constant="20" id="Dpw-jn-764"/>
+                            <constraint firstItem="p2X-e6-CWn" firstAttribute="leading" secondItem="coV-aP-5fl" secondAttribute="leading" id="EeZ-rj-38g"/>
+                            <constraint firstItem="O1j-3w-FVb" firstAttribute="width" secondItem="coV-aP-5fl" secondAttribute="width" multiplier="0.6" id="GF0-2i-aNE"/>
+                            <constraint firstItem="rrj-99-OMc" firstAttribute="leading" secondItem="coV-aP-5fl" secondAttribute="leading" constant="20" id="HOL-cB-hrL"/>
+                            <constraint firstItem="iPV-qS-Cq3" firstAttribute="top" secondItem="p2X-e6-CWn" secondAttribute="bottom" id="Sk9-Aq-EIb"/>
+                            <constraint firstItem="FLw-nE-NBi" firstAttribute="width" secondItem="coV-aP-5fl" secondAttribute="width" id="X9U-DW-Mhe"/>
+                            <constraint firstItem="FLw-nE-NBi" firstAttribute="top" secondItem="O1j-3w-FVb" secondAttribute="bottom" constant="25" id="nYk-td-PU7"/>
+                            <constraint firstItem="p2X-e6-CWn" firstAttribute="top" secondItem="FLw-nE-NBi" secondAttribute="bottom" id="qh1-yq-AEr"/>
+                            <constraint firstItem="FLw-nE-NBi" firstAttribute="centerX" secondItem="coV-aP-5fl" secondAttribute="centerX" id="wVU-jd-vEL"/>
+                            <constraint firstItem="O1j-3w-FVb" firstAttribute="centerX" secondItem="coV-aP-5fl" secondAttribute="centerX" id="ylr-V3-Im1"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="chatsTableView" destination="p2X-e6-CWn" id="isD-DU-t0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JoU-9m-X0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iQo-V3-sRR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2696.8000000000002" y="428.63568215892059"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="D1s-zu-Y9Z">
@@ -894,8 +969,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="back-icon"/>
                                 <connections>
-                                    <action selector="tapOnLogoutButton:" destination="K4y-mn-w4p" eventType="touchUpInside" id="Vrc-DG-c50"/>
-                                    <segue destination="5e3-CO-PES" kind="unwind" identifier="unwindProfileSegue" customClass="UIStoryboardUnwindSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="cfS-mv-0hi"/>
+                                    <segue destination="5e3-CO-PES" kind="unwind" identifier="unwindProfileSegue" customClass="UIStoryboardUnwindSegueFromLeftToRight" customModule="ios_target" customModuleProvider="target" unwindAction="prepareForUnwindProfileSegueWithSegue:" id="DPT-hT-TXX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-ag-tCa" userLabel="Username Label">
@@ -1011,6 +1085,13 @@
                                     <action selector="tapLogoutButton:" destination="whd-0M-nGp" eventType="touchUpInside" id="MWX-UF-LJu"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-background" translatesAutoresizingMaskIntoConstraints="NO" id="zZ1-Uy-ckg" userLabel="Backgound Image">
+                                <rect key="frame" x="2" y="69" width="275" height="176"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="bvZ-pW-Bvt"/>
+                                    <constraint firstAttribute="width" constant="275" id="xIP-g5-iOg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1020,6 +1101,7 @@
                             <constraint firstItem="upm-ci-NIh" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="ED5-Tq-qdb"/>
                             <constraint firstAttribute="trailing" secondItem="NGd-X4-4VV" secondAttribute="trailing" constant="31" id="ElE-Or-B8s"/>
                             <constraint firstItem="Z34-ag-tCa" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="EsV-C3-eSx"/>
+                            <constraint firstItem="zZ1-Uy-ckg" firstAttribute="centerY" secondItem="DH6-JF-oBo" secondAttribute="centerY" constant="-14" id="FaW-1d-JRm"/>
                             <constraint firstItem="4kc-p6-nUf" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="K2f-kM-VO8"/>
                             <constraint firstItem="eqr-a5-HAo" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="K55-R2-oK4"/>
                             <constraint firstItem="Z34-ag-tCa" firstAttribute="top" secondItem="DH6-JF-oBo" secondAttribute="bottom" constant="36" id="KtN-PJ-0YC"/>
@@ -1037,6 +1119,7 @@
                             <constraint firstItem="DH6-JF-oBo" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="f6g-vJ-oe5"/>
                             <constraint firstItem="4kc-p6-nUf" firstAttribute="width" secondItem="b4x-YW-VNP" secondAttribute="width" multiplier="0.8" id="gDC-aD-kMH"/>
                             <constraint firstItem="HvP-TF-e9W" firstAttribute="top" secondItem="OLD-25-EUd" secondAttribute="bottom" constant="30" id="h09-tz-s4a"/>
+                            <constraint firstItem="zZ1-Uy-ckg" firstAttribute="centerX" secondItem="DH6-JF-oBo" secondAttribute="centerX" constant="-48" id="iH3-h4-KMc"/>
                             <constraint firstItem="nwm-y3-v58" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="iI4-CV-Xr8"/>
                             <constraint firstItem="4zV-3y-lA0" firstAttribute="centerX" secondItem="b4x-YW-VNP" secondAttribute="centerX" id="oO1-3Y-Kh8"/>
                             <constraint firstItem="BVG-p6-T3l" firstAttribute="width" secondItem="b4x-YW-VNP" secondAttribute="width" multiplier="0.8" id="qt2-Ta-flN"/>
@@ -1051,6 +1134,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="zZ1-Uy-ckg" id="EDg-YU-iDz"/>
                         <outlet property="emailTextField" destination="eqr-a5-HAo" id="Pvz-5e-hea"/>
                         <outlet property="firstNameTextField" destination="upm-ci-NIh" id="8t4-BP-Jy2"/>
                         <outlet property="lastNameTextField" destination="pJp-Ep-Dhv" id="Zo3-Qm-TZK"/>
@@ -1062,7 +1146,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRX-lW-Hri" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5e3-CO-PES" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2757.5999999999999" y="428.63568215892059"/>
+            <point key="canvasLocation" x="1945" y="-286"/>
         </scene>
         <!--Match Notification View Controller-->
         <scene sceneID="z8i-Yc-gWy">
@@ -1116,7 +1200,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGa-NC-obr" userLabel="Profile Name">
-                                                <rect key="frame" x="52" y="17" width="58" height="21"/>
+                                                <rect key="frame" x="52" y="17" width="62" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="6ec-sg-W2t"/>
                                                 </constraints>
@@ -1439,14 +1523,16 @@
     </scenes>
     <resources>
         <image name="back-icon" width="10" height="19"/>
-        <image name="logout-icon" width="30" height="30"/>
+        <image name="chat-icon" width="28" height="23"/>
+        <image name="location-icon-white" width="19" height="23"/>
         <image name="notification-icon" width="133" height="78"/>
+        <image name="profile-background" width="205" height="145"/>
         <image name="profile-icon" width="23" height="23"/>
         <image name="profile-image" width="83" height="83"/>
         <image name="target-icon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jg5-7v-oJ8"/>
-        <segue reference="gzI-wi-lZU"/>
+        <segue reference="h0g-Mt-v4v"/>
     </inferredMetricsTieBreakers>
 </document>

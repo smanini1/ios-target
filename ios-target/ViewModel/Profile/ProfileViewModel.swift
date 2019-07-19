@@ -61,7 +61,7 @@ class ProfileViewModel {
   }
   
   func setUser(_ user: User) {
-    email = user.email
+    email = user.email ?? ""
     username = user.username ?? ""
     firstName = user.firstName ?? ""
     lastName = user.lastName ?? ""
